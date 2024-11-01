@@ -231,6 +231,9 @@ void CreateYesNoMenuParameterized(u8, u8, u16, u16, u8, u8);
 static void Task_NewGameBirchSpeech_SlidePlatformAway2(u8);
 static void Task_NewGameBirchSpeech_ReshowBirchLotad(u8);
 static void Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter(u8);
+static void Task_NewGameBirchSpeech_MeetCheren(u8);
+static void Task_NewGameBirchSpeech_MeetBianca(u8);
+static void Task_NewGameBirchSpeech_AllTogether(u8);
 static void Task_NewGameBirchSpeech_AreYouReady(u8);
 static void Task_NewGameBirchSpeech_ShrinkPlayer(u8);
 static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *);
@@ -1261,6 +1264,8 @@ static void HighlightSelectedMainMenuItem(u8 menuType, u8 selectedMenuItem, s16 
 #define tLotadSpriteId data[9]
 #define tBrendanSpriteId data[10]
 #define tMaySpriteId data[11]
+#define tCherenSpriteId data[12]
+#define tBiancaSpriteId data[13]
 
 static void Task_NewGameBirchSpeech_Init(u8 taskId)
 {
@@ -1369,8 +1374,8 @@ static void Task_NewGameBirchSpeechSub_InitPokeBall(u8 taskId)
 {
     u8 spriteId = gTasks[sBirchSpeechMainTaskId].tLotadSpriteId;
 
-    gSprites[spriteId].x = 100;
-    gSprites[spriteId].y = 75;
+    gSprites[spriteId].x = 85;
+    gSprites[spriteId].y = 80;
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
@@ -1694,12 +1699,12 @@ static void Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter(u8 taskId)
             NewGameBirchSpeech_StartFadeOutTarget1InTarget2(taskId, 2);
             NewGameBirchSpeech_StartFadePlatformIn(taskId, 1);
             gTasks[taskId].tTimer = 64;
-            gTasks[taskId].func = Task_NewGameBirchSpeech_AreYouReady;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_MeetCheren;
         }
     }
 }
 
-static void Task_NewGameBirchSpeech_AreYouReady(u8 taskId)
+static void Task_NewGameBirchSpeech_MeetCheren(u8 taskId)
 {
     u8 spriteId;
 
@@ -1707,6 +1712,54 @@ static void Task_NewGameBirchSpeech_AreYouReady(u8 taskId)
     {
         gSprites[gTasks[taskId].tBirchSpriteId].invisible = TRUE;
         gSprites[gTasks[taskId].tLotadSpriteId].invisible = TRUE;
+        gTasks[taskId].tTimer = 1;
+        if (gTasks[taskId].tTimer)
+        {
+            gTasks[taskId].tTimer--;
+            return;
+        }
+        spriteId = gTasks[taskId].tCherenSpriteId;
+        gSprites[spriteId].x = 60;
+        gSprites[spriteId].y = 60;
+        gSprites[spriteId].invisible = FALSE;
+        gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
+        gTasks[taskId].tCherenSpriteId = spriteId;
+        StringExpandPlaceholders(gStringVar4, gText_Birch_MeetCheren);
+        AddTextPrinterForMessage(TRUE);
+        gTasks[taskId].func = Task_NewGameBirchSpeech_MeetBianca;
+    }
+}
+
+static void Task_NewGameBirchSpeech_MeetBianca(u8 taskId)
+{
+    u8 spriteId;
+
+    if (gTasks[taskId].tIsDoneFadingSprites)
+    {
+        if (gTasks[taskId].tTimer)
+        {
+            gTasks[taskId].tTimer--;
+            return;
+        }
+        spriteId = gTasks[taskId].tBiancaSpriteId;
+        gSprites[spriteId].x = 180;
+        gSprites[spriteId].y = 60;
+        gSprites[spriteId].invisible = FALSE;
+        gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
+        gTasks[taskId].tBiancaSpriteId = spriteId;
+        NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
+        StringExpandPlaceholders(gStringVar4, gText_Birch_MeetBianca);
+        AddTextPrinterForMessage(TRUE);
+        gTasks[taskId].func = Task_NewGameBirchSpeech_AllTogether;
+    }
+}
+
+static void Task_NewGameBirchSpeech_AllTogether(u8 taskId)
+{
+    u8 spriteId;
+
+    if (gTasks[taskId].tIsDoneFadingSprites)
+    {
         if (gTasks[taskId].tTimer)
         {
             gTasks[taskId].tTimer--;
@@ -1721,8 +1774,21 @@ static void Task_NewGameBirchSpeech_AreYouReady(u8 taskId)
         gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         gTasks[taskId].tPlayerSpriteId = spriteId;
-        NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
-        NewGameBirchSpeech_StartFadePlatformOut(taskId, 1);
+        StringExpandPlaceholders(gStringVar4, gText_Birch_AllTogether);
+        AddTextPrinterForMessage(TRUE);
+        gTasks[taskId].func = Task_NewGameBirchSpeech_AreYouReady;
+    }
+}
+
+static void Task_NewGameBirchSpeech_AreYouReady(u8 taskId)
+{
+    if (gTasks[taskId].tIsDoneFadingSprites)
+    {
+        if (gTasks[taskId].tTimer)
+        {
+            gTasks[taskId].tTimer--;
+            return;
+        }
         StringExpandPlaceholders(gStringVar4, gText_Birch_AreYouReady);
         AddTextPrinterForMessage(TRUE);
         gTasks[taskId].func = Task_NewGameBirchSpeech_ShrinkPlayer;
@@ -1885,6 +1951,8 @@ static void AddBirchSpeechObjects(u8 taskId)
     u8 lotadSpriteId;
     u8 brendanSpriteId;
     u8 maySpriteId;
+    u8 cherenSpriteId;
+    u8 biancaSpriteId;
 
     birchSpriteId = AddNewGameBirchObject(0x88, 0x3C, 1);
     gSprites[birchSpriteId].callback = SpriteCB_Null;
@@ -1906,6 +1974,16 @@ static void AddBirchSpeechObjects(u8 taskId)
     gSprites[maySpriteId].invisible = TRUE;
     gSprites[maySpriteId].oam.priority = 0;
     gTasks[taskId].tMaySpriteId = maySpriteId;
+    cherenSpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_RED), 120, 60, 0, &gDecompressionBuffer[TRAINER_PIC_SIZE]);
+    gSprites[cherenSpriteId].callback = SpriteCB_Null;
+    gSprites[cherenSpriteId].invisible = TRUE;
+    gSprites[cherenSpriteId].oam.priority = 0;
+    gTasks[taskId].tCherenSpriteId = cherenSpriteId;
+    biancaSpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_LEAF), 120, 60, 0, &gDecompressionBuffer[TRAINER_PIC_SIZE]);
+    gSprites[biancaSpriteId].callback = SpriteCB_Null;
+    gSprites[biancaSpriteId].invisible = TRUE;
+    gSprites[biancaSpriteId].oam.priority = 0;
+    gTasks[taskId].tBiancaSpriteId = biancaSpriteId;
 }
 
 #undef tPlayerSpriteId
@@ -1915,6 +1993,8 @@ static void AddBirchSpeechObjects(u8 taskId)
 #undef tLotadSpriteId
 #undef tBrendanSpriteId
 #undef tMaySpriteId
+#undef tCherenSpriteId
+#undef tBiancaSpriteId
 
 #define tMainTask data[0]
 #define tAlphaCoeff1 data[1]

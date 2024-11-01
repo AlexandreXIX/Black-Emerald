@@ -28,7 +28,7 @@ gText_Birch_MainSpeech::
 
 gText_Birch_AndYouAre::
 	.string "Well, that's enough from me...\n"
-	.string "Could you tell me about yourself?$"
+	.string "Could you tell me about yourself?\p"
 
 gText_Birch_BoyOrGirl::
 	.string "Are you a boy?\n"
@@ -36,7 +36,7 @@ gText_Birch_BoyOrGirl::
 
 gText_Birch_WhatsYourName::
 	.string "I'd like to know your name.\p"
-	.string "Please tell me.\p$"
+	.string "Please tell me.$"
 
 gText_Birch_SoItsPlayer::
 	.string "Your name is {PLAYER}{KUN}?$"
@@ -46,15 +46,25 @@ gText_Birch_YourePlayer::
 	.string "What a wonderful name!\p"
 	.string "Well then. I'm going to introduce you\n"
 	.string "to your two best friends!\p"
+	.string "$"
+
+gText_Birch_MeetCheren::
 	.string "This young man is Cheren.\p"
 	.string "He can be a little difficult, but\n"
 	.string "he's a very honest person.\p"
+	.string "$"
+
+gText_Birch_MeetBianca::
 	.string "This young woman is Bianca.\p"
 	.string "She's a little flighty,\n"
 	.string "but she works very hard.\p"
+	.string "$"
+
+gText_Birch_AllTogether::
 	.string "I think you three have potential,\n"
 	.string "so I'm going to give you\l"
-	.string "a very, very important Pokémon.$"
+	.string "a very, very important Pokémon.\p"
+	.string "$"
 
 gText_Birch_AreYouReady::
 	.string "{PLAYER}{KUN}!\p"
