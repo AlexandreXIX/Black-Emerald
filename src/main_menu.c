@@ -231,8 +231,11 @@ void CreateYesNoMenuParameterized(u8, u8, u16, u16, u8, u8);
 static void Task_NewGameBirchSpeech_SlidePlatformAway2(u8);
 static void Task_NewGameBirchSpeech_ReshowBirchLotad(u8);
 static void Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter(u8);
+static void Task_NewGameBirchSpeech_LoadCheren(u8);
 static void Task_NewGameBirchSpeech_MeetCheren(u8);
+static void Task_NewGameBirchSpeech_LoadBianca(u8);
 static void Task_NewGameBirchSpeech_MeetBianca(u8);
+static void Task_NewGameBirchSpeech_LoadPlayer(u8);
 static void Task_NewGameBirchSpeech_AllTogether(u8);
 static void Task_NewGameBirchSpeech_AreYouReady(u8);
 static void Task_NewGameBirchSpeech_ShrinkPlayer(u8);
@@ -1699,16 +1702,16 @@ static void Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter(u8 taskId)
             NewGameBirchSpeech_StartFadeOutTarget1InTarget2(taskId, 2);
             NewGameBirchSpeech_StartFadePlatformIn(taskId, 1);
             gTasks[taskId].tTimer = 64;
-            gTasks[taskId].func = Task_NewGameBirchSpeech_MeetCheren;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_LoadCheren;
         }
     }
 }
 
-static void Task_NewGameBirchSpeech_MeetCheren(u8 taskId)
+static void Task_NewGameBirchSpeech_LoadCheren(u8 taskId)
 {
     u8 spriteId;
 
-    if (gTasks[taskId].tIsDoneFadingSprites)
+    if (!RunTextPrintersAndIsPrinter0Active() && gTasks[taskId].tIsDoneFadingSprites)
     {
         gSprites[gTasks[taskId].tBirchSpriteId].invisible = TRUE;
         gSprites[gTasks[taskId].tLotadSpriteId].invisible = TRUE;
@@ -1723,17 +1726,26 @@ static void Task_NewGameBirchSpeech_MeetCheren(u8 taskId)
         gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
-        StringExpandPlaceholders(gStringVar4, gText_Birch_MeetCheren);
-        AddTextPrinterForMessage(TRUE);
-        gTasks[taskId].func = Task_NewGameBirchSpeech_MeetBianca;
+        gTasks[taskId].func = Task_NewGameBirchSpeech_MeetCheren;
     }
 }
 
-static void Task_NewGameBirchSpeech_MeetBianca(u8 taskId)
+static void Task_NewGameBirchSpeech_MeetCheren(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active() && gTasks[taskId].tIsDoneFadingSprites)
+    {
+      NewGameBirchSpeech_ClearWindow(0);
+      StringExpandPlaceholders(gStringVar4, gText_Birch_MeetCheren);
+      AddTextPrinterForMessage(1);
+      gTasks[taskId].func = Task_NewGameBirchSpeech_LoadBianca;
+    }
+}
+
+static void Task_NewGameBirchSpeech_LoadBianca(u8 taskId)
 {
     u8 spriteId;
 
-    if (gTasks[taskId].tIsDoneFadingSprites)
+    if (!RunTextPrintersAndIsPrinter0Active() && gTasks[taskId].tIsDoneFadingSprites)
     {
         if (gTasks[taskId].tTimer)
         {
@@ -1746,17 +1758,26 @@ static void Task_NewGameBirchSpeech_MeetBianca(u8 taskId)
         gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
-        StringExpandPlaceholders(gStringVar4, gText_Birch_MeetBianca);
-        AddTextPrinterForMessage(TRUE);
-        gTasks[taskId].func = Task_NewGameBirchSpeech_AllTogether;
+        gTasks[taskId].func = Task_NewGameBirchSpeech_MeetBianca;
     }
 }
 
-static void Task_NewGameBirchSpeech_AllTogether(u8 taskId)
+static void Task_NewGameBirchSpeech_MeetBianca(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active() && gTasks[taskId].tIsDoneFadingSprites)
+    {
+      NewGameBirchSpeech_ClearWindow(0);
+      StringExpandPlaceholders(gStringVar4, gText_Birch_MeetBianca);
+      AddTextPrinterForMessage(1);
+      gTasks[taskId].func = Task_NewGameBirchSpeech_LoadPlayer;
+    }
+}
+
+static void Task_NewGameBirchSpeech_LoadPlayer(u8 taskId)
 {
     u8 spriteId;
 
-    if (gTasks[taskId].tIsDoneFadingSprites)
+    if (!RunTextPrintersAndIsPrinter0Active() && gTasks[taskId].tIsDoneFadingSprites)
     {
         if (gTasks[taskId].tTimer)
         {
@@ -1767,29 +1788,39 @@ static void Task_NewGameBirchSpeech_AllTogether(u8 taskId)
             spriteId = gTasks[taskId].tMaySpriteId;
         else
             spriteId = gTasks[taskId].tBrendanSpriteId;
+        gTasks[taskId].tPlayerSpriteId = spriteId;
         gSprites[spriteId].x = 120;
         gSprites[spriteId].y = 60;
         gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
-        gTasks[taskId].tPlayerSpriteId = spriteId;
+        gTasks[taskId].func = Task_NewGameBirchSpeech_AllTogether;
+    }
+}
+
+static void Task_NewGameBirchSpeech_AllTogether(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active() && gTasks[taskId].tIsDoneFadingSprites)
+    {
+        NewGameBirchSpeech_ClearWindow(0);
         StringExpandPlaceholders(gStringVar4, gText_Birch_AllTogether);
-        AddTextPrinterForMessage(TRUE);
+        AddTextPrinterForMessage(1);
         gTasks[taskId].func = Task_NewGameBirchSpeech_AreYouReady;
     }
 }
 
 static void Task_NewGameBirchSpeech_AreYouReady(u8 taskId)
 {
-    if (gTasks[taskId].tIsDoneFadingSprites)
+    if (!RunTextPrintersAndIsPrinter0Active() && gTasks[taskId].tIsDoneFadingSprites)
     {
         if (gTasks[taskId].tTimer)
         {
             gTasks[taskId].tTimer--;
             return;
         }
+        NewGameBirchSpeech_ClearWindow(0);
         StringExpandPlaceholders(gStringVar4, gText_Birch_AreYouReady);
-        AddTextPrinterForMessage(TRUE);
+        AddTextPrinterForMessage(1);
         gTasks[taskId].func = Task_NewGameBirchSpeech_ShrinkPlayer;
     }
 }
