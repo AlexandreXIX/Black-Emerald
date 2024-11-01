@@ -1712,7 +1712,6 @@ static void Task_NewGameBirchSpeech_MeetCheren(u8 taskId)
     {
         gSprites[gTasks[taskId].tBirchSpriteId].invisible = TRUE;
         gSprites[gTasks[taskId].tLotadSpriteId].invisible = TRUE;
-        gTasks[taskId].tTimer = 1;
         if (gTasks[taskId].tTimer)
         {
             gTasks[taskId].tTimer--;
@@ -1723,7 +1722,7 @@ static void Task_NewGameBirchSpeech_MeetCheren(u8 taskId)
         gSprites[spriteId].y = 60;
         gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
-        gTasks[taskId].tCherenSpriteId = spriteId;
+        NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
         StringExpandPlaceholders(gStringVar4, gText_Birch_MeetCheren);
         AddTextPrinterForMessage(TRUE);
         gTasks[taskId].func = Task_NewGameBirchSpeech_MeetBianca;
@@ -1746,7 +1745,6 @@ static void Task_NewGameBirchSpeech_MeetBianca(u8 taskId)
         gSprites[spriteId].y = 60;
         gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
-        gTasks[taskId].tBiancaSpriteId = spriteId;
         NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
         StringExpandPlaceholders(gStringVar4, gText_Birch_MeetBianca);
         AddTextPrinterForMessage(TRUE);
@@ -1773,6 +1771,7 @@ static void Task_NewGameBirchSpeech_AllTogether(u8 taskId)
         gSprites[spriteId].y = 60;
         gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
+        NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
         gTasks[taskId].tPlayerSpriteId = spriteId;
         StringExpandPlaceholders(gStringVar4, gText_Birch_AllTogether);
         AddTextPrinterForMessage(TRUE);
