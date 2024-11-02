@@ -257,6 +257,11 @@ static void Task_HandleTruckSequence(u8 taskId)
     }
 }
 
+void ProfessorWalkingIntro(void)
+{
+    gObjectEvents[gPlayerAvatar.objectEventId].invisible = 1;
+}
+
 void ExecuteTruckSequence(void)
 {
     MapGridSetMetatileIdAt(4 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_InsideOfTruck_DoorClosedFloor_Top);
