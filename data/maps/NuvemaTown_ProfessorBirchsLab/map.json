@@ -1,9 +1,9 @@
 {
-  "id": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
-  "name": "LittlerootTown_ProfessorBirchsLab",
-  "layout": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+  "id": "MAP_NUVEMA_TOWN_PROFESSOR_BIRCHS_LAB",
+  "name": "NuvemaTown_ProfessorBirchsLab",
+  "layout": "LAYOUT_NUVEMA_TOWN_PROFESSOR_BIRCHS_LAB",
   "music": "MUS_BIRCH_LAB",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_NUVEMA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -24,7 +24,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Aide",
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Aide",
       "flag": "0"
     },
     {
@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Birch",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Birch",
+      "flag": "FLAG_HIDE_NUVEMA_TOWN_BIRCHS_LAB_BIRCH"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -50,8 +50,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Rival",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Rival",
+      "flag": "FLAG_HIDE_NUVEMA_TOWN_BIRCHS_LAB_RIVAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -63,8 +63,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Cyndaquil",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Cyndaquil",
+      "flag": "FLAG_HIDE_NUVEMA_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -76,8 +76,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Totodile",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Totodile",
+      "flag": "FLAG_HIDE_NUVEMA_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -89,8 +89,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Chikorita",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Chikorita",
+      "flag": "FLAG_HIDE_NUVEMA_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA"
     }
   ],
   "warp_events": [
@@ -98,14 +98,14 @@
       "x": 6,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
+      "dest_map": "MAP_NUVEMA_TOWN",
       "dest_warp_id": "2"
     },
     {
       "x": 7,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
+      "dest_map": "MAP_NUVEMA_TOWN",
       "dest_warp_id": "2"
     }
   ],
@@ -117,7 +117,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Machine"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Machine"
     },
     {
       "type": "sign",
@@ -125,7 +125,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Machine"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Machine"
     },
     {
       "type": "sign",
@@ -133,7 +133,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Book"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Book"
     },
     {
       "type": "sign",
@@ -141,7 +141,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Book"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Book"
     },
     {
       "type": "sign",
@@ -149,7 +149,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -157,7 +157,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -165,7 +165,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -173,7 +173,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -181,7 +181,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -189,7 +189,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -197,7 +197,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -205,7 +205,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -213,7 +213,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -221,7 +221,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -229,7 +229,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "NuvemaTown_ProfessorBirchsLab_EventScript_PC"
     }
   ]
 }

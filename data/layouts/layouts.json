@@ -92,14 +92,14 @@
       "blockdata_filepath": "data/layouts/EverGrandeCity/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN",
-      "name": "LittlerootTown_Layout",
+      "id": "LAYOUT_NUVEMA_TOWN",
+      "name": "NuvemaTown_Layout",
       "width": 24,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/LittlerootTown/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown/map.bin"
+      "border_filepath": "data/layouts/NuvemaTown/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown/map.bin"
     },
     {
       "id": "LAYOUT_OLDALE_TOWN",
@@ -532,54 +532,54 @@
       "blockdata_filepath": "data/layouts/Underwater_Route128/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "name": "LittlerootTown_BrendansHouse_1F_Layout",
+      "id": "LAYOUT_NUVEMA_TOWN_BRENDANS_HOUSE_1F",
+      "name": "NuvemaTown_BrendansHouse_1F_Layout",
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/map.bin"
+      "border_filepath": "data/layouts/NuvemaTown_BrendansHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_BrendansHouse_1F/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
-      "name": "LittlerootTown_BrendansHouse_2F_Layout",
+      "id": "LAYOUT_NUVEMA_TOWN_BRENDANS_HOUSE_2F",
+      "name": "NuvemaTown_BrendansHouse_2F_Layout",
       "width": 9,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/map.bin"
+      "border_filepath": "data/layouts/NuvemaTown_BrendansHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_BrendansHouse_2F/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
-      "name": "LittlerootTown_MaysHouse_1F_Layout",
+      "id": "LAYOUT_NUVEMA_TOWN_MAYS_HOUSE_1F",
+      "name": "NuvemaTown_MaysHouse_1F_Layout",
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/map.bin"
+      "border_filepath": "data/layouts/NuvemaTown_MaysHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_MaysHouse_1F/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
-      "name": "LittlerootTown_MaysHouse_2F_Layout",
+      "id": "LAYOUT_NUVEMA_TOWN_MAYS_HOUSE_2F",
+      "name": "NuvemaTown_MaysHouse_2F_Layout",
       "width": 9,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/map.bin"
+      "border_filepath": "data/layouts/NuvemaTown_MaysHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_MaysHouse_2F/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
-      "name": "LittlerootTown_ProfessorBirchsLab_Layout",
+      "id": "LAYOUT_NUVEMA_TOWN_PROFESSOR_BIRCHS_LAB",
+      "name": "NuvemaTown_ProfessorBirchsLab_Layout",
       "width": 13,
       "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",
-      "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/map.bin"
+      "border_filepath": "data/layouts/NuvemaTown_ProfessorBirchsLab/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_ProfessorBirchsLab/map.bin"
     },
     {
       "id": "LAYOUT_HOUSE1",
@@ -4312,14 +4312,14 @@
       "blockdata_filepath": "data/layouts/MeteorFalls_StevensCave/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB_WITH_TABLE",
-      "name": "LittlerootTown_ProfessorBirchsLabWithTable_Layout",
+      "id": "LAYOUT_NUVEMA_TOWN_PROFESSOR_BIRCHS_LAB_WITH_TABLE",
+      "name": "NuvemaTown_ProfessorBirchsLabWithTable_Layout",
       "width": 13,
       "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",
-      "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLabWithTable/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLabWithTable/map.bin"
+      "border_filepath": "data/layouts/NuvemaTown_ProfessorBirchsLabWithTable/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_ProfessorBirchsLabWithTable/map.bin"
     },
     {
       "id": "LAYOUT_SKY_PILLAR_1F_CLEAN",

@@ -1,0 +1,85 @@
+raw `
+.set LOCALID_JUNIPER, 1
+
+NuvemaTown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, NuvemaTown_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, NuvemaTown_OnFrame
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NuvemaTown_OnWarp
+	.byte 0
+
+	@ State descriptions for VAR_NUVEMA_TOWN_STATE
+	@ 1: Met Rival
+	@ 2: Saving Birch
+	@ 3: Received Pokedex
+	@ 4: Received Running Shoes
+
+	@ State descriptions for VAR_NUVEMA_INTRO_STATE
+	@ 1: Intro Sequence (Male)
+	@ 2: Intro Sequence (Female)
+	@ 3: Entered house
+	@ 4: Told to go set clock
+	@ 5: Entered 2F to set clock
+	@ 6: Set clock
+	@ 7: Told to go meet rival
+
+	@ State descriptions for VAR_NUVEMA_HOUSES_STATE_MAY
+	@                    and VAR_NUVEMA_HOUSES_STATE_BRENDAN
+	@ 1: On Truck (and is corresponding gender)
+	@ 2: Met Rival's Mom (and is corresponding gender)
+	@ 3: Entered Hall of Fame
+	@ 4: Completed Lati TV / SS Ticket event
+	@ 5: Exited house after above event
+
+	@ State descriptions for VAR_NUVEMA_RIVAL_STATE
+	@ 1: Never occurs
+	@ 2: Entered Rival's bedroom
+	@ 3: Met Rival
+	@ 4: Received Pokedex
+
+
+NuvemaTown_OnTransition:
+	setflag FLAG_VISITED_NUVEMA_TOWN
+	end
+
+NuvemaTown_EventScript_LeftLabAfterDexUpgrade::
+	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3
+	return
+
+NuvemaTown_OnFrame:
+	map_script_2 VAR_NUVEMA_TOWN_STATE, 0, NuvemaTown_EventScript_JuniperIntro
+	.2byte 0
+
+NuvemaTown_OnWarp:
+	.2byte 0
+`
+script NuvemaTown_EventScript_JuniperIntro {
+    lockall
+    special(SpawnCameraObject)
+	playbgm(MUS_FOLLOW_ME, TRUE)
+	applymovement(LOCALID_JUNIPER, NuvemaTown_LabToHouse)
+	applymovement(OBJ_EVENT_ID_CAMERA, NuvemaTown_LabToHouse)
+	waitmovement(0)
+	opendoor(12,12)
+	waitdooranim
+	applymovement(LOCALID_JUNIPER, NuvemaTown_EnterHouse)
+	waitmovement(0)
+	setvar(VAR_NUVEMA_TOWN_STATE, 1)
+	setflag(FLAG_HIDE_NUVEMA_TOWN_BRENDANS_HOUSE_TRUCK)
+	clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+	removeobject(LOCALID_JUNIPER)
+	closedoor(12,12)
+	waitdooranim
+	warpsilent(MAP_NUVEMA_TOWN_BRENDANS_HOUSE_2F, 6, 3)
+	waitstate
+    releaseall
+}
+
+movement NuvemaTown_LabToHouse {
+    walk_down * 8
+    walk_right * 5
+    face_up * 1
+}
+
+movement NuvemaTown_EnterHouse {
+    walk_up * 1
+}
