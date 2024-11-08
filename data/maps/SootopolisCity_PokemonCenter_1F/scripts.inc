@@ -27,7 +27,7 @@ SootopolisCity_PokemonCenter_1F_EventScript_Gentleman::
 	end
 
 SootopolisCity_PokemonCenter_1F_EventScript_GentlemanNoLegendaries::
-	msgbox SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn, MSGBOX_DEFAULT
+	msgbox SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInUnova, MSGBOX_DEFAULT
 	release
 	end
 
@@ -45,9 +45,9 @@ SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries::
 	release
 	end
 
-SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn:
+SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInUnova:
 	.string "WALLACE is rumored to be the toughest\n"
-	.string "TRAINER in the whole HOENN region.\p"
+	.string "TRAINER in the whole UNOVA region.\p"
 	.string "This town's GYM is led by the TRAINER\n"
 	.string "who taught WALLACE.\p"
 	.string "But the ELITE FOUR… They're said to be\n"

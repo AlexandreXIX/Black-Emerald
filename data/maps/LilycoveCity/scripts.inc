@@ -442,7 +442,7 @@ LilycoveCity_Text_MayWontBeBeaten:
 LilycoveCity_Text_MayDefeat:
 	.string "… … … … … … … …\p"
 	.string "I remember the battle I had with you,\n"
-	.string "{PLAYER}{KUN}, on ROUTE 103.\p"
+	.string "{PLAYER}{KUN}, on ROUTE 3.\p"
 	.string "That battle helped you become this\n"
 	.string "strong, {PLAYER}{KUN}, didn't it?$"
 
@@ -599,7 +599,7 @@ LilycoveCity_Text_GoingToMoveDeleterForHMs:
 
 LilycoveCity_Text_ImFromKanto:
 	.string "I came from KANTO.\p"
-	.string "The HOENN region is beautiful with\n"
+	.string "The UNOVA region is beautiful with\n"
 	.string "all its water and verdant nature.\p"
 	.string "Hunh? Wait a second…\p"
 	.string "Could there be rare POKéMON that live\n"
@@ -750,7 +750,7 @@ LilycoveCity_Text_JustArrivedAndSawRarePokemon:
 	.string "We happened to see a DRAGON-type\n"
 	.string "POKéMON flying way up in the sky.\p"
 	.string "Do cool POKéMON like that live in\n"
-	.string "the HOENN region?$"
+	.string "the UNOVA region?$"
 
 LilycoveCity_Text_HoneymoonVowToSeeRarePokemon:
 	.string "On our honeymoon, we vowed to see as\n"

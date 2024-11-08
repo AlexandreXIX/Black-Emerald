@@ -1,9 +1,9 @@
 {
-  "id": "MAP_ROUTE103",
-  "name": "Route103",
-  "layout": "LAYOUT_ROUTE103",
-  "music": "MUS_ROUTE101",
-  "region_map_section": "MAPSEC_ROUTE_103",
+  "id": "MAP_ROUTE3",
+  "name": "Route3",
+  "layout": "LAYOUT_ROUTE3",
+  "music": "MUS_ROUTE1",
+  "region_map_section": "MAPSEC_ROUTE_3",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -35,7 +35,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route103_EventScript_Man",
+      "script": "Route3_EventScript_Man",
       "flag": "0"
     },
     {
@@ -48,8 +48,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route103_EventScript_Rival",
-      "flag": "FLAG_HIDE_ROUTE_103_RIVAL"
+      "script": "Route3_EventScript_Rival",
+      "flag": "FLAG_HIDE_ROUTE_3_RIVAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
@@ -61,7 +61,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route103_EventScript_Daisy",
+      "script": "Route3_EventScript_Daisy",
       "flag": "0"
     },
     {
@@ -74,7 +74,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route103_EventScript_Liv",
+      "script": "Route3_EventScript_Liv",
       "flag": "0"
     },
     {
@@ -87,7 +87,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route103_EventScript_Amy",
+      "script": "Route3_EventScript_Amy",
       "flag": "0"
     },
     {
@@ -100,7 +100,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route103_EventScript_Andrew",
+      "script": "Route3_EventScript_Andrew",
       "flag": "0"
     },
     {
@@ -112,7 +112,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_103_CHERI_1",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_3_CHERI_1",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -125,7 +125,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_103_LEPPA",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_3_LEPPA",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -138,7 +138,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_103_CHERI_2",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_3_CHERI_2",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -152,7 +152,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route103_EventScript_Boy",
+      "script": "Route3_EventScript_Boy",
       "flag": "0"
     },
     {
@@ -166,7 +166,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ProfBirch_EventScript_RatePokedexOrRegister",
-      "flag": "FLAG_HIDE_ROUTE_103_BIRCH"
+      "flag": "FLAG_HIDE_ROUTE_3_BIRCH"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
@@ -178,7 +178,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
-      "script": "Route103_EventScript_Miguel",
+      "script": "Route3_EventScript_Miguel",
       "flag": "0"
     },
     {
@@ -192,7 +192,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_GUARD_SPEC",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_103_GUARD_SPEC"
+      "flag": "FLAG_ITEM_ROUTE_3_GUARD_SPEC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -230,7 +230,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route103_EventScript_Rhett",
+      "script": "Route3_EventScript_Rhett",
       "flag": "0"
     },
     {
@@ -243,7 +243,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route103_EventScript_Marcos",
+      "script": "Route3_EventScript_Marcos",
       "flag": "0"
     },
     {
@@ -256,7 +256,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
-      "script": "Route103_EventScript_Isabelle",
+      "script": "Route3_EventScript_Isabelle",
       "flag": "0"
     },
     {
@@ -269,7 +269,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
-      "script": "Route103_EventScript_Pete",
+      "script": "Route3_EventScript_Pete",
       "flag": "0"
     },
     {
@@ -283,7 +283,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_PP_UP",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_103_PP_UP"
+      "flag": "FLAG_ITEM_ROUTE_3_PP_UP"
     }
   ],
   "warp_events": [
@@ -303,7 +303,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route103_EventScript_RouteSign"
+      "script": "Route3_EventScript_RouteSign"
     }
   ]
 }

@@ -227,8 +227,8 @@ SlateportCity_OceanicMuseum_2F_EventScript_PressureExperiment::
 	msgbox SlateportCity_OceanicMuseum_2F_Text_PressureExperiment, MSGBOX_SIGN
 	end
 
-SlateportCity_OceanicMuseum_2F_EventScript_HoennModel::
-	msgbox SlateportCity_OceanicMuseum_2F_Text_HoennModel, MSGBOX_SIGN
+SlateportCity_OceanicMuseum_2F_EventScript_UnovaModel::
+	msgbox SlateportCity_OceanicMuseum_2F_Text_UnovaModel, MSGBOX_SIGN
 	end
 
 SlateportCity_OceanicMuseum_2F_EventScript_DeepSeawaterDisplay::
@@ -402,10 +402,10 @@ SlateportCity_OceanicMuseum_2F_Text_PressureExperiment:
 	.string "the pressure can reach even tens of\l"
 	.string "thousands of tons on a small area.”$"
 
-SlateportCity_OceanicMuseum_2F_Text_HoennModel:
-	.string "“MODEL OF HOENN REGION”\p"
+SlateportCity_OceanicMuseum_2F_Text_UnovaModel:
+	.string "“MODEL OF UNOVA REGION”\p"
 	.string "It's a miniature diorama of the\n"
-	.string "HOENN region.\p"
+	.string "UNOVA region.\p"
 	.string "Where is NUVEMA TOWN on this?$"
 
 SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay:

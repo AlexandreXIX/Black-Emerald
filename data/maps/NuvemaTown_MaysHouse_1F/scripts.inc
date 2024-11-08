@@ -116,8 +116,8 @@ NuvemaTown_MaysHouse_1F_Movement_RivalMomApproach:
 RivalsHouse_1F_EventScript_RivalMom::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
-	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
+	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE3, RivalsHouse_1F_EventScript_GoHomeEverySoOften
+	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute3
 	goto_if_eq VAR_NUVEMA_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
@@ -129,8 +129,8 @@ RivalsHouse_1F_EventScript_RivalTooBusy::
 	release
 	end
 
-RivalsHouse_1F_EventScript_RivalIsOnRoute103::
-	msgbox RivalsHouse_1F_Text_WentOutToRoute103, MSGBOX_DEFAULT
+RivalsHouse_1F_EventScript_RivalIsOnRoute3::
+	msgbox RivalsHouse_1F_Text_WentOutToRoute3, MSGBOX_DEFAULT
 	release
 	end
 
@@ -345,8 +345,8 @@ RivalsHouse_1F_Text_TooBusyToNoticeVisit:
 	.string "POKéMON to notice that you came\l"
 	.string "to visit, {PLAYER}{KUN}.$"
 
-RivalsHouse_1F_Text_WentOutToRoute103:
-	.string "Oh, {RIVAL} went out to ROUTE 103\n"
+RivalsHouse_1F_Text_WentOutToRoute3:
+	.string "Oh, {RIVAL} went out to ROUTE 3\n"
 	.string "just a little while ago.\p"
 	.string "Like father, like child.\n"
 	.string "{RIVAL} can't stay quietly at home.$"

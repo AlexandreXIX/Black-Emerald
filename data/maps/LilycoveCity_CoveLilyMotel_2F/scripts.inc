@@ -6,8 +6,8 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesigner::
 	faceplayer
 	call_if_unset FLAG_TEMP_2, LilycoveCity_CoveLilyMotel_2F_EventScript_ShowMeCompletedDex
 	call_if_set FLAG_TEMP_2, LilycoveCity_CoveLilyMotel_2F_EventScript_ShowDiploma
-	specialvar VAR_RESULT, HasAllHoennMons
-	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_CoveLilyMotel_2F_EventScript_AllHoennMonsFanfare
+	specialvar VAR_RESULT, HasAllUnovaMons
+	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_CoveLilyMotel_2F_EventScript_AllUnovaMonsFanfare
 	release
 	end
 
@@ -15,7 +15,7 @@ LilycoveCity_CoveLilyMotel_2F_EventScript_ShowMeCompletedDex::
 	msgbox LilycoveCity_CoveLilyMotel_2F_Text_ShowMeCompletedDex, MSGBOX_DEFAULT
 	return
 
-LilycoveCity_CoveLilyMotel_2F_EventScript_AllHoennMonsFanfare::
+LilycoveCity_CoveLilyMotel_2F_EventScript_AllUnovaMonsFanfare::
 	setflag FLAG_TEMP_2
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
@@ -92,7 +92,7 @@ LilycoveCity_CoveLilyMotel_2F_Text_ImTheProgrammer:
 
 LilycoveCity_CoveLilyMotel_2F_Text_ImTheGraphicArtist:
 	.string "I'm the GRAPHIC ARTIST! Aren't the\n"
-	.string "POKéMON of HOENN interesting?$"
+	.string "POKéMON of UNOVA interesting?$"
 
 LilycoveCity_CoveLilyMotel_2F_Text_GirlsAreCute:
 	.string "The girl TUBERS, they're cute, hey?\n"

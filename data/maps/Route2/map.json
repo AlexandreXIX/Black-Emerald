@@ -1,9 +1,9 @@
 {
-  "id": "MAP_ROUTE102",
-  "name": "Route102",
-  "layout": "LAYOUT_ROUTE102",
-  "music": "MUS_ROUTE101",
-  "region_map_section": "MAPSEC_ROUTE_102",
+  "id": "MAP_ROUTE2",
+  "name": "Route2",
+  "layout": "LAYOUT_ROUTE2",
+  "music": "MUS_ROUTE1",
+  "region_map_section": "MAPSEC_ROUTE_2",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -35,7 +35,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route102_EventScript_LittleBoy",
+      "script": "Route2_EventScript_LittleBoy",
       "flag": "0"
     },
     {
@@ -48,7 +48,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route102_EventScript_Calvin",
+      "script": "Route2_EventScript_Calvin",
       "flag": "0"
     },
     {
@@ -61,7 +61,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route102_EventScript_Rick",
+      "script": "Route2_EventScript_Rick",
       "flag": "0"
     },
     {
@@ -74,7 +74,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route102_EventScript_Tiana",
+      "script": "Route2_EventScript_Tiana",
       "flag": "0"
     },
     {
@@ -87,7 +87,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route102_EventScript_Boy",
+      "script": "Route2_EventScript_Boy",
       "flag": "0"
     },
     {
@@ -101,7 +101,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_POTION",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_102_POTION"
+      "flag": "FLAG_ITEM_ROUTE_2_POTION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -112,7 +112,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_102_ORAN",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_2_ORAN",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -125,7 +125,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_102_PECHA",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_2_PECHA",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -139,12 +139,16 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route102_EventScript_Allen",
+      "script": "Route2_EventScript_Allen",
       "flag": "0"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -152,7 +156,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route102_EventScript_RouteSignPetalburg"
+      "script": "Route2_EventScript_RouteSignPetalburg"
     },
     {
       "type": "sign",
@@ -160,7 +164,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route102_EventScript_RouteSignOldale"
+      "script": "Route2_EventScript_RouteSignOldale"
     }
   ]
 }

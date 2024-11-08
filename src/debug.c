@@ -4424,7 +4424,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_C_COMM_CENTER) \
     X(MUS_GSC_PEWTER) \
     X(MUS_C_VS_LEGEND_BEAST) \
-    X(MUS_ROUTE101) \
+    X(MUS_ROUTE1) \
     X(MUS_ROUTE110) \
     X(MUS_ROUTE120) \
     X(MUS_PETALBURG) \

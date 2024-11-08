@@ -77,8 +77,8 @@
       ],
       "encounters": [
         {
-          "map": "MAP_ROUTE101",
-          "base_label": "gRoute101",
+          "map": "MAP_ROUTE1",
+          "base_label": "gRoute1",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -146,8 +146,8 @@
           }
         },
         {
-          "map": "MAP_ROUTE102",
-          "base_label": "gRoute102",
+          "map": "MAP_ROUTE2",
+          "base_label": "gRoute2",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -300,8 +300,8 @@
           }
         },
         {
-          "map": "MAP_ROUTE103",
-          "base_label": "gRoute103",
+          "map": "MAP_ROUTE3",
+          "base_label": "gRoute3",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [

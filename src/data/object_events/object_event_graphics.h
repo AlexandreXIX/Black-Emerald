@@ -377,8 +377,14 @@ const u32 gObjectEventPic_VigorothMover[] = INCBIN_U32("graphics/object_events/p
 const u32 gObjectEventPic_SudowoodoTree[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/sudowoodo_tree.4bpp");
 const u32 gObjectEventPic_RayquazaCutscene[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/rayquaza_cutscene.4bpp");
 
+const u32 gObjectEventPic_Cheren[] = INCBIN_U32("graphics/object_events/pics/people/rivals/cheren.4bpp");
+const u32 gObjectEventPic_Bianca[] = INCBIN_U32("graphics/object_events/pics/people/rivals/bianca.4bpp");
+
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
+
+const u16 gObjectEventPal_Cheren[] = INCBIN_U16("graphics/object_events/palettes/cheren.gbapal");
+const u16 gObjectEventPal_Bianca[] = INCBIN_U16("graphics/object_events/palettes/bianca.gbapal");
 
 const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/pokemon/question_mark/overworld.gbapal");
 

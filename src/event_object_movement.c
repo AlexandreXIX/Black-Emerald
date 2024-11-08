@@ -507,6 +507,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+    {gObjectEventPal_Cheren,                OBJ_EVENT_PAL_TAG_CHEREN},
+    {gObjectEventPal_Bianca,                OBJ_EVENT_PAL_TAG_BIANCA},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -2355,18 +2357,15 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
         switch (gMapHeader.regionMapSectionId)
         {
         case MAPSEC_RUSTBORO_CITY:
-        case MAPSEC_PEWTER_CITY:
             multi = TYPE_ROCK;
             break;
         case MAPSEC_DEWFORD_TOWN:
             multi = TYPE_FIGHTING;
             break;
         case MAPSEC_MAUVILLE_CITY:
-        case MAPSEC_VERMILION_CITY:
             multi = TYPE_ELECTRIC;
             break;
         case MAPSEC_LAVARIDGE_TOWN:
-        case MAPSEC_CINNABAR_ISLAND:
             multi = TYPE_FIRE;
             break;
         case MAPSEC_PETALBURG_CITY:
@@ -2376,21 +2375,10 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
             multi = TYPE_FLYING;
             break;
         case MAPSEC_MOSSDEEP_CITY:
-        case MAPSEC_SAFFRON_CITY:
             multi = TYPE_PSYCHIC;
             break;
         case MAPSEC_SOOTOPOLIS_CITY:
-        case MAPSEC_CERULEAN_CITY:
             multi = TYPE_WATER;
-            break;
-        case MAPSEC_CELADON_CITY:
-            multi = TYPE_GRASS;
-            break;
-        case MAPSEC_FUCHSIA_CITY:
-            multi = TYPE_POISON;
-            break;
-        case MAPSEC_VIRIDIAN_CITY:
-            multi = TYPE_GROUND;
             break;
         default:
             multi = NUMBER_OF_MON_TYPES;

@@ -422,7 +422,7 @@ PlayersHouse_1F_Text_IsThatABreakingStory:
 PlayersHouse_1F_Text_LatiEmergencyNewsFlash:
 	.string "We bring you this emergency\n"
 	.string "news flash!\p"
-	.string "In various HOENN locales, there have\n"
+	.string "In various UNOVA locales, there have\n"
 	.string "been reports of a BZZT…colored\l"
 	.string "POKéMON in flight.\p"
 	.string "The identity of this POKéMON is\n"

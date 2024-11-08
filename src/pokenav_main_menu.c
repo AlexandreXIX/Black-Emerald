@@ -125,7 +125,7 @@ static const struct SpritePalette sSpinningNavgearPalettes[] =
 
 static const struct CompressedSpriteSheet sMenuLeftHeaderSpriteSheet =
 {
-    .data = gPokenavLeftHeaderHoennMap_Gfx, // Hoenn map is the first of the headers listed
+    .data = gPokenavLeftHeaderUnovaMap_Gfx, // Unova map is the first of the headers listed
     .size = 0xC00,
     .tag = 2
 };
@@ -153,12 +153,12 @@ static const struct CompressedSpriteSheet sMenuLeftHeaderSpriteSheets[] =
         .tag = 4
     },
     [POKENAV_GFX_MAP_MENU_ZOOMED_OUT] = {
-        .data = gPokenavLeftHeaderHoennMap_Gfx,
+        .data = gPokenavLeftHeaderUnovaMap_Gfx,
         .size = 0x20,
         .tag = 0
     },
     [POKENAV_GFX_MAP_MENU_ZOOMED_IN] = {
-        .data = gPokenavLeftHeaderHoennMap_Gfx,
+        .data = gPokenavLeftHeaderUnovaMap_Gfx,
         .size = 0x40,
         .tag = 0
     }

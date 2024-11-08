@@ -15,7 +15,7 @@ NuvemaTown_ProfessorBirchsLab_MapScripts::
 	@ 1: Beat Elite Four, Dex upgrade ready
 	@ 2: Received National Dex
 	@ 3: Left lab after receiving National Dex
-	@ 4: Entered lab after catching all Hoenn mons
+	@ 4: Entered lab after catching all Unova mons
 	@ 5: Birch told player to choose Johto starter
 	@ 6: Chose Johto starter
 
@@ -23,7 +23,7 @@ NuvemaTown_ProfessorBirchsLab_MapScripts::
 	@ 1: Never occurs
 	@ 2: Chose starter
 	@ 3: Received starter in lab
-	@ 4: Defeated rival on Route 103
+	@ 4: Defeated rival on Route 3
 	@ 5: Received pokedex
 
 NuvemaTown_ProfessorBirchsLab_OnTransition:
@@ -35,7 +35,7 @@ NuvemaTown_ProfessorBirchsLab_OnTransition:
 	end
 
 NuvemaTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter::
-	specialvar VAR_RESULT, HasAllHoennMons
+	specialvar VAR_RESULT, HasAllUnovaMons
 	goto_if_eq VAR_RESULT, TRUE, NuvemaTown_ProfessorBirchsLab_EventScript_SetReadyForJohtoStarter
 	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
 	setobjectxyperm LOCALID_RIVAL, 5, 10
@@ -109,7 +109,7 @@ NuvemaTown_ProfessorBirchsLab_OnFrame:
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, NuvemaTown_ProfessorBirchsLab_EventScript_ChooseJohtoStarter
 	.2byte 0
 
-@ The starter is technically given prior to this on Route 101 by special ChooseStarter
+@ The starter is technically given prior to this on Route 1 by special ChooseStarter
 @ This is just where the game tells you its yours and lets you nickname it
 NuvemaTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	lockall
@@ -137,7 +137,7 @@ NuvemaTown_ProfessorBirchsLab_EventScript_GoSeeRival::
 
 NuvemaTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	msgbox NuvemaTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
-	clearflag FLAG_HIDE_ROUTE_101_BOY
+	clearflag FLAG_HIDE_ROUTE_1_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
 	end
@@ -828,11 +828,11 @@ NuvemaTown_ProfessorBirchsLab_Text_OtherRegionsUpgradeToNational:
 	.string "of you help me study POKéMON.\p"
 	.string "Thanks to your help, new facts\n"
 	.string "are coming to light.\p"
-	.string "It appears that in the HOENN region,\n"
+	.string "It appears that in the UNOVA region,\n"
 	.string "there are also POKéMON from other\l"
 	.string "regions.\p"
 	.string "It goes to show how rich and varied\n"
-	.string "the natural environments of HOENN\l"
+	.string "the natural environments of UNOVA\l"
 	.string "happen to be.\p"
 	.string "That's why I think it's necessary for\n"
 	.string "me to upgrade your POKéDEX to\l"
@@ -847,7 +847,7 @@ NuvemaTown_ProfessorBirchsLab_Text_MayUpgradeSoCool:
 	.string "so many POKéMON, {PLAYER}{KUN}!$"
 
 NuvemaTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe:
-	.string "BRENDAN: I went out all over HOENN\n"
+	.string "BRENDAN: I went out all over UNOVA\n"
 	.string "and checked out POKéMON.\p"
 	.string "You can thank me for getting\n"
 	.string "the NATIONAL Mode POKéDEX.\p"
@@ -887,7 +887,7 @@ NuvemaTown_ProfessorBirchsLab_Text_CompletedDexChoosePokemon:
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "Yes, there's no doubt about it.\p"
-	.string "You really have completed the HOENN\n"
+	.string "You really have completed the UNOVA\n"
 	.string "region's POKéDEX.\p"
 	.string "That's more than just impressive.\p"
 	.string "I have a gift for you.\p"
@@ -943,7 +943,7 @@ NuvemaTown_ProfessorBirchsLab_Text_NicknameJohtoStarter:
 
 NuvemaTown_ProfessorBirchsLab_Text_GrassyPatchWaiting:
 	.string "PROF. BIRCH: Listen, {PLAYER}{KUN}.\n"
-	.string "You've completed the HOENN POKéDEX,\l"
+	.string "You've completed the UNOVA POKéDEX,\l"
 	.string "but your POKéMON journey isn't over.\p"
 	.string "There is no end to the road\n"
 	.string "that is POKéMON.\p"

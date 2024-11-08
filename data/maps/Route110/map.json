@@ -24,7 +24,7 @@
       "direction": "down"
     },
     {
-      "map": "MAP_ROUTE103",
+      "map": "MAP_ROUTE3",
       "offset": 60,
       "direction": "left"
     }
@@ -665,7 +665,7 @@
       "y": 79,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route110_EventScript_Route103Sign"
+      "script": "Route110_EventScript_Route3Sign"
     },
     {
       "type": "sign",

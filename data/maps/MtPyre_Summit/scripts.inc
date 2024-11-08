@@ -141,7 +141,7 @@ MtPyre_Summit_EventScript_OldMan::
 	end
 
 MtPyre_Summit_EventScript_OldManAfterRayquaza::
-	msgbox MtPyre_Summit_Text_HearTheNewLegendOfHoenn, MSGBOX_YESNO
+	msgbox MtPyre_Summit_Text_HearTheNewLegendOfUnova, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, MtPyre_Summit_EventScript_OldManNewTale
 	call_if_eq VAR_RESULT, NO, MtPyre_Summit_EventScript_DeclineOldManTale
 	release
@@ -156,7 +156,7 @@ MtPyre_Summit_EventScript_DeclineOldManTale::
 	return
 
 MtPyre_Summit_EventScript_OldManNewTale::
-	msgbox MtPyre_Summit_Text_HoennTrioTale, MSGBOX_DEFAULT
+	msgbox MtPyre_Summit_Text_UnovaTrioTale, MSGBOX_DEFAULT
 	return
 
 MtPyre_Summit_EventScript_OldLady::
@@ -560,12 +560,12 @@ MtPyre_Summit_Text_WillYouHearOutMyTale:
 	.string "MT. PYRE is where we calm the spirits\n"
 	.string "of POKéMON that have passed on…\p"
 	.string "This is a high place where one can\n"
-	.string "see all of HOENN…\p"
+	.string "see all of UNOVA…\p"
 	.string "The disembodied spirits of POKéMON\n"
 	.string "must find solace here…\p"
 	.string "Is it coincidence that you are here…\p"
 	.string "Will you hear out my tale? A tale long\n"
-	.string "told in the HOENN region?$"
+	.string "told in the UNOVA region?$"
 
 MtPyre_Summit_Text_GroudonKyogreTale:
 	.string "It happened long, long ago…\p"
@@ -596,15 +596,15 @@ MtPyre_Summit_Text_MaxieSilence:
 	.string "… … … … … …\n"
 	.string "… … … … … …$"
 
-MtPyre_Summit_Text_HearTheNewLegendOfHoenn:
+MtPyre_Summit_Text_HearTheNewLegendOfUnova:
 	.string "It is my role to pass on the legends\n"
-	.string "of HOENN to future generations.\p"
+	.string "of UNOVA to future generations.\p"
 	.string "And the crisis that just ended in\n"
 	.string "SOOTOPOLIS rewrote a legend…\p"
 	.string "Have you the time to hear the new\n"
-	.string "legend of HOENN?$"
+	.string "legend of UNOVA?$"
 
-MtPyre_Summit_Text_HoennTrioTale:
+MtPyre_Summit_Text_UnovaTrioTale:
 	.string "It happened long, long ago…\p"
 	.string "The world was wracked by a ferocious\n"
 	.string "clash between the POKéMON of the land\l"

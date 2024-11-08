@@ -658,7 +658,7 @@ gTVTrainerFanClubSpecialText00::
 	.string "TRAINER FAN CLUB\n"
 	.string "{STR_VAR_1} SPECIAL!\p"
 	.string "This is a special presentation for\n"
-	.string "the fans of {STR_VAR_1} all over HOENN!\p"
+	.string "the fans of {STR_VAR_1} all over UNOVA!\p"
 	.string "Today, we ask the question, “What do\n"
 	.string "people think of {STR_VAR_1}?”\p"
 	.string "We posed the question to {STR_VAR_2}\n"
@@ -1292,8 +1292,8 @@ TrendWatcher_Text_Outro::
 	.string "My time is up. Catch you on the fly!\p"
 	.string "Old man: {STR_VAR_1} {STR_VAR_2}!$"
 
-gTVHoennTreasureInvestigatorsText00::
-	.string "HOENN TREASURE INVESTIGATORS!\p"
+gTVUnovaTreasureInvestigatorsText00::
+	.string "UNOVA TREASURE INVESTIGATORS!\p"
 	.string "Hi, gang!\n"
 	.string "Score any secret items lately?\p"
 	.string "As always, we'll examine eyewitness\n"
@@ -1301,7 +1301,7 @@ gTVHoennTreasureInvestigatorsText00::
 	.string "Let's start with a letter.\n"
 	.string "It says, “{STR_VAR_1} discovered!”$"
 
-gTVHoennTreasureInvestigatorsText01::
+gTVUnovaTreasureInvestigatorsText01::
 	.string "Wow, we'd better check this letter\n"
 	.string "out! Let me read it to you.\p"
 	.string "…Dear INVESTIGATORS,\n"
@@ -1316,7 +1316,7 @@ gTVHoennTreasureInvestigatorsText01::
 	.string "I'll be waiting for exciting news\n"
 	.string "from all of you!$"
 
-gTVHoennTreasureInvestigatorsText02::
+gTVUnovaTreasureInvestigatorsText02::
 	.string "Wow, we'd better check this letter\n"
 	.string "out! Let me read it to you.\p"
 	.string "…Dear INVESTIGATORS,\n"
@@ -1608,7 +1608,7 @@ gTVPokemonLotteryWinnerFlashReportText00::
 	.string "This has been a live broadcast from\n"
 	.string "the LILYCOVE DEPARTMENT STORE,\l"
 	.string "offering you the greatest selection\l"
-	.string "in all HOENN!$"
+	.string "in all UNOVA!$"
 
 gTVThePokemonBattleSeminarText00::
 	.string "THE POKéMON BATTLE SEMINAR!\p"
@@ -2004,8 +2004,8 @@ gTVPokemonNewsBattleFrontierText18::
 	.string "POKéMON!\p"
 	.string "That's the news on POKéMON NEWS!$"
 
-gTVWhatsNo1InHoennTodayText00::
-	.string "WHAT'S NO. 1 IN HOENN TODAY?\n"
+gTVWhatsNo1InUnovaTodayText00::
+	.string "WHAT'S NO. 1 IN UNOVA TODAY?\n"
 	.string "Yes, it's that time again!\p"
 	.string "Hello, viewers! Are you giving your\n"
 	.string "best at whatever you do?\p"
@@ -2014,7 +2014,7 @@ gTVWhatsNo1InHoennTodayText00::
 	.string "Today's no. 1 TRAINER is none other\n"
 	.string "than {STR_VAR_1}!$"
 
-gTVWhatsNo1InHoennTodayText01::
+gTVWhatsNo1InUnovaTodayText01::
 	.string "In one day, {STR_VAR_1} spun the SLOTS\n"
 	.string "at the GAME CORNER {STR_VAR_2} times.\p"
 	.string "While playing, {STR_VAR_1} was heard\n"
@@ -2022,7 +2022,7 @@ gTVWhatsNo1InHoennTodayText01::
 	.string "even move…”\l"
 	.string "Isn't that interesting?$"
 
-gTVWhatsNo1InHoennTodayText02::
+gTVWhatsNo1InUnovaTodayText02::
 	.string "In one day, {STR_VAR_1} played\n"
 	.string "the ROULETTE game at the GAME\l"
 	.string "CORNER {STR_VAR_2} times.\p"
@@ -2031,7 +2031,7 @@ gTVWhatsNo1InHoennTodayText02::
 	.string "The TRAINER's eyes were focused and\n"
 	.string "the face showed concentration.$"
 
-gTVWhatsNo1InHoennTodayText03::
+gTVWhatsNo1InUnovaTodayText03::
 	.string "In one day, {STR_VAR_1} battled\n"
 	.string "wild POKéMON {STR_VAR_2} times!\p"
 	.string "Apparently, {STR_VAR_1}'s POKéMON\n"
@@ -2039,7 +2039,7 @@ gTVWhatsNo1InHoennTodayText03::
 	.string "They appear eager to battle anywhere,\n"
 	.string "anytime, and anyhow!$"
 
-gTVWhatsNo1InHoennTodayText04::
+gTVWhatsNo1InUnovaTodayText04::
 	.string "In just one day, {STR_VAR_1} spun\n"
 	.string "the BERRY BLENDER {STR_VAR_2} times!\p"
 	.string "Toward the end, even {STR_VAR_1}\n"
@@ -2047,7 +2047,7 @@ gTVWhatsNo1InHoennTodayText04::
 	.string "The TRAINER appeared to totter\n"
 	.string "around like a SPINDA!$"
 
-gTVWhatsNo1InHoennTodayText05::
+gTVWhatsNo1InUnovaTodayText05::
 	.string "In just one day, {STR_VAR_1} planted\n"
 	.string "{STR_VAR_2} BERRIES!\p"
 	.string "As a result, {STR_VAR_1}'s clothes\n"
@@ -2057,14 +2057,14 @@ gTVWhatsNo1InHoennTodayText05::
 	.string "The flowers are said to soothe\n"
 	.string "the emotions of people.$"
 
-gTVWhatsNo1InHoennTodayText06::
+gTVWhatsNo1InUnovaTodayText06::
 	.string "In just one day, {STR_VAR_1} picked\n"
 	.string "{STR_VAR_2} BERRIES!\p"
 	.string "{STR_VAR_1}'s BAG became so filled\n"
 	.string "with BERRIES, the TRAINER had trouble\l"
 	.string "walking afterward!$"
 
-gTVWhatsNo1InHoennTodayText07::
+gTVWhatsNo1InUnovaTodayText07::
 	.string "In just one day, {STR_VAR_1} obtained\n"
 	.string "{STR_VAR_2} Battle Points!\p"
 	.string "{STR_VAR_1} was later seen wrestling\n"
@@ -2074,7 +2074,7 @@ gTVWhatsNo1InHoennTodayText07::
 	.string "The TRAINER reportedly was grinning\n"
 	.string "while mulling options.$"
 
-gTVWhatsNo1InHoennTodayText08::
+gTVWhatsNo1InUnovaTodayText08::
 	.string "Well, isn't that something!\p"
 	.string "{STR_VAR_1}!\n"
 	.string "You're today's no. 1 TRAINER!\p"

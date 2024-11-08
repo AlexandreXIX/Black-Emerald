@@ -17,7 +17,7 @@
 #include "constants/rgb.h"
 
 extern const u8 gText_DexNational[];
-extern const u8 gText_DexHoenn[];
+extern const u8 gText_DexUnova[];
 extern const u8 gText_PokedexDiploma[];
 
 static void MainCB2(void);
@@ -41,7 +41,7 @@ static void VBlankCB(void)
 static const u16 sDiplomaPalettes[][16] =
 {
     INCBIN_U16("graphics/diploma/national.gbapal"),
-    INCBIN_U16("graphics/diploma/hoenn.gbapal"),
+    INCBIN_U16("graphics/diploma/unova.gbapal"),
 };
 
 static const u32 sDiplomaTilemap[] = INCBIN_U32("graphics/diploma/tilemap.bin.lz");
@@ -135,7 +135,7 @@ static void DisplayDiplomaText(void)
     else
     {
         SetGpuReg(REG_OFFSET_BG1HOFS, 0);
-        StringCopy(gStringVar1, gText_DexHoenn);
+        StringCopy(gStringVar1, gText_DexUnova);
     }
     StringExpandPlaceholders(gStringVar4, gText_PokedexDiploma);
     PrintDiplomaText(gStringVar4, 0, 1);
