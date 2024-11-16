@@ -532,44 +532,64 @@
       "blockdata_filepath": "data/layouts/Underwater_Route128/map.bin"
     },
     {
-      "id": "LAYOUT_NUVEMA_TOWN_BRENDANS_HOUSE_1F",
-      "name": "NuvemaTown_BrendansHouse_1F_Layout",
+      "id": "LAYOUT_NUVEMA_TOWN_PLAYERS_HOUSE_1F",
+      "name": "NuvemaTown_PlayersHouse_1F_Layout",
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/NuvemaTown_BrendansHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/NuvemaTown_BrendansHouse_1F/map.bin"
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/NuvemaTown_PlayersHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_PlayersHouse_1F/map.bin"
     },
     {
-      "id": "LAYOUT_NUVEMA_TOWN_BRENDANS_HOUSE_2F",
-      "name": "NuvemaTown_BrendansHouse_2F_Layout",
+      "id": "LAYOUT_NUVEMA_TOWN_PLAYERS_HOUSE_2F",
+      "name": "NuvemaTown_PlayersHouse_2F_Layout",
       "width": 10,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/NuvemaTown_BrendansHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/NuvemaTown_BrendansHouse_2F/map.bin"
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/NuvemaTown_PlayersHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_PlayersHouse_2F/map.bin"
     },
     {
-      "id": "LAYOUT_NUVEMA_TOWN_MAYS_HOUSE_1F",
-      "name": "NuvemaTown_MaysHouse_1F_Layout",
-      "width": 11,
-      "height": 9,
+      "id": "LAYOUT_NUVEMA_TOWN_BIANCAS_HOUSE_1F",
+      "name": "NuvemaTown_BiancasHouse_1F_Layout",
+      "width": 12,
+      "height": 11,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/NuvemaTown_MaysHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/NuvemaTown_MaysHouse_1F/map.bin"
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/NuvemaTown_BiancasHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_BiancasHouse_1F/map.bin"
     },
     {
-      "id": "LAYOUT_NUVEMA_TOWN_MAYS_HOUSE_2F",
-      "name": "NuvemaTown_MaysHouse_2F_Layout",
-      "width": 9,
-      "height": 8,
+      "id": "LAYOUT_NUVEMA_TOWN_BIANCAS_HOUSE_2F",
+      "name": "NuvemaTown_BiancasHouse_2F_Layout",
+      "width": 20,
+      "height": 20,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/NuvemaTown_MaysHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/NuvemaTown_MaysHouse_2F/map.bin"
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/NuvemaTown_BiancasHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_BiancasHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NUVEMA_TOWN_CHERENS_HOUSE_1F",
+      "name": "NuvemaTown_CherensHouse_1F_Layout",
+      "width": 12,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/NuvemaTown_CherensHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_CherensHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NUVEMA_TOWN_CHERENS_HOUSE_2F",
+      "name": "NuvemaTown_CherensHouse_2F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayersHouse",
+      "border_filepath": "data/layouts/NuvemaTown_CherensHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/NuvemaTown_CherensHouse_2F/map.bin"
     },
     {
       "id": "LAYOUT_NUVEMA_TOWN_PROFESSOR_BIRCHS_LAB",

@@ -279,38 +279,38 @@ static const struct MatchCallRival sMayMatchCallHeader =
     .type = MC_TYPE_RIVAL,
     .playerGender = MALE,
     .flag = FLAG_ENABLE_RIVAL_MATCH_CALL,
-    .desc = gText_MayBrendanMatchCallDesc,
+    .desc = gText_MayHilbertMatchCallDesc,
     .name = gText_ExpandedPlaceholder_May,
     .textData = sMayTextScripts
 };
 
-static const match_call_text_data_t sBrendanTextScripts[] = {
-    { MatchCall_Text_Brendan1,  0xFFFF,                              0xFFFF },
-    { MatchCall_Text_Brendan2,  FLAG_DEFEATED_DEWFORD_GYM,           0xFFFF },
-    { MatchCall_Text_Brendan3,  FLAG_DELIVERED_DEVON_GOODS,          0xFFFF },
-    { MatchCall_Text_Brendan4,  FLAG_HIDE_MAUVILLE_CITY_WALLY,       0xFFFF },
-    { MatchCall_Text_Brendan5,  FLAG_RECEIVED_HM_STRENGTH,           0xFFFF },
-    { MatchCall_Text_Brendan6,  FLAG_DEFEATED_LAVARIDGE_GYM,         0xFFFF },
-    { MatchCall_Text_Brendan7,  FLAG_DEFEATED_PETALBURG_GYM,         0xFFFF },
-    { MatchCall_Text_Brendan8,  FLAG_RECEIVED_CASTFORM,              0xFFFF },
-    { MatchCall_Text_Brendan9,  FLAG_RECEIVED_RED_OR_BLUE_ORB,       0xFFFF },
-    { MatchCall_Text_Brendan10, FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, 0xFFFF },
-    { MatchCall_Text_Brendan11, FLAG_MET_TEAM_AQUA_HARBOR,           0xFFFF },
-    { MatchCall_Text_Brendan12, FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, 0xFFFF },
-    { MatchCall_Text_Brendan13, FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, 0xFFFF },
-    { MatchCall_Text_Brendan14, FLAG_DEFEATED_SOOTOPOLIS_GYM,        0xFFFF },
-    { MatchCall_Text_Brendan15, FLAG_SYS_GAME_CLEAR,                 0xFFFF },
+static const match_call_text_data_t sHilbertTextScripts[] = {
+    { MatchCall_Text_Hilbert1,  0xFFFF,                              0xFFFF },
+    { MatchCall_Text_Hilbert2,  FLAG_DEFEATED_DEWFORD_GYM,           0xFFFF },
+    { MatchCall_Text_Hilbert3,  FLAG_DELIVERED_DEVON_GOODS,          0xFFFF },
+    { MatchCall_Text_Hilbert4,  FLAG_HIDE_MAUVILLE_CITY_WALLY,       0xFFFF },
+    { MatchCall_Text_Hilbert5,  FLAG_RECEIVED_HM_STRENGTH,           0xFFFF },
+    { MatchCall_Text_Hilbert6,  FLAG_DEFEATED_LAVARIDGE_GYM,         0xFFFF },
+    { MatchCall_Text_Hilbert7,  FLAG_DEFEATED_PETALBURG_GYM,         0xFFFF },
+    { MatchCall_Text_Hilbert8,  FLAG_RECEIVED_CASTFORM,              0xFFFF },
+    { MatchCall_Text_Hilbert9,  FLAG_RECEIVED_RED_OR_BLUE_ORB,       0xFFFF },
+    { MatchCall_Text_Hilbert10, FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT, 0xFFFF },
+    { MatchCall_Text_Hilbert11, FLAG_MET_TEAM_AQUA_HARBOR,           0xFFFF },
+    { MatchCall_Text_Hilbert12, FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, 0xFFFF },
+    { MatchCall_Text_Hilbert13, FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, 0xFFFF },
+    { MatchCall_Text_Hilbert14, FLAG_DEFEATED_SOOTOPOLIS_GYM,        0xFFFF },
+    { MatchCall_Text_Hilbert15, FLAG_SYS_GAME_CLEAR,                 0xFFFF },
     { NULL,                     0xFFFF,                              0xFFFF }
 };
 
-static const struct MatchCallRival sBrendanMatchCallHeader =
+static const struct MatchCallRival sHilbertMatchCallHeader =
 {
     .type = MC_TYPE_RIVAL,
     .playerGender = FEMALE,
     .flag = FLAG_ENABLE_RIVAL_MATCH_CALL,
-    .desc = gText_MayBrendanMatchCallDesc,
-    .name = gText_ExpandedPlaceholder_Brendan,
-    .textData = sBrendanTextScripts
+    .desc = gText_MayHilbertMatchCallDesc,
+    .name = gText_ExpandedPlaceholder_Hilbert,
+    .textData = sHilbertTextScripts
 };
 
 static const match_call_text_data_t sWallyTextScripts[] = {
@@ -580,7 +580,7 @@ static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
 static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_MR_STONE]   = {.npc    = &sMrStoneMatchCallHeader},
     [MC_HEADER_PROF_BIRCH] = {.birch  = &sProfBirchMatchCallHeader},
-    [MC_HEADER_BRENDAN]    = {.rival  = &sBrendanMatchCallHeader},
+    [MC_HEADER_HILBERT]    = {.rival  = &sHilbertMatchCallHeader},
     [MC_HEADER_MAY]        = {.rival  = &sMayMatchCallHeader},
     [MC_HEADER_WALLY]      = {.wally  = &sWallyMatchCallHeader},
     [MC_HEADER_NORMAN]     = {.leader = &sNormanMatchCallHeader},
@@ -681,10 +681,10 @@ static const struct MatchCallCheckPageOverride sCheckPageOverrides[] = {
         }
     },
     {
-        .idx = MC_HEADER_BRENDAN,
-        .facilityClass = FACILITY_CLASS_BRENDAN,
+        .idx = MC_HEADER_HILBERT,
+        .facilityClass = FACILITY_CLASS_HILBERT,
         .flag = 0xFFFF,
-        .flavorTexts = MCFLAVOR(Brendan)
+        .flavorTexts = MCFLAVOR(Hilbert)
     },
     {
         .idx = MC_HEADER_MAY,

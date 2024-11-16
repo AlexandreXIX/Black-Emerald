@@ -32,11 +32,13 @@ gText_Birch_AndYouAre::
 
 gText_Birch_BoyOrGirl::
 	.string "Are you a boy?\n"
-	.string "Or are you a girl?$"
+	.string "Or are you a girl?\p"
+	.string "$"
 
 gText_Birch_WhatsYourName::
 	.string "I'd like to know your name.\p"
-	.string "Please tell me.$"
+	.string "Please tell me.\p"
+	.string "$"
 
 gText_Birch_SoItsPlayer::
 	.string "Your name is {PLAYER}{KUN}?$"
@@ -81,6 +83,6 @@ gText_Birch_AreYouReady::
 	.string "new people and Pokémon and\l"
 	.string "grow as a person!\p"
 	.string "That is the most important goal\n"
-	.string "for your journey.\p"
+	.string "for your journey!\p"
 	.string "Let's go visit the world of Pokémon!\p"
 	.string "$"

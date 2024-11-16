@@ -46,13 +46,13 @@ extern const u32 gTrainerPalette_Hiker[];
 extern const u32 gTrainerPalette_RubySapphireMay[];
 + extern const u32 gTrainerPalette_myTrainerClass[];
 
-extern const u8 gTrainerBackPic_Brendan[];
+extern const u8 gTrainerBackPic_Hilbert[];
 ```
 
 Now link the graphic files.
 [src/data/graphics/trainers](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/src/data/graphics/trainers.h):
 ```diff
-const u32 gTrainerPalette_RubySapphireBrendan[] = INCBIN_U32("graphics/trainers/palettes/ruby_sapphire_brendan.gbapal.lz");
+const u32 gTrainerPalette_RubySapphireHilbert[] = INCBIN_U32("graphics/trainers/palettes/ruby_sapphire_hilbert.gbapal.lz");
 
 const u32 gTrainerFrontPic_RubySapphireMay[] = INCBIN_U32("graphics/trainers/front_pics/ruby_sapphire_may_front_pic.4bpp.lz");
 const u32 gTrainerPalette_RubySapphireMay[] = INCBIN_U32("graphics/trainers/palettes/ruby_sapphire_may.gbapal.lz");
@@ -60,7 +60,7 @@ const u32 gTrainerPalette_RubySapphireMay[] = INCBIN_U32("graphics/trainers/pale
 + const u32 gTrainerFrontPic_Sheriff[] = INCBIN_U32("graphics/trainers/front_pics/myTrainerClass_front_pic.4bpp.lz");
 + const u32 gTrainerPalette_Sheriff[] = INCBIN_U32("graphics/trainers/palettes/myTrainerClass.gbapal.lz");
 
-const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan_back_pic.4
+const u8 gTrainerBackPic_Hilbert[] = INCBIN_U8("graphics/trainers/back_pics/hilbert_back_pic.4
 ```
 
 ### 3. The Animation
@@ -86,7 +86,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 ...
 
 ...
-    [TRAINER_PIC_RS_BRENDAN] = sAnims_RubySapphireBrendan,
+    [TRAINER_PIC_RS_BRENDAN] = sAnims_RubySapphireHilbert,
     [TRAINER_PIC_RS_MAY] = sAnims_RubySapphireMay,
 +     [TRAINER_PIC_MYTRAINERCLASS] = sAnims_MyTrainerClass,
 };
@@ -124,7 +124,7 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 ...
 
 ...
-    TRAINER_SPRITE(RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, 0x800),
+    TRAINER_SPRITE(RS_BRENDAN, gTrainerFrontPic_RubySapphireHilbert, 0x800),
     TRAINER_SPRITE(RS_MAY, gTrainerFrontPic_RubySapphireMay, 0x800),
 +     TRAINER_SPRITE(MYTRAINERCLASS, gTrainerFrontPic_MyTrainerClass, 0x800),
 };
@@ -139,7 +139,7 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
 ...
 
 ...
-    TRAINER_PAL(RS_BRENDAN, gTrainerPalette_RubySapphireBrendan),
+    TRAINER_PAL(RS_BRENDAN, gTrainerPalette_RubySapphireHilbert),
     TRAINER_PAL(RS_MAY, gTrainerPalette_RubySapphireMay),
 +     TRAINER_PAL(MYTRAINERCLASS, gTrainerPalette_MyTrainerClass),
 };
@@ -153,7 +153,7 @@ Finally, let's bring it all together by defining our new trainer class in [inclu
 #define TRAINER_PIC_RS_MAY                92
 + #define TRAINER_PIC_MYTRAINERCLASS      93
 
-#define TRAINER_BACK_PIC_BRENDAN                0
+#define TRAINER_BACK_PIC_HILBERT                0
 #define TRAINER_BACK_PIC_MAY                    1
 ```
 Remember to count the number next to the trainer class up by one!
@@ -161,18 +161,18 @@ Remember to count the number next to the trainer class up by one!
 ## Usage
 You can test your trainer type by going to [src/data/trainers](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/src/data/trainers.h) and changing a trainer type. For example:
 ```diff
-    [TRAINER_BRENDAN_PLACEHOLDER] =
+    [TRAINER_HILBERT_PLACEHOLDER] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_RS_PROTAG,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
 -       .trainerPic = TRAINER_PIC_RS_BRENDAN,
 +       .trainerPic = TRAINER_PIC_MYTRAINERCLASS,
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("HILBERT"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = 0,
-        .partySize = ARRAY_COUNT(sParty_BrendanLinkPlaceholder),
-        .party = {.NoItemDefaultMoves = sParty_BrendanLinkPlaceholder},
+        .partySize = ARRAY_COUNT(sParty_HilbertLinkPlaceholder),
+        .party = {.NoItemDefaultMoves = sParty_HilbertLinkPlaceholder},
     },
 ```

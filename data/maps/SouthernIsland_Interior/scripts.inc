@@ -33,12 +33,12 @@ SouthernIsland_Interior_EventScript_SetUpLatias::
 
 SouthernIsland_Interior_EventScript_SetUpPlayerGfx::
 	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, SouthernIsland_Interior_EventScript_SetBrendanGfx
+	goto_if_eq VAR_RESULT, MALE, SouthernIsland_Interior_EventScript_SetHilbertGfx
 	goto_if_eq VAR_RESULT, FEMALE, SouthernIsland_Interior_EventScript_SetMayGfx
 	end
 
-SouthernIsland_Interior_EventScript_SetBrendanGfx::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+SouthernIsland_Interior_EventScript_SetHilbertGfx::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_HILBERT_NORMAL
 	return
 
 SouthernIsland_Interior_EventScript_SetMayGfx::

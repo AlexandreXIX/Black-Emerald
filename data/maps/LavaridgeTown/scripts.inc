@@ -52,12 +52,12 @@ LavaridgeTown_EventScript_RivalGiveGoGoggles::
 	delay 20
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LavaridgeTown_EventScript_PlayMayMusic
-	call_if_eq VAR_RESULT, FEMALE, LavaridgeTown_EventScript_PlayBrendanMusic
+	call_if_eq VAR_RESULT, FEMALE, LavaridgeTown_EventScript_PlayHilbertMusic
 	call_if_eq VAR_0x8008, 9, LavaridgeTown_EventScript_RivalApproachPlayer1
 	call_if_ne VAR_0x8008, 9, LavaridgeTown_EventScript_RivalApproachPlayer2
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, LavaridgeTown_EventScript_MayGiveGoGoggles
-	goto_if_eq VAR_RESULT, FEMALE, LavaridgeTown_EventScript_BrendanGiveGoGoggles
+	goto_if_eq VAR_RESULT, FEMALE, LavaridgeTown_EventScript_HilbertGiveGoGoggles
 	end
 
 LavaridgeTown_EventScript_MayGiveGoGoggles::
@@ -68,11 +68,11 @@ LavaridgeTown_EventScript_MayGiveGoGoggles::
 	goto LavaridgeTown_EventScript_RivalExit
 	end
 
-LavaridgeTown_EventScript_BrendanGiveGoGoggles::
-	msgbox LavaridgeTown_Text_BrendanNiceBadgesTakeThis, MSGBOX_DEFAULT
+LavaridgeTown_EventScript_HilbertGiveGoGoggles::
+	msgbox LavaridgeTown_Text_HilbertNiceBadgesTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_GO_GOGGLES
 	setflag FLAG_RECEIVED_GO_GOGGLES
-	msgbox LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad, MSGBOX_DEFAULT
+	msgbox LavaridgeTown_Text_HilbertExplainGoGogglesChallengeDad, MSGBOX_DEFAULT
 	goto LavaridgeTown_EventScript_RivalExit
 	end
 
@@ -95,8 +95,8 @@ LavaridgeTown_EventScript_PlayMayMusic::
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 	return
 
-LavaridgeTown_EventScript_PlayBrendanMusic::
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+LavaridgeTown_EventScript_PlayHilbertMusic::
+	playbgm MUS_ENCOUNTER_HILBERT, TRUE
 	return
 
 LavaridgeTown_EventScript_RivalNoticePlayer::
@@ -298,16 +298,16 @@ LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
 	.string "your dad in PETALBURG GYM.\p"
 	.string "See you again!$"
 
-LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
-	.string "BRENDAN: {PLAYER}, hey, it's been a while.\n"
+LavaridgeTown_Text_HilbertNiceBadgesTakeThis:
+	.string "HILBERT: {PLAYER}, hey, it's been a while.\n"
 	.string "How's it going?\p"
 	.string "Hmm…\n"
 	.string "That's a decent collection of BADGES.\p"
 	.string "All right, then.\n"
 	.string "You may as well have this.$"
 
-LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
-	.string "BRENDAN: Keep those with you if you're\n"
+LavaridgeTown_Text_HilbertExplainGoGogglesChallengeDad:
+	.string "HILBERT: Keep those with you if you're\n"
 	.string "planning on going into that desert near\l"
 	.string "ROUTE 111.\p"
 	.string "There should be some POKéMON that\n"

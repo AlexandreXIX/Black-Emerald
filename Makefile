@@ -1,5 +1,5 @@
 # GBA rom header
-TITLE       := BLACK EMERALD
+TITLE       := BLACKEMERALD
 GAME_CODE   := BPEE
 MAKER_CODE  := 01
 REVISION    := 0
@@ -345,6 +345,8 @@ AUTO_GEN_TARGETS += $(patsubst %.pory,%.inc,$(shell find data/ -type f -name '*.
 # NOTE: Tools must have been built prior (FIXME)
 # so you can't really call this rule directly
 generated: $(AUTO_GEN_TARGETS)
+	@: # Silence the "Nothing to be done for `generated'" message, which some people were confusing for an error.
+
 
 %.s:   ;
 %.png: ;
@@ -419,6 +421,10 @@ $(TEST_BUILDDIR)/%.o: $(TEST_SUBDIR)/%.c
 
 $(TEST_BUILDDIR)/%.d: $(TEST_SUBDIR)/%.c
 	$(SCANINC) -M $@ $(INCLUDE_SCANINC_ARGS) -I tools/agbcc/include $<
+
+ifneq ($(NODEP),1)
+-include $(addprefix $(OBJ_DIR)/,$(TEST_SRCS:.c=.d))
+endif
 
 $(ASM_BUILDDIR)/%.o: $(ASM_SUBDIR)/%.s
 	$(AS) $(ASFLAGS) -o $@ $<

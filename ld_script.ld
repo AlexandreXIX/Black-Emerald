@@ -1075,7 +1075,7 @@ SECTIONS {
         sound/songs/midi/mus_route113.o(.rodata);
         sound/songs/midi/mus_encounter_aqua.o(.rodata);
         sound/songs/midi/mus_follow_me.o(.rodata);
-        sound/songs/midi/mus_encounter_brendan.o(.rodata);
+        sound/songs/midi/mus_encounter_hilbert.o(.rodata);
         sound/songs/midi/mus_ever_grande.o(.rodata);
         sound/songs/midi/mus_encounter_suspicious.o(.rodata);
         sound/songs/midi/mus_victory_aqua_magma.o(.rodata);

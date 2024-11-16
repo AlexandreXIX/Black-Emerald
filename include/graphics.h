@@ -1790,7 +1790,7 @@ extern const u32 gIntroRayquaza_Gfx[];
 extern const u32 gIntroRayquazaClouds_Gfx[];
 extern const u32 gIntroRayquazaClouds_Tilemap[];
 extern const u16 gIntroGameFreakTextFade_Pal[];
-extern const u32 gIntroBrendan_Gfx[];
+extern const u32 gIntroHilbert_Gfx[];
 extern const u32 gIntroMay_Gfx[];
 extern const u16 gIntroPlayer_Pal[];
 extern const u16 gIntroFlygon_Pal[];
@@ -3325,7 +3325,7 @@ extern const u16 gFrontierFactoryMenu_Tilemap[];
 extern const u16 gFrontierFactoryMenu_Pal[];
 
 // Object event pals
-extern const u16 gObjectEventPal_Brendan[];
+extern const u16 gObjectEventPal_Hilbert[];
 extern const u16 gObjectEventPal_May[];
 extern const u16 gObjectEventPal_RubySapphireBrendan[];
 extern const u16 gObjectEventPal_RubySapphireMay[];

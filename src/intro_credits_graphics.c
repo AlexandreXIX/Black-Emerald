@@ -18,7 +18,7 @@
 */
 
 #define TAG_BICYCLE 1001
-#define TAG_BRENDAN 1002
+#define TAG_HILBERT 1002
 #define TAG_MAY     1003
 #define TAG_FLYGON_LATIOS  1004
 #define TAG_FLYGON_LATIAS  1005
@@ -60,8 +60,8 @@ static const u32 sHouses_Gfx[]            = INCBIN_U32("graphics/intro/scene_2/h
 static const u16 sHouseSilhouette_Pal[]   = INCBIN_U16("graphics/intro/scene_2/house_silhouette.gbapal");
 static const u32 sHouses_Tilemap[]        = INCBIN_U32("graphics/intro/scene_2/houses_map.bin.lz");
 static const u32 sHouseSilhouette_Gfx[]   = INCBIN_U32("graphics/intro/scene_2/house_silhouette.4bpp.lz");
-static const u16 sBrendanCredits_Pal[]    = INCBIN_U16("graphics/intro/scene_2/brendan_credits.gbapal");
-static const u32 sBrendanCredits_Gfx[]    = INCBIN_U32("graphics/intro/scene_2/brendan_credits.4bpp.lz");
+static const u16 sHilbertCredits_Pal[]    = INCBIN_U16("graphics/intro/scene_2/hilbert_credits.gbapal");
+static const u32 sHilbertCredits_Gfx[]    = INCBIN_U32("graphics/intro/scene_2/hilbert_credits.4bpp.lz");
 static const u16 sMayCredits_Pal[]        = INCBIN_U16("graphics/intro/scene_2/may_credits.gbapal");
 static const u16 sUnused[0xF0]            = {0};
 static const u32 sMayCredits_Gfx[]        = INCBIN_U32("graphics/intro/scene_2/may_credits.4bpp.lz");
@@ -462,10 +462,10 @@ static const union AnimCmd *const sAnims_Player[] =
     sAnim_Player
 };
 
-static const struct SpriteTemplate sSpriteTemplate_Brendan =
+static const struct SpriteTemplate sSpriteTemplate_Hilbert =
 {
-    .tileTag = TAG_BRENDAN,
-    .paletteTag = TAG_BRENDAN,
+    .tileTag = TAG_HILBERT,
+    .paletteTag = TAG_HILBERT,
     .oam = &sOamData_Player,
     .anims = sAnims_Player,
     .images = NULL,
@@ -506,10 +506,10 @@ static const union AnimCmd *const sAnims_Bicycle[] =
     sAnim_Bicycle
 };
 
-static const struct SpriteTemplate sSpriteTemplate_BrendanBicycle =
+static const struct SpriteTemplate sSpriteTemplate_HilbertBicycle =
 {
     .tileTag = TAG_BICYCLE,
-    .paletteTag = TAG_BRENDAN,
+    .paletteTag = TAG_HILBERT,
     .oam = &sOamData_Bicycle,
     .anims = sAnims_Bicycle,
     .images = NULL,
@@ -576,12 +576,12 @@ static const struct SpriteTemplate sSpriteTemplate_FlygonLatias =
     .callback = SpriteCB_FlygonLeftHalf
 };
 
-const struct CompressedSpriteSheet gSpriteSheet_IntroBrendan[] =
+const struct CompressedSpriteSheet gSpriteSheet_IntroHilbert[] =
 {
     {
-        .data = gIntroBrendan_Gfx,
+        .data = gIntroHilbert_Gfx,
         .size = 0x2000,
-        .tag = TAG_BRENDAN
+        .tag = TAG_HILBERT
     },
     {}
 };
@@ -629,19 +629,19 @@ const struct CompressedSpriteSheet gSpriteSheet_IntroFlygon[] =
 
 const struct SpritePalette gSpritePalettes_IntroPlayerFlygon[] =
 {
-    { .data = gIntroPlayer_Pal, .tag = TAG_BRENDAN },
+    { .data = gIntroPlayer_Pal, .tag = TAG_HILBERT },
     { .data = gIntroPlayer_Pal, .tag = TAG_MAY },
     { .data = gIntroFlygon_Pal, .tag = TAG_FLYGON_LATIOS },
     { .data = gIntroFlygon_Pal, .tag = TAG_FLYGON_LATIAS },
     {}
 };
 
-const struct CompressedSpriteSheet gSpriteSheet_CreditsBrendan[] =
+const struct CompressedSpriteSheet gSpriteSheet_CreditsHilbert[] =
 {
     {
-        .data = sBrendanCredits_Gfx,
+        .data = sHilbertCredits_Gfx,
         .size = 0x3800,
-        .tag = TAG_BRENDAN
+        .tag = TAG_HILBERT
     },
     {}
 };
@@ -690,19 +690,19 @@ static const struct CompressedSpriteSheet sSpriteSheet_Latias[] =
 
 const struct SpritePalette gSpritePalettes_Credits[] =
 {
-    { .data = sBrendanCredits_Pal, .tag = TAG_BRENDAN },
+    { .data = sHilbertCredits_Pal, .tag = TAG_HILBERT },
     { .data = sMayCredits_Pal,     .tag = TAG_MAY },
     { .data = sLatios_Pal,         .tag = TAG_FLYGON_LATIOS },
     { .data = sLatias_Pal,         .tag = TAG_FLYGON_LATIAS },
     {}
 };
 
-const struct CompressedSpriteSheet gSpriteSheet_CreditsRivalBrendan[] =
+const struct CompressedSpriteSheet gSpriteSheet_CreditsRivalHilbert[] =
 {
     {
-        .data = sBrendanCredits_Gfx,
+        .data = sHilbertCredits_Gfx,
         .size = 0x2000,
-        .tag = TAG_BRENDAN
+        .tag = TAG_HILBERT
     },
     {}
 };
@@ -1115,10 +1115,10 @@ static void SpriteCB_Bicycle(struct Sprite *sprite)
     sprite->y2 = gSprites[sprite->sPlayerSpriteId].y2;
 }
 
-u8 CreateIntroBrendanSprite(s16 x, s16 y)
+u8 CreateIntroHilbertSprite(s16 x, s16 y)
 {
-    u8 playerSpriteId = CreateSprite(&sSpriteTemplate_Brendan, x, y, 2);
-    u8 bicycleSpriteId = CreateSprite(&sSpriteTemplate_BrendanBicycle, x, y + 8, 3);
+    u8 playerSpriteId = CreateSprite(&sSpriteTemplate_Hilbert, x, y, 2);
+    u8 bicycleSpriteId = CreateSprite(&sSpriteTemplate_HilbertBicycle, x, y + 8, 3);
     gSprites[bicycleSpriteId].sPlayerSpriteId = playerSpriteId;
     return playerSpriteId;
 }

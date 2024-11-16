@@ -186,7 +186,7 @@ NuvemaTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex::
 	waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, NuvemaTown_ProfessorBirchsLab_EventScript_MayUpgradeComment
-	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_BrendanUpgradeComment
+	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_HilbertUpgradeComment
 	playse SE_PC_ON
 	waitse
 	delay 20
@@ -217,8 +217,8 @@ NuvemaTown_ProfessorBirchsLab_EventScript_MayUpgradeComment::
 	closemessage
 	return
 
-NuvemaTown_ProfessorBirchsLab_EventScript_BrendanUpgradeComment::
-	msgbox NuvemaTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe, MSGBOX_DEFAULT
+NuvemaTown_ProfessorBirchsLab_EventScript_HilbertUpgradeComment::
+	msgbox NuvemaTown_ProfessorBirchsLab_Text_HilbertYouCanThankMe, MSGBOX_DEFAULT
 	closemessage
 	return
 
@@ -521,7 +521,7 @@ NuvemaTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, NuvemaTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls
-	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls
+	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_HilbertGivePokeBalls
 	setvar VAR_BIRCH_LAB_STATE, 5
 	setflag FLAG_ADVENTURE_STARTED
 	setvar VAR_OLDALE_TOWN_STATE, 1
@@ -538,10 +538,10 @@ NuvemaTown_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	setvar VAR_RESULT, 0
 	return
 
-NuvemaTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
-	msgbox NuvemaTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
+NuvemaTown_ProfessorBirchsLab_EventScript_HilbertGivePokeBalls::
+	msgbox NuvemaTown_ProfessorBirchsLab_Text_HilbertGotPokedexTooTakeThese, MSGBOX_DEFAULT
 	giveitem ITEM_POKE_BALL, 5
-	call_if_eq VAR_RESULT, FALSE, NuvemaTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls
+	call_if_eq VAR_RESULT, FALSE, NuvemaTown_ProfessorBirchsLab_EventScript_HilbertNoRoomForPokeBalls
 	msgbox NuvemaTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 1
 	return
@@ -565,7 +565,7 @@ NuvemaTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls::
 	msgbox NuvemaTown_ProfessorBirchsLab_Text_OhYourBagsFull, MSGBOX_DEFAULT
 	return
 
-NuvemaTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls::
+NuvemaTown_ProfessorBirchsLab_EventScript_HilbertNoRoomForPokeBalls::
 	msgbox NuvemaTown_ProfessorBirchsLab_Text_HeyYourBagsFull, MSGBOX_DEFAULT
 	return
 
@@ -586,7 +586,7 @@ NuvemaTown_ProfessorBirchsLab_EventScript_Rival::
 	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, NuvemaTown_ProfessorBirchsLab_EventScript_RivalTakeBreakFromFieldwork
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, NuvemaTown_ProfessorBirchsLab_EventScript_MayWhereShouldIGoNext
-	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext
+	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_HilbertWhereShouldIGoNext
 	release
 	end
 
@@ -594,14 +594,14 @@ NuvemaTown_ProfessorBirchsLab_EventScript_MayWhereShouldIGoNext::
 	msgbox NuvemaTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext, MSGBOX_DEFAULT
 	return
 
-NuvemaTown_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext::
-	msgbox NuvemaTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext, MSGBOX_DEFAULT
+NuvemaTown_ProfessorBirchsLab_EventScript_HilbertWhereShouldIGoNext::
+	msgbox NuvemaTown_ProfessorBirchsLab_Text_HilbertWhereShouldIGoNext, MSGBOX_DEFAULT
 	return
 
 NuvemaTown_ProfessorBirchsLab_EventScript_RivalFuturePlans::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, NuvemaTown_ProfessorBirchsLab_EventScript_MayWhatNextImStayingHere
-	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_BrendanPreferCollectingSlowly
+	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_HilbertPreferCollectingSlowly
 	release
 	end
 
@@ -609,14 +609,14 @@ NuvemaTown_ProfessorBirchsLab_EventScript_MayWhatNextImStayingHere::
 	msgbox NuvemaTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere, MSGBOX_DEFAULT
 	return
 
-NuvemaTown_ProfessorBirchsLab_EventScript_BrendanPreferCollectingSlowly:
-	msgbox NuvemaTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly, MSGBOX_DEFAULT
+NuvemaTown_ProfessorBirchsLab_EventScript_HilbertPreferCollectingSlowly:
+	msgbox NuvemaTown_ProfessorBirchsLab_Text_HilbertPreferCollectingSlowly, MSGBOX_DEFAULT
 	return
 
 NuvemaTown_ProfessorBirchsLab_EventScript_RivalHaveYouGoneToBattleFrontier::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, NuvemaTown_ProfessorBirchsLab_EventScript_MayHaveYouGoneToBattleFrontier
-	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_BrendanHaveYouGoneToBattleFrontier
+	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_HilbertHaveYouGoneToBattleFrontier
 	release
 	end
 
@@ -624,14 +624,14 @@ NuvemaTown_ProfessorBirchsLab_EventScript_MayHaveYouGoneToBattleFrontier::
 	msgbox NuvemaTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier, MSGBOX_DEFAULT
 	return
 
-NuvemaTown_ProfessorBirchsLab_EventScript_BrendanHaveYouGoneToBattleFrontier::
-	msgbox NuvemaTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier, MSGBOX_DEFAULT
+NuvemaTown_ProfessorBirchsLab_EventScript_HilbertHaveYouGoneToBattleFrontier::
+	msgbox NuvemaTown_ProfessorBirchsLab_Text_HilbertHaveYouGoneToBattleFrontier, MSGBOX_DEFAULT
 	return
 
 NuvemaTown_ProfessorBirchsLab_EventScript_RivalTakeBreakFromFieldwork::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, NuvemaTown_ProfessorBirchsLab_EventScript_MayTakeBreakFromFieldwork
-	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork
+	call_if_eq VAR_RESULT, FEMALE, NuvemaTown_ProfessorBirchsLab_EventScript_HilbertTakeBreakFromFieldwork
 	release
 	end
 
@@ -639,8 +639,8 @@ NuvemaTown_ProfessorBirchsLab_EventScript_MayTakeBreakFromFieldwork::
 	msgbox NuvemaTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork, MSGBOX_DEFAULT
 	return
 
-NuvemaTown_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork::
-	msgbox NuvemaTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork, MSGBOX_DEFAULT
+NuvemaTown_ProfessorBirchsLab_EventScript_HilbertTakeBreakFromFieldwork::
+	msgbox NuvemaTown_ProfessorBirchsLab_Text_HilbertTakeBreakFromFieldwork, MSGBOX_DEFAULT
 	return
 
 NuvemaTown_ProfessorBirchsLab_EventScript_PC::
@@ -787,14 +787,14 @@ NuvemaTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext:
 	.string "MAY: I wonder where I should go look\n"
 	.string "for POKéMON next?$"
 
-NuvemaTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese:
-	.string "BRENDAN: Huh…\n"
+NuvemaTown_ProfessorBirchsLab_Text_HilbertGotPokedexTooTakeThese:
+	.string "HILBERT: Huh…\n"
 	.string "So you got a POKéDEX, too.\p"
 	.string "Well then, here.\n"
 	.string "I'll give you these.$"
 
 NuvemaTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
-	.string "BRENDAN: You know it's more fun to\n"
+	.string "HILBERT: You know it's more fun to\n"
 	.string "have a whole bunch of POKéMON.\p"
 	.string "I'm going to explore all over the place\n"
 	.string "to find different POKéMON.\p"
@@ -804,8 +804,8 @@ NuvemaTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
 NuvemaTown_ProfessorBirchsLab_Text_HeyYourBagsFull:
 	.string "Hey, your BAG's full.$"
 
-NuvemaTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext:
-	.string "BRENDAN: Where should I look for\n"
+NuvemaTown_ProfessorBirchsLab_Text_HilbertWhereShouldIGoNext:
+	.string "HILBERT: Where should I look for\n"
 	.string "POKéMON next…$"
 
 NuvemaTown_ProfessorBirchsLab_Text_SeriousLookingMachine:
@@ -846,8 +846,8 @@ NuvemaTown_ProfessorBirchsLab_Text_MayUpgradeSoCool:
 	.string "It's because you went out and caught\n"
 	.string "so many POKéMON, {PLAYER}{KUN}!$"
 
-NuvemaTown_ProfessorBirchsLab_Text_BrendanYouCanThankMe:
-	.string "BRENDAN: I went out all over UNOVA\n"
+NuvemaTown_ProfessorBirchsLab_Text_HilbertYouCanThankMe:
+	.string "HILBERT: I went out all over UNOVA\n"
 	.string "and checked out POKéMON.\p"
 	.string "You can thank me for getting\n"
 	.string "the NATIONAL Mode POKéDEX.\p"
@@ -875,8 +875,8 @@ NuvemaTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork:
 	.string "I think I'll help the PROF here for\n"
 	.string "a while.$"
 
-NuvemaTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork:
-	.string "BRENDAN: For the time being,\n"
+NuvemaTown_ProfessorBirchsLab_Text_HilbertTakeBreakFromFieldwork:
+	.string "HILBERT: For the time being,\n"
 	.string "I'm taking a break from fieldwork.\p"
 	.string "I'll be helping out the PROF here\n"
 	.string "for a while.$"
@@ -968,8 +968,8 @@ NuvemaTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere:
 	.string "the NATIONAL POKéDEX?\p"
 	.string "I'm staying here to help the PROF.$"
 
-NuvemaTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
-	.string "BRENDAN: Rather than collecting\n"
+NuvemaTown_ProfessorBirchsLab_Text_HilbertPreferCollectingSlowly:
+	.string "HILBERT: Rather than collecting\n"
 	.string "POKéMON, I prefer slowly and \l"
 	.string "steadily raising the one I chose.$"
 
@@ -978,8 +978,8 @@ NuvemaTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier:
 	.string "Have you gone to that place,\l"
 	.string "the BATTLE FRONTIER?$"
 
-NuvemaTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier:
-	.string "BRENDAN: Hey, {PLAYER}!\n"
+NuvemaTown_ProfessorBirchsLab_Text_HilbertHaveYouGoneToBattleFrontier:
+	.string "HILBERT: Hey, {PLAYER}!\n"
 	.string "Have you gone out to that place,\l"
 	.string "the BATTLE FRONTIER?$"
 

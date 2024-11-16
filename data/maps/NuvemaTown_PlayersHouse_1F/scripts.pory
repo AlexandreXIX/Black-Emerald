@@ -1,0 +1,28 @@
+raw `
+.set LOCALID_MOM, 1
+.set LOCALID_RIVAL_MOM, 4
+.set LOCALID_RIVAL, 7
+
+NuvemaTown_PlayersHouse_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, NuvemaTown_PlayersHouse_1F_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, NuvemaTown_PlayersHouse_1F_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, NuvemaTown_PlayersHouse_1F_OnFrame
+	.byte 0
+
+NuvemaTown_PlayersHouse_1F_OnLoad:
+	end
+
+NuvemaTown_PlayersHouse_1F_OnTransition:
+	end
+
+NuvemaTown_PlayersHouse_1F_OnFrame:
+	.2byte 0
+`
+
+script NuvemaTown_PlayersHouse_1F_EventScript_Mom {
+	msgbox(Players_Mom, MSGBOX_NPC)
+}
+
+text Players_Mom {
+    format("TBD")
+}

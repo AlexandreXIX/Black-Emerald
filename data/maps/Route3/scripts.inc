@@ -23,7 +23,7 @@ Route3_EventScript_Rival::
 	lockall
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route3_EventScript_RivalMay
-	goto_if_eq VAR_RESULT, FEMALE, Route3_EventScript_RivalBrendan
+	goto_if_eq VAR_RESULT, FEMALE, Route3_EventScript_RivalHilbert
 	end
 
 Route3_EventScript_RivalMay::
@@ -43,21 +43,21 @@ Route3_EventScript_RivalMay::
 	case 2, Route3_EventScript_StartMayBattleMudkip
 	end
 
-Route3_EventScript_RivalBrendan::
-	msgbox Route3_Text_BrendanRoute3Pokemon, MSGBOX_DEFAULT
+Route3_EventScript_RivalHilbert::
+	msgbox Route3_Text_HilbertRoute3Pokemon, MSGBOX_DEFAULT
 	closemessage
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_ENCOUNTER_HILBERT, TRUE
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
 	waitmovement 0
-	msgbox Route3_Text_BrendanLetsBattle, MSGBOX_DEFAULT
+	msgbox Route3_Text_HilbertLetsBattle, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
-	case 0, Route3_EventScript_StartBrendanBattleTreecko
-	case 1, Route3_EventScript_StartBrendanBattleTorchic
-	case 2, Route3_EventScript_StartBrendanBattleMudkip
+	case 0, Route3_EventScript_StartHilbertBattleTreecko
+	case 1, Route3_EventScript_StartHilbertBattleTorchic
+	case 2, Route3_EventScript_StartHilbertBattleMudkip
 	end
 
 Route3_EventScript_StartMayBattleTreecko::
@@ -75,19 +75,19 @@ Route3_EventScript_StartMayBattleMudkip::
 	goto Route3_EventScript_AfterMayBattle
 	end
 
-Route3_EventScript_StartBrendanBattleTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_3_TREECKO, Route3_Text_BrendanDefeated
-	goto Route3_EventScript_AfterBrendanBattle
+Route3_EventScript_StartHilbertBattleTreecko::
+	trainerbattle_no_intro TRAINER_HILBERT_ROUTE_3_TREECKO, Route3_Text_HilbertDefeated
+	goto Route3_EventScript_AfterHilbertBattle
 	end
 
-Route3_EventScript_StartBrendanBattleTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_3_TORCHIC, Route3_Text_BrendanDefeated
-	goto Route3_EventScript_AfterBrendanBattle
+Route3_EventScript_StartHilbertBattleTorchic::
+	trainerbattle_no_intro TRAINER_HILBERT_ROUTE_3_TORCHIC, Route3_Text_HilbertDefeated
+	goto Route3_EventScript_AfterHilbertBattle
 	end
 
-Route3_EventScript_StartBrendanBattleMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_3_MUDKIP, Route3_Text_BrendanDefeated
-	goto Route3_EventScript_AfterBrendanBattle
+Route3_EventScript_StartHilbertBattleMudkip::
+	trainerbattle_no_intro TRAINER_HILBERT_ROUTE_3_MUDKIP, Route3_Text_HilbertDefeated
+	goto Route3_EventScript_AfterHilbertBattle
 	end
 
 Route3_EventScript_AfterMayBattle::
@@ -95,8 +95,8 @@ Route3_EventScript_AfterMayBattle::
 	goto Route3_EventScript_RivalExit
 	end
 
-Route3_EventScript_AfterBrendanBattle::
-	msgbox Route3_Text_BrendanTimeToHeadBack, MSGBOX_DEFAULT
+Route3_EventScript_AfterHilbertBattle::
+	msgbox Route3_Text_HilbertTimeToHeadBack, MSGBOX_DEFAULT
 	goto Route3_EventScript_RivalExit
 	end
 
@@ -315,11 +315,11 @@ Route3_Text_MayTimeToHeadBack:
 	.string "Well, it's time to head back to\n"
 	.string "the LAB.$"
 
-Route3_Text_BrendanRoute3Pokemon:
-	.string "BRENDAN: Okay, so it's this one and\n"
+Route3_Text_HilbertRoute3Pokemon:
+	.string "HILBERT: Okay, so it's this one and\n"
 	.string "that one that live on ROUTE 3…$"
 
-Route3_Text_BrendanLetsBattle:
+Route3_Text_HilbertLetsBattle:
 	.string "Hey, it's {PLAYER}!\p"
 	.string "…Oh, yeah, Dad gave you a POKéMON.\p"
 	.string "Since we're here, how about a little\n"
@@ -327,11 +327,11 @@ Route3_Text_BrendanLetsBattle:
 	.string "I'll teach you what being a TRAINER's\n"
 	.string "about!$"
 
-Route3_Text_BrendanDefeated:
+Route3_Text_HilbertDefeated:
 	.string "Huh, {PLAYER}, you're not too shabby.$"
 
-Route3_Text_BrendanTimeToHeadBack:
-	.string "BRENDAN: I think I get it.\n"
+Route3_Text_HilbertTimeToHeadBack:
+	.string "HILBERT: I think I get it.\n"
 	.string "I think I know why my dad has his eye\l"
 	.string "out for you now.\p"
 	.string "Look, your POKéMON already likes you,\n"

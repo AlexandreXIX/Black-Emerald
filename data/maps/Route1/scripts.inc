@@ -240,7 +240,7 @@ Route1_EventScript_BirchsBag::
 	setvar VAR_ROUTE1_STATE, 3
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, Route1_EventScript_HideMayInBedroom
-	call_if_eq VAR_RESULT, FEMALE, Route1_EventScript_HideBrendanInBedroom
+	call_if_eq VAR_RESULT, FEMALE, Route1_EventScript_HideHilbertInBedroom
 	warp MAP_NUVEMA_TOWN_PROFESSOR_BIRCHS_LAB, 6, 5
 	waitstate
 	release
@@ -250,8 +250,8 @@ Route1_EventScript_HideMayInBedroom::
 	setflag FLAG_HIDE_NUVEMA_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	return
 
-Route1_EventScript_HideBrendanInBedroom::
-	setflag FLAG_HIDE_NUVEMA_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
+Route1_EventScript_HideHilbertInBedroom::
+	setflag FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_RIVAL_BEDROOM
 	return
 
 Route1_Movement_BirchApproachPlayer:

@@ -10,7 +10,7 @@ const u32 gIntroVolbeat_Gfx[] = INCBIN_U32("graphics/intro/scene_2/volbeat.4bpp.
 const u32 gIntroTorchic_Gfx[] = INCBIN_U32("graphics/intro/scene_2/torchic.4bpp.lz");
 const u32 gIntroManectric_Gfx[] = INCBIN_U32("graphics/intro/scene_2/manectric.4bpp.lz");
 const u32 gIntroFlygon_Gfx[] = INCBIN_U32("graphics/intro/scene_2/flygon.4bpp.lz");
-const u32 gIntroBrendan_Gfx[] = INCBIN_U32("graphics/intro/scene_2/brendan.4bpp.lz");
+const u32 gIntroHilbert_Gfx[] = INCBIN_U32("graphics/intro/scene_2/hilbert.4bpp.lz");
 const u32 gIntroMay_Gfx[] = INCBIN_U32("graphics/intro/scene_2/may.4bpp.lz");
 
 const u32 gIntroGroudon_Gfx[] = INCBIN_U32("graphics/intro/scene_3/groudon.8bpp.lz");

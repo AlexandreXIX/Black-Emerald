@@ -260,7 +260,7 @@ OldaleTown_EventScript_RivalTrigger3::
 OldaleTown_EventScript_ShowRivalMessage::
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, OldaleTown_EventScript_ShowMayMessage
-	goto_if_eq VAR_RESULT, FEMALE, OldaleTown_EventScript_ShowBrendanMessage
+	goto_if_eq VAR_RESULT, FEMALE, OldaleTown_EventScript_ShowHilbertMessage
 	end
 
 OldaleTown_EventScript_ShowMayMessage::
@@ -268,8 +268,8 @@ OldaleTown_EventScript_ShowMayMessage::
 	goto OldaleTown_EventScript_RivalFinish
 	end
 
-OldaleTown_EventScript_ShowBrendanMessage::
-	msgbox OldaleTown_Text_BrendanLetsGoBack, MSGBOX_DEFAULT
+OldaleTown_EventScript_ShowHilbertMessage::
+	msgbox OldaleTown_Text_HilbertLetsGoBack, MSGBOX_DEFAULT
 	goto OldaleTown_EventScript_RivalFinish
 	end
 
@@ -390,8 +390,8 @@ OldaleTown_Text_MayLetsGoBack:
 	.string "Over here!\l"
 	.string "Let's hurry home!$"
 
-OldaleTown_Text_BrendanLetsGoBack:
-	.string "BRENDAN: I'm heading back to my dad's\n"
+OldaleTown_Text_HilbertLetsGoBack:
+	.string "HILBERT: I'm heading back to my dad's\n"
 	.string "LAB now.\l"
 	.string "{PLAYER}, you should hustle back, too.$"
 

@@ -1,0 +1,20 @@
+raw `
+NuvemaTown_CherensHouse_1F_MapScripts::
+	.byte 0
+`
+
+script NuvemaTown_CherensHouse_1F_EventScript_Man {
+	msgbox(Cherens_Dad, MSGBOX_NPC)
+}
+
+script NuvemaTown_CherensHouse_1F_EventScript_Woman {
+	msgbox(Cherens_Mom, MSGBOX_NPC)
+}
+
+text Cherens_Dad{
+    format("Cheren's Dad: Traveling is great!\NYou encounter so many things you've never seen and things you don't yet understand. Wherever you go, you'll learn something new and grow up a little.")
+}
+
+text Cherens_Mom{
+    format("Cheren's Mom: Why, {PLAYER}.\NI heard the professor asked you to complete the Pokédex.\NDon't worry! You'll always have Pokémon by your side.")
+}

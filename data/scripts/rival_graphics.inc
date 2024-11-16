@@ -9,7 +9,7 @@ EventScript_SetupRivalGfxIdFemale::
 	return
 
 EventScript_SetupRivalGfxIdMale::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_HILBERT_NORMAL
 	return
 
 Common_EventScript_SetupRivalOnBikeGfxId::
@@ -23,7 +23,7 @@ EventScript_SetupRivalOnBikeGfxIdFemale::
 	return
 
 EventScript_SetupRivalOnBikeGfxIdMale::
-	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE
+	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_RIVAL_HILBERT_MACH_BIKE
 	return
 
 @ Unused
@@ -34,7 +34,7 @@ Common_EventScript_SetupRivalGfxIdSameGender::
 	end
 
 EventScript_SetupRivalGfxIdMale2::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_HILBERT_NORMAL
 	return
 
 EventScript_SetupRivalGfxIdFemale2::

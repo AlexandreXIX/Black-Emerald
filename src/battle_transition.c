@@ -788,7 +788,7 @@ static const struct SpriteTemplate sSpriteTemplate_Pokeball =
     .callback = SpriteCB_FldEffPokeballTrail
 };
 
-static const struct OamData sOam_UnusedBrendanLass =
+static const struct OamData sOam_UnusedHilbertLass =
 {
     .y = 0,
     .affineMode = ST_OAM_AFFINE_OFF,
@@ -805,7 +805,7 @@ static const struct OamData sOam_UnusedBrendanLass =
     .affineParam = 0,
 };
 
-static const struct SpriteFrameImage sImageTable_UnusedBrendan[] =
+static const struct SpriteFrameImage sImageTable_UnusedHilbert[] =
 {
     {sUnusedBrendan_Gfx, sizeof(sUnusedBrendan_Gfx)}
 };
@@ -815,24 +815,24 @@ static const struct SpriteFrameImage sImageTable_UnusedLass[] =
     {sUnusedLass_Gfx, sizeof(sUnusedLass_Gfx)}
 };
 
-static const union AnimCmd sSpriteAnim_UnusedBrendanLass[] =
+static const union AnimCmd sSpriteAnim_UnusedHilbertLass[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END
 };
 
-static const union AnimCmd *const sSpriteAnimTable_UnusedBrendanLass[] =
+static const union AnimCmd *const sSpriteAnimTable_UnusedHilbertLass[] =
 {
-    sSpriteAnim_UnusedBrendanLass
+    sSpriteAnim_UnusedHilbertLass
 };
 
-static const struct SpriteTemplate sSpriteTemplate_UnusedBrendan =
+static const struct SpriteTemplate sSpriteTemplate_UnusedHilbert =
 {
     .tileTag = TAG_NONE,
     .paletteTag = PALTAG_UNUSED_MUGSHOT,
-    .oam = &sOam_UnusedBrendanLass,
-    .anims = sSpriteAnimTable_UnusedBrendanLass,
-    .images = sImageTable_UnusedBrendan,
+    .oam = &sOam_UnusedHilbertLass,
+    .anims = sSpriteAnimTable_UnusedHilbertLass,
+    .images = sImageTable_UnusedHilbert,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_MugshotTrainerPic
 };
@@ -841,8 +841,8 @@ static const struct SpriteTemplate sSpriteTemplate_UnusedLass =
 {
     .tileTag = TAG_NONE,
     .paletteTag = PALTAG_UNUSED_MUGSHOT,
-    .oam = &sOam_UnusedBrendanLass,
-    .anims = sSpriteAnimTable_UnusedBrendanLass,
+    .oam = &sOam_UnusedHilbertLass,
+    .anims = sSpriteAnimTable_UnusedHilbertLass,
     .images = sImageTable_UnusedLass,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_MugshotTrainerPic
@@ -857,7 +857,7 @@ static const u16 sMugshotPal_Green[]  = INCBIN_U16("graphics/battle_transitions/
 static const u16 sMugshotPal_Pink[]   = INCBIN_U16("graphics/battle_transitions/pink_bg.gbapal");
 static const u16 sMugshotPal_Blue[]   = INCBIN_U16("graphics/battle_transitions/blue_bg.gbapal");
 static const u16 sMugshotPal_Yellow[] = INCBIN_U16("graphics/battle_transitions/yellow_bg.gbapal");
-static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/battle_transitions/brendan_bg.gbapal");
+static const u16 sMugshotPal_Hilbert[] = INCBIN_U16("graphics/battle_transitions/hilbert_bg.gbapal");
 static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/battle_transitions/may_bg.gbapal");
 
 static const u16 *const sOpponentMugshotsPals[MUGSHOT_COLOR_COUNT] =
@@ -871,7 +871,7 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOT_COLOR_COUNT] =
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
 {
-    [MALE] = sMugshotPal_Brendan,
+    [MALE] = sMugshotPal_Hilbert,
     [FEMALE] = sMugshotPal_May
 };
 

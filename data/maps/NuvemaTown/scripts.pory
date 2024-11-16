@@ -23,7 +23,7 @@ NuvemaTown_MapScripts::
 	@ 7: Told to go meet rival
 
 	@ State descriptions for VAR_NUVEMA_HOUSES_STATE_MAY
-	@                    and VAR_NUVEMA_HOUSES_STATE_BRENDAN
+	@                    and VAR_NUVEMA_HOUSES_STATE_HILBERT
 	@ 1: On Truck (and is corresponding gender)
 	@ 2: Met Rival's Mom (and is corresponding gender)
 	@ 3: Entered Hall of Fame
@@ -65,7 +65,7 @@ script NuvemaTown_EventScript_JuniperIntro {
 	applymovement(OBJ_EVENT_ID_CAMERA, NuvemaTown_EnterHouse)
 	waitmovement(0)
 	setvar(VAR_NUVEMA_TOWN_STATE, 1)
-	setflag(FLAG_HIDE_NUVEMA_TOWN_BRENDANS_HOUSE_TRUCK)
+	setflag(FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_TRUCK)
 	clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 	hideobjectat(LOCALID_JUNIPER, MAP_NUVEMA_TOWN)
 	closedoor(12,12)
@@ -73,10 +73,14 @@ script NuvemaTown_EventScript_JuniperIntro {
 	opendoor(12,12)
 	waitdooranim
 	showobjectat(LOCALID_JUNIPER, MAP_NUVEMA_TOWN)
+	applymovement(LOCALID_JUNIPER, NuvemaTown_ExitHouse)
+	waitmovement(0)
+	closedoor(12,12)
+	waitdooranim
 	applymovement(LOCALID_JUNIPER, NuvemaTown_WalkOffCamera)
 	waitmovement(0)
 	removeobject(LOCALID_JUNIPER)
-	warpsilent(MAP_NUVEMA_TOWN_BRENDANS_HOUSE_2F, 4, 6)
+	warpsilent(MAP_NUVEMA_TOWN_PLAYERS_HOUSE_2F, 4, 6)
 	waitstate
     releaseall
 }
@@ -89,6 +93,10 @@ movement NuvemaTown_LabToHouse {
 
 movement NuvemaTown_EnterHouse {
     walk_up * 1
+}
+
+movement NuvemaTown_ExitHouse {
+    walk_down * 1
 }
 
 movement NuvemaTown_WalkOffCamera {

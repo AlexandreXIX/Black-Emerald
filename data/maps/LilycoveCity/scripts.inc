@@ -234,7 +234,7 @@ LilycoveCity_EventScript_Rival::
 	faceplayer
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, LilycoveCity_EventScript_May
-	goto_if_eq VAR_RESULT, FEMALE, LilycoveCity_EventScript_Brendan
+	goto_if_eq VAR_RESULT, FEMALE, LilycoveCity_EventScript_Hilbert
 	end
 
 LilycoveCity_EventScript_May::
@@ -265,29 +265,29 @@ LilycoveCity_EventScript_DeclineMayBattle::
 	release
 	end
 
-LilycoveCity_EventScript_Brendan::
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	call_if_set FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_BrendanAskToBattleAgain
-	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_BrendanAskToBattle
-	goto_if_eq VAR_RESULT, NO, LilycoveCity_EventScript_DeclineBrendanBattle
-	msgbox LilycoveCity_Text_BrendanWontBeBeaten, MSGBOX_DEFAULT
+LilycoveCity_EventScript_Hilbert::
+	playbgm MUS_ENCOUNTER_HILBERT, TRUE
+	call_if_set FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_HilbertAskToBattleAgain
+	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_HilbertAskToBattle
+	goto_if_eq VAR_RESULT, NO, LilycoveCity_EventScript_DeclineHilbertBattle
+	msgbox LilycoveCity_Text_HilbertWontBeBeaten, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
-	case 0, LilycoveCity_EventScript_BattleBrendanTreecko
-	case 1, LilycoveCity_EventScript_BattleBrendanTorchic
-	case 2, LilycoveCity_EventScript_BattleBrendanMudkip
+	case 0, LilycoveCity_EventScript_BattleHilbertTreecko
+	case 1, LilycoveCity_EventScript_BattleHilbertTorchic
+	case 2, LilycoveCity_EventScript_BattleHilbertMudkip
 	end
 
-LilycoveCity_EventScript_BrendanAskToBattleAgain::
-	msgbox LilycoveCity_Text_BrendanBattleMe, MSGBOX_YESNO
+LilycoveCity_EventScript_HilbertAskToBattleAgain::
+	msgbox LilycoveCity_Text_HilbertBattleMe, MSGBOX_YESNO
 	return
 
-LilycoveCity_EventScript_BrendanAskToBattle::
-	msgbox LilycoveCity_Text_BrendanShoppingLetsBattle, MSGBOX_YESNO
+LilycoveCity_EventScript_HilbertAskToBattle::
+	msgbox LilycoveCity_Text_HilbertShoppingLetsBattle, MSGBOX_YESNO
 	return
 
-LilycoveCity_EventScript_DeclineBrendanBattle::
+LilycoveCity_EventScript_DeclineHilbertBattle::
 	setflag FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE
-	msgbox LilycoveCity_Text_BrendanNoConfidence, MSGBOX_DEFAULT
+	msgbox LilycoveCity_Text_HilbertNoConfidence, MSGBOX_DEFAULT
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	release
@@ -308,19 +308,19 @@ LilycoveCity_EventScript_BattleMayMudkip::
 	goto LilycoveCity_EventScript_DefeatedMay
 	end
 
-LilycoveCity_EventScript_BattleBrendanTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TREECKO, LilycoveCity_Text_BrendanDefeat
-	goto LilycoveCity_EventScript_DefeatedBrendan
+LilycoveCity_EventScript_BattleHilbertTreecko::
+	trainerbattle_no_intro TRAINER_HILBERT_LILYCOVE_TREECKO, LilycoveCity_Text_HilbertDefeat
+	goto LilycoveCity_EventScript_DefeatedHilbert
 	end
 
-LilycoveCity_EventScript_BattleBrendanTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TORCHIC, LilycoveCity_Text_BrendanDefeat
-	goto LilycoveCity_EventScript_DefeatedBrendan
+LilycoveCity_EventScript_BattleHilbertTorchic::
+	trainerbattle_no_intro TRAINER_HILBERT_LILYCOVE_TORCHIC, LilycoveCity_Text_HilbertDefeat
+	goto LilycoveCity_EventScript_DefeatedHilbert
 	end
 
-LilycoveCity_EventScript_BattleBrendanMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_MUDKIP, LilycoveCity_Text_BrendanDefeat
-	goto LilycoveCity_EventScript_DefeatedBrendan
+LilycoveCity_EventScript_BattleHilbertMudkip::
+	trainerbattle_no_intro TRAINER_HILBERT_LILYCOVE_MUDKIP, LilycoveCity_Text_HilbertDefeat
+	goto LilycoveCity_EventScript_DefeatedHilbert
 	end
 
 LilycoveCity_EventScript_DefeatedMay::
@@ -355,28 +355,28 @@ LilycoveCity_EventScript_MayBattleFrontier::
 	msgbox LilycoveCity_Text_MayYouGoingToBattleFrontier, MSGBOX_DEFAULT
 	return
 
-LilycoveCity_EventScript_DefeatedBrendan::
-	msgbox LilycoveCity_Text_BrendanGoingBackToNuvema, MSGBOX_DEFAULT
+LilycoveCity_EventScript_DefeatedHilbert::
+	msgbox LilycoveCity_Text_HilbertGoingBackToNuvema, MSGBOX_DEFAULT
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_BADGE06_GET, LilycoveCity_EventScript_CheckFinalBadge
-	call_if_eq VAR_RESULT, FALSE, LilycoveCity_EventScript_BrendanCollectBadges
-	call_if_eq VAR_RESULT, TRUE, LilycoveCity_EventScript_BrendanPokemonLeague
-	clearflag FLAG_HIDE_NUVEMA_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
-	clearflag FLAG_HIDE_NUVEMA_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL
+	call_if_eq VAR_RESULT, FALSE, LilycoveCity_EventScript_HilbertCollectBadges
+	call_if_eq VAR_RESULT, TRUE, LilycoveCity_EventScript_HilbertPokemonLeague
+	clearflag FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_RIVAL_BEDROOM
+	clearflag FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_2F_SWABLU_DOLL
 	goto LilycoveCity_EventScript_RivalFlyAway
 	end
 
-LilycoveCity_EventScript_BrendanCollectBadges::
-	msgbox LilycoveCity_Text_BrendanYouGoingToCollectBadges, MSGBOX_DEFAULT
+LilycoveCity_EventScript_HilbertCollectBadges::
+	msgbox LilycoveCity_Text_HilbertYouGoingToCollectBadges, MSGBOX_DEFAULT
 	return
 
-LilycoveCity_EventScript_BrendanPokemonLeague::
-	goto_if_set FLAG_SYS_GAME_CLEAR, LilycoveCity_EventScript_BrendanBattleFrontier
-	msgbox LilycoveCity_Text_BrendanYouGoingToPokemonLeague, MSGBOX_DEFAULT
+LilycoveCity_EventScript_HilbertPokemonLeague::
+	goto_if_set FLAG_SYS_GAME_CLEAR, LilycoveCity_EventScript_HilbertBattleFrontier
+	msgbox LilycoveCity_Text_HilbertYouGoingToPokemonLeague, MSGBOX_DEFAULT
 	return
 
-LilycoveCity_EventScript_BrendanBattleFrontier::
-	msgbox LilycoveCity_Text_BrendanYouGoingToBattleFrontier, MSGBOX_DEFAULT
+LilycoveCity_EventScript_HilbertBattleFrontier::
+	msgbox LilycoveCity_Text_HilbertYouGoingToBattleFrontier, MSGBOX_DEFAULT
 	return
 
 LilycoveCity_EventScript_RivalFlyAway::
@@ -482,47 +482,47 @@ LilycoveCity_Text_MayYouGoingToBattleFrontier:
 	.string "but I'll finish my POKéDEX before you!\p"
 	.string "See you!$"
 
-LilycoveCity_Text_BrendanShoppingLetsBattle:
-	.string "BRENDAN: Oh, hey, it's {PLAYER}.\p"
+LilycoveCity_Text_HilbertShoppingLetsBattle:
+	.string "HILBERT: Oh, hey, it's {PLAYER}.\p"
 	.string "I'm running an errand for my dad.\n"
 	.string "No, I'm not buying any DOLLS.\p"
 	.string "Anyways, it's been a while.\p"
 	.string "Want to have a battle to see who's been\n"
 	.string "raising POKéMON better?$"
 
-LilycoveCity_Text_BrendanNoConfidence:
-	.string "BRENDAN: Oh, what's the matter?\n"
+LilycoveCity_Text_HilbertNoConfidence:
+	.string "HILBERT: Oh, what's the matter?\n"
 	.string "Don't have the confidence?$"
 
-LilycoveCity_Text_BrendanBattleMe:
-	.string "BRENDAN: Want to battle to see who's\n"
+LilycoveCity_Text_HilbertBattleMe:
+	.string "HILBERT: Want to battle to see who's\n"
 	.string "been raising POKéMON better?$"
 
-LilycoveCity_Text_BrendanWontBeBeaten:
-	.string "BRENDAN: Aww, but you know I'm not\n"
+LilycoveCity_Text_HilbertWontBeBeaten:
+	.string "HILBERT: Aww, but you know I'm not\n"
 	.string "going to lose to no {PLAYER}.$"
 
-LilycoveCity_Text_BrendanDefeat:
+LilycoveCity_Text_HilbertDefeat:
 	.string "Humph…\n"
 	.string "You've done a lot of raising.\p"
 	.string "That stings a bit--I had a head start\n"
 	.string "on you as a TRAINER…$"
 
-LilycoveCity_Text_BrendanGoingBackToNuvema:
-	.string "BRENDAN: I…\n"
+LilycoveCity_Text_HilbertGoingBackToNuvema:
+	.string "HILBERT: I…\n"
 	.string "I plan on going home to NUVEMA.\p"
 	.string "You know I'm helping out my dad on his\n"
 	.string "POKéDEX. It's coming together pretty\l"
 	.string "decently, so I should go show him.$"
 
-LilycoveCity_Text_BrendanYouGoingToCollectBadges:
+LilycoveCity_Text_HilbertYouGoingToCollectBadges:
 	.string "{PLAYER}, what are you going to do?\p"
 	.string "Collect all the GYM BADGES and take\n"
 	.string "the POKéMON LEAGUE challenge?\p"
 	.string "Maybe I'll do that, too…\p"
 	.string "Well, anyway, hang in there!$"
 
-LilycoveCity_Text_BrendanYouGoingToPokemonLeague:
+LilycoveCity_Text_HilbertYouGoingToPokemonLeague:
 	.string "{PLAYER}, what are you going to do?\p"
 	.string "Since you're that strong, are you\n"
 	.string "taking the POKéMON LEAGUE challenge?\p"
@@ -531,7 +531,7 @@ LilycoveCity_Text_BrendanYouGoingToPokemonLeague:
 	.string "you, {PLAYER}.\p"
 	.string "Well, anyway, hang in there!$"
 
-LilycoveCity_Text_BrendanYouGoingToBattleFrontier:
+LilycoveCity_Text_HilbertYouGoingToBattleFrontier:
 	.string "{PLAYER}, what are you going to do?\p"
 	.string "Are you taking the BATTLE FRONTIER\n"
 	.string "challenge?\p"

@@ -21,7 +21,7 @@ SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfx::
 	return
 
 SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfxMale::
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_RIVAL_HILBERT_NORMAL
 	return
 
 SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfxFemale::

@@ -95,10 +95,12 @@
     "Underwater_Route125"
   ],
   "gMapGroup_IndoorNuvema": [
-    "NuvemaTown_BrendansHouse_1F",
-    "NuvemaTown_BrendansHouse_2F",
-    "NuvemaTown_MaysHouse_1F",
-    "NuvemaTown_MaysHouse_2F",
+    "NuvemaTown_PlayersHouse_1F",
+    "NuvemaTown_PlayersHouse_2F",
+    "NuvemaTown_BiancasHouse_1F",
+    "NuvemaTown_BiancasHouse_2F",
+    "NuvemaTown_CherensHouse_1F",
+    "NuvemaTown_CherensHouse_2F",
     "NuvemaTown_ProfessorBirchsLab"
   ],
   "gMapGroup_IndoorOldale": [
