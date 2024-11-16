@@ -147,277 +147,259 @@ NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene::
 # 127 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
 # 128 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox Cheren_Intro, MSGBOX_NPC
+	msgbox Cheren_Intro
 # 129 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_CHEREN, Cheren_Sees_Starters
+	applymovement LOCALID_CHEREN, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_0
 # 130 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
 # 131 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox Cheren_Waiting, MSGBOX_NPC
+	msgbox Cheren_Waiting
 # 132 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_CHEREN, Cheren_Looks_at_Player
+	applymovement LOCALID_CHEREN, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_1
 # 133 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
 # 134 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox Cheren_Time, MSGBOX_NPC
+	applymovement OBJ_EVENT_ID_PLAYER, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_2
 # 135 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	call PlayersHouse_2F_EventScript_SetWallClock
-# 136 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	setvar VAR_NUVEMA_TOWN_STATE, 2
-# 137 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	addobject LOCALID_BIANCA
-# 138 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_BIANCA, Bianca_Climbs_Stairs
-# 139 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
+# 136 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox Cheren_Time
+# 137 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	call PlayersHouse_2F_EventScript_SetWallClock
+# 138 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	setvar VAR_NUVEMA_TOWN_STATE, 2
+# 139 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	addobject LOCALID_BIANCA
 # 140 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Player_Notices_Bianca
+	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_3
 # 141 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
 # 142 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_CHEREN, Cheren_Notices_Bianca
+	applymovement OBJ_EVENT_ID_PLAYER, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_4
 # 143 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
 # 144 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox Bianca_Arrives, MSGBOX_NPC
+	applymovement LOCALID_CHEREN, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_4
 # 145 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_CHEREN, Cheren_Meets_Bianca
+	waitmovement 0
 # 146 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement 0
+	msgbox Bianca_Arrives
 # 147 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox Cheren_Berating, MSGBOX_NPC
+	applymovement LOCALID_CHEREN, Cheren_Meets_Bianca
 # 148 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_BIANCA, Bianca_Enters
+	waitmovement 0
 # 149 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement 0
+	msgbox Cheren_Berating
 # 150 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_CHEREN, Cheren_Faces_Group
+	applymovement LOCALID_BIANCA, Bianca_Enters
 # 151 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Player_Faces_Group
-# 152 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 153 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox Bianca_Apology, MSGBOX_NPC
-# 154 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_BIANCA, Bianca_Approaches_Starters
-# 155 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
+# 152 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	applymovement LOCALID_CHEREN, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_1
+# 153 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_4
+# 154 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 155 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox Bianca_Apology
 # 156 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Player_Faces_Bianca
+	applymovement LOCALID_BIANCA, Bianca_Approaches_Starters
 # 157 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
 # 158 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox Bianca_TimeToPick, MSGBOX_NPC
+	applymovement OBJ_EVENT_ID_PLAYER, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_1
 # 159 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox Cheren_Response, MSGBOX_NPC
-# 160 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_CHEREN, Cheren_Approaches_Starters
-# 161 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
+# 160 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox Bianca_TimeToPick
+# 161 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox Cheren_Response
 # 162 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Player_Faces_Starters
+	applymovement LOCALID_CHEREN, Cheren_Approaches_Starters
 # 163 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
 # 164 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_BIANCA, Bianca_Faces_Starters
+	applymovement OBJ_EVENT_ID_PLAYER, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_0
 # 165 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
 # 166 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox Cheren_TimeToPick, MSGBOX_NPC
+	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_0
 # 167 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitmovement 0
+# 168 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox Cheren_TimeToPick
+# 169 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 NuvemaTown_PlayersHouse_2F_EventScript_StarterBag::
-# 171 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	lockall
-# 172 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
 # 173 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	lockall
 # 174 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	special ChooseStarter
+	setflag FLAG_SYS_POKEMON_GET
 # 175 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	setflag FLAG_SYS_POKEDEX_GET
+	fadescreen FADE_TO_BLACK
 # 176 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	special SetUnlockedPokedexFlags
+	special ChooseStarter
 # 177 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setflag FLAG_SYS_POKEDEX_GET
 # 178 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	special SetUnlockedPokedexFlags
+# 179 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+# 180 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	releaseall
 	return
 
 
 PlayersHouse_2F_EventScript_CheckWallClock::
-# 182 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	incrementgamestat GAME_STAT_CHECKED_CLOCK
-# 183 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	fadescreen FADE_TO_BLACK
 # 184 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	special Special_ViewWallClock
+	lockall
 # 185 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitstate
+	checkplayergender
 # 186 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	setvar 0x8004, VAR_RESULT
+# 187 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	incrementgamestat GAME_STAT_CHECKED_CLOCK
+# 188 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 189 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	special Special_ViewWallClock
+# 190 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitstate
+# 191 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	releaseall
 	end
 
 
 PlayersHouse_2F_EventScript_SetWallClock::
-# 192 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 197 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	lockall
+# 198 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	checkplayergender
+# 199 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	setvar 0x8004, VAR_RESULT
+# 200 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 193 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 201 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	special StartWallClock
-# 194 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 202 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitstate
-# 195 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 203 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	setflag FLAG_SET_WALL_CLOCK
+# 204 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	releaseall
 	return
 
 
-# 200 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Cheren_Approaches:
-# 201 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	walk_down
-# 202 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_left
-	step_end
-
 # 209 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Cheren_Sees_Starters:
+Cheren_Approaches:
 # 210 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_down
-	step_end
-
-# 217 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Cheren_Looks_at_Player:
-# 218 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	walk_down
+# 211 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	face_left
 	step_end
 
-# 221 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Player_Looks_at_Cheren:
-# 222 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_right
-	step_end
-
-# 229 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Bianca_Climbs_Stairs:
 # 230 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	walk_down
-	step_end
-
-# 233 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Player_Notices_Bianca:
-# 234 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_up
-	step_end
-
-# 237 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Cheren_Notices_Bianca:
-# 238 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_up
-	step_end
-
-# 245 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 Cheren_Meets_Bianca:
-# 246 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 231 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_right
-# 247 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 232 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_up
 	step_end
 
-# 254 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 239 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 Bianca_Enters:
-# 255 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 240 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_down
-# 256 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 241 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_left
-# 256 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 241 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_left
-# 256 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 241 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_left
-# 256 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 241 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_left
-# 257 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 242 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_down
 	step_end
 
-# 260 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Cheren_Faces_Group:
-# 261 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_left
-	step_end
-
-# 264 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Player_Faces_Group:
-# 265 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_up
-	step_end
-
-# 272 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 249 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 Bianca_Approaches_Starters:
-# 273 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 250 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_left
-# 274 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 251 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_down
-# 274 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 251 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_down
-# 275 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 252 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	face_player
 	step_end
 
-# 278 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Player_Faces_Bianca:
-# 279 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 263 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+Cheren_Approaches_Starters:
+# 264 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	walk_down
+# 265 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	walk_left
+# 266 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	face_down
+	step_end
+
+# 129 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_0:
+# 129 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	face_down
+	step_end
+
+# 132 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_1:
+# 132 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	face_left
 	step_end
 
-# 290 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Cheren_Approaches_Starters:
-# 291 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 134 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_2:
+# 134 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	face_right
+	step_end
+
+# 140 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_3:
+# 140 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_down
-# 292 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	walk_left
-# 293 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_down
 	step_end
 
-# 296 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Player_Faces_Starters:
-# 297 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_down
-	step_end
-
-# 300 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-Bianca_Faces_Starters:
-# 301 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	face_down
+# 142 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_4:
+# 142 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	face_up
 	step_end
 
 Cheren_Intro::
-# 205 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 214 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Cheren: {PLAYER}! I heard from\n"
 	.string "Professor Juniper. We can have a\l"
 	.string "Pokémon?$"
 
 Cheren_Waiting::
-# 213 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 218 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "...\l"
 	.string "...\n"
 	.string "What's keeping Bianca?$"
 
 Cheren_Time::
-# 225 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 222 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "What time is it anyways?$"
 
 Bianca_Arrives::
-# 241 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 226 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Bianca: Am I a little late again?\n"
 	.string "So-oooo-orry!$"
 
 Cheren_Berating::
-# 250 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 235 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Cheren: Bianca...\n"
 	.string "I've known for ten years that you have\l"
 	.string "no sense of time, but...seriously...\l"
@@ -425,22 +407,22 @@ Cheren_Berating::
 	.string "from Professor Juniper!$"
 
 Bianca_Apology::
-# 268 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 245 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Bianca: I know. Sorry, {PLAYER}. Sorry,\n"
 	.string "Cheren.$"
 
 Bianca_TimeToPick::
-# 282 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 255 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Bianca: So, where are the Pokémon?\n"
 	.string "They were delivered to {PLAYER}'s\l"
 	.string "house, so {PLAYER} gets first pick.$"
 
 Cheren_Response::
-# 286 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 259 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Cheren: Naturally.$"
 
 Cheren_TimeToPick::
-# 304 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 269 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "The Pokémon are waiting for us inside\n"
 	.string "that gift box.\n"
 	.string "Ok, {PLAYER}, you go first and take a\l"

@@ -4,7 +4,9 @@ NuvemaTown_CherensHouse_1F_MapScripts::
 `
 
 script NuvemaTown_CherensHouse_1F_EventScript_Man {
+	lockall
 	msgbox(Cherens_Dad, MSGBOX_NPC)
+	releaseall
 }
 
 script NuvemaTown_CherensHouse_1F_EventScript_Woman {
