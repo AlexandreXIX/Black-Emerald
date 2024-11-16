@@ -171,19 +171,31 @@ script NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene {
 
 script NuvemaTown_PlayersHouse_2F_EventScript_StarterBag {
 	lockall
+	msgbox(Player_Opened_Box)
 	setflag(FLAG_SYS_POKEMON_GET)
 	fadescreen(FADE_TO_BLACK)
 	special(ChooseStarter)
-	setflag(FLAG_SYS_POKEDEX_GET)
-	special(SetUnlockedPokedexFlags)
-	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+	setflag(FLAG_SYS_POKEDEX_GET) //TMP
+	special(SetUnlockedPokedexFlags) //TMP
+	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH) //TMP
+	waitstate
+	switch (var(VAR_STARTER_MON)) {
+		case 0:
+			msgbox(format("{PLAYER} chose \n Snivy!"))
+		case 1:
+			msgbox(format("{PLAYER} chose \n Tepig!"))
+		case 2:
+			msgbox(format("{PLAYER} chose \n Oshawott!"))
+		default:
+			msgbox("Error getting starter!")
+	}
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
 	releaseall
 }
 
 script PlayersHouse_2F_EventScript_CheckWallClock {
 	lockall
-	checkplayergender
-	setvar(0x8004, VAR_RESULT)
 	incrementgamestat(GAME_STAT_CHECKED_CLOCK)
 	fadescreen(FADE_TO_BLACK)
 	special(Special_ViewWallClock)
@@ -195,8 +207,6 @@ script PlayersHouse_2F_EventScript_CheckWallClock {
 
 script PlayersHouse_2F_EventScript_SetWallClock {
 	lockall
-	checkplayergender
-	setvar(0x8004, VAR_RESULT)
 	fadescreen(FADE_TO_BLACK)
 	special(StartWallClock)
 	waitstate
@@ -268,4 +278,8 @@ movement Cheren_Approaches_Starters{
 
 text Cheren_TimeToPick{
     format("The Pokémon are waiting for us inside that gift box.\nOk, {PLAYER}, you go first and take a peek at the gift box.\nI want to meet the Pokémon right now!")
+}
+
+text Player_Opened_Box{
+    format("{PLAYER} opened the gift box!")
 }
