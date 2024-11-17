@@ -20,8 +20,13 @@
     },
     {
       "map": "MAP_NUVEMA_TOWN",
-      "offset": 33,
+      "offset": -6,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE1PART2",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

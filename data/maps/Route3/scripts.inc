@@ -61,32 +61,32 @@ Route3_EventScript_RivalHilbert::
 	end
 
 Route3_EventScript_StartMayBattleTreecko::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_3_TREECKO, Route3_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_BIANCA_INTRO_SNIVY, Route3_Text_MayDefeated
 	goto Route3_EventScript_AfterMayBattle
 	end
 
 Route3_EventScript_StartMayBattleTorchic::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_3_TORCHIC, Route3_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_BIANCA_INTRO_TEPIG, Route3_Text_MayDefeated
 	goto Route3_EventScript_AfterMayBattle
 	end
 
 Route3_EventScript_StartMayBattleMudkip::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_3_MUDKIP, Route3_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_BIANCA_INTRO_OSHAWOTT, Route3_Text_MayDefeated
 	goto Route3_EventScript_AfterMayBattle
 	end
 
 Route3_EventScript_StartHilbertBattleTreecko::
-	trainerbattle_no_intro TRAINER_HILBERT_ROUTE_3_TREECKO, Route3_Text_HilbertDefeated
+	trainerbattle_no_intro TRAINER_BIANCA_INTRO_SNIVY, Route3_Text_HilbertDefeated
 	goto Route3_EventScript_AfterHilbertBattle
 	end
 
 Route3_EventScript_StartHilbertBattleTorchic::
-	trainerbattle_no_intro TRAINER_HILBERT_ROUTE_3_TORCHIC, Route3_Text_HilbertDefeated
+	trainerbattle_no_intro TRAINER_BIANCA_INTRO_TEPIG, Route3_Text_HilbertDefeated
 	goto Route3_EventScript_AfterHilbertBattle
 	end
 
 Route3_EventScript_StartHilbertBattleMudkip::
-	trainerbattle_no_intro TRAINER_HILBERT_ROUTE_3_MUDKIP, Route3_Text_HilbertDefeated
+	trainerbattle_no_intro TRAINER_BIANCA_INTRO_OSHAWOTT, Route3_Text_HilbertDefeated
 	goto Route3_EventScript_AfterHilbertBattle
 	end
 

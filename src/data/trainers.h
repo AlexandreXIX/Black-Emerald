@@ -23726,14 +23726,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9504
-    [TRAINER_HILBERT_ROUTE_3_MUDKIP] =
+    [TRAINER_CHEREN_INTRO_OSHAWOTT] =
     {
 #line 9505
-        .trainerName = _("HILBERT"),
+        .trainerName = _("Cheren"),
 #line 9506
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9507
-        .trainerPic = TRAINER_PIC_HILBERT,
+        .trainerPic = TRAINER_PIC_CHEREN,
         .encounterMusic_gender = 
 #line 9509
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -23866,14 +23866,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9559
-    [TRAINER_HILBERT_ROUTE_3_TREECKO] =
+    [TRAINER_CHEREN_INTRO_SNIVY] =
     {
 #line 9560
-        .trainerName = _("HILBERT"),
+        .trainerName = _("Cheren"),
 #line 9561
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9562
-        .trainerPic = TRAINER_PIC_HILBERT,
+        .trainerPic = TRAINER_PIC_CHEREN,
         .encounterMusic_gender = 
 #line 9564
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -24006,14 +24006,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9614
-    [TRAINER_HILBERT_ROUTE_3_TORCHIC] =
+    [TRAINER_CHEREN_INTRO_TEPIG] =
     {
 #line 9615
-        .trainerName = _("HILBERT"),
+        .trainerName = _("Cheren"),
 #line 9616
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9617
-        .trainerPic = TRAINER_PIC_HILBERT,
+        .trainerPic = TRAINER_PIC_CHEREN,
         .encounterMusic_gender = 
 #line 9619
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -24146,14 +24146,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9669
-    [TRAINER_MAY_ROUTE_3_MUDKIP] =
+    [TRAINER_BIANCA_INTRO_OSHAWOTT] =
     {
 #line 9670
-        .trainerName = _("MAY"),
+        .trainerName = _("Bianca"),
 #line 9671
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9672
-        .trainerPic = TRAINER_PIC_MAY,
+        .trainerPic = TRAINER_PIC_BIANCA,
         .encounterMusic_gender = 
 #line 9673
 F_TRAINER_FEMALE | 
@@ -24168,7 +24168,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9678
-            .species = SPECIES_TREECKO,
+            .species = SPECIES_TEPIG,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9680
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -24292,14 +24292,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9724
-    [TRAINER_MAY_ROUTE_3_TREECKO] =
+    [TRAINER_BIANCA_INTRO_SNIVY] =
     {
 #line 9725
-        .trainerName = _("MAY"),
+        .trainerName = _("Bianca"),
 #line 9726
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9727
-        .trainerPic = TRAINER_PIC_MAY,
+        .trainerPic = TRAINER_PIC_BIANCA,
         .encounterMusic_gender = 
 #line 9728
 F_TRAINER_FEMALE | 
@@ -24314,7 +24314,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9733
-            .species = SPECIES_TORCHIC,
+            .species = SPECIES_OSHAWOTT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9735
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -24438,14 +24438,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9779
-    [TRAINER_MAY_ROUTE_3_TORCHIC] =
+    [TRAINER_BIANCA_INTRO_TEPIG] =
     {
 #line 9780
-        .trainerName = _("MAY"),
+        .trainerName = _("Bianca"),
 #line 9781
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9782
-        .trainerPic = TRAINER_PIC_MAY,
+        .trainerPic = TRAINER_PIC_BIANCA,
         .encounterMusic_gender = 
 #line 9783
 F_TRAINER_FEMALE | 
@@ -24460,7 +24460,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9788
-            .species = SPECIES_MUDKIP,
+            .species = SPECIES_SNIVY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9790
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

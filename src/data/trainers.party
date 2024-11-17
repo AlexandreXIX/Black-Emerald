@@ -9501,10 +9501,10 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Psychic
 - Future Sight
 
-=== TRAINER_HILBERT_ROUTE_3_MUDKIP ===
-Name: HILBERT
+=== TRAINER_CHEREN_INTRO_OSHAWOTT ===
+Name: Cheren
 Class: Rival
-Pic: Hilbert
+Pic: Cheren
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9556,10 +9556,10 @@ Grovyle
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_HILBERT_ROUTE_3_TREECKO ===
-Name: HILBERT
+=== TRAINER_CHEREN_INTRO_SNIVY ===
+Name: Cheren
 Class: Rival
-Pic: Hilbert
+Pic: Cheren
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9611,10 +9611,10 @@ Combusken
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_HILBERT_ROUTE_3_TORCHIC ===
-Name: HILBERT
+=== TRAINER_CHEREN_INTRO_TEPIG ===
+Name: Cheren
 Class: Rival
-Pic: Hilbert
+Pic: Cheren
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9666,16 +9666,16 @@ Marshtomp
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_MAY_ROUTE_3_MUDKIP ===
-Name: MAY
+=== TRAINER_BIANCA_INTRO_OSHAWOTT ===
+Name: Bianca
 Class: Rival
-Pic: May
+Pic: Bianca
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Treecko
+Tepig
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9721,16 +9721,16 @@ Grovyle
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_MAY_ROUTE_3_TREECKO ===
-Name: MAY
+=== TRAINER_BIANCA_INTRO_SNIVY ===
+Name: Bianca
 Class: Rival
-Pic: May
+Pic: Bianca
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Torchic
+Oshawott
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9776,16 +9776,16 @@ Combusken
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_MAY_ROUTE_3_TORCHIC ===
-Name: MAY
+=== TRAINER_BIANCA_INTRO_TEPIG ===
+Name: Bianca
 Class: Rival
-Pic: May
+Pic: Bianca
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Mudkip
+Snivy
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -16853,7 +16853,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_HILBERT_PLACEHOLDER ===
 Name: HILBERT
 Class: RS Protag
-Pic: RS Hilbert
+Pic: RS Brendan
 Gender: Male
 Music: Male
 Double Battle: No

@@ -15,7 +15,7 @@ NuvemaTown_PlayersHouse_2F_OnTransition:
 	end
 
 NuvemaTown_PlayersHouse_2F_OnFrame:
-	map_script_2 VAR_NUVEMA_TOWN_STATE, 1, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene
+	map_script_2 VAR_NUVEMA_INTRO_STATE, 1, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene
 	.2byte 0
 
 NuvemaTown_PlayersHouse_2F_OnWarp:
@@ -106,6 +106,9 @@ PlayersHouse_2F_Text_ItsAGameCube:
 //	return
 
 
+// Common_EventScript_SetupRivalGfxId
+
+
 // special TurnOnTVScreen
 // special TurnOffTVScreen
 // special InitRoamer
@@ -123,19 +126,18 @@ PlayersHouse_2F_Text_ItsAGameCube:
 
 script NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene {
 	lockall
-	applymovement(LOCALID_CHEREN, Cheren_Approaches)
+	applymovement(LOCALID_CHEREN, moves(walk_down, face_left))
 	waitmovement(0)
-    msgbox(Cheren_Intro)
+    msgbox(format("Cheren: {PLAYER}!\pI heard from Professor Juniper. We can have a Pokémon?"))
 	applymovement(LOCALID_CHEREN, moves(face_down))
 	waitmovement(0)
-	msgbox(Cheren_Waiting)
+	msgbox(format("...\n...\pWhat's keeping Bianca?"))
 	applymovement(LOCALID_CHEREN, moves(face_left))
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_right))
 	waitmovement(0)
-	msgbox(Cheren_Time)
+	msgbox(format("What time is it anyways?"))
 	call(PlayersHouse_2F_EventScript_SetWallClock)
-	setvar(VAR_NUVEMA_TOWN_STATE,2)
     addobject(LOCALID_BIANCA)
 	applymovement(LOCALID_BIANCA, moves(walk_down))
 	waitmovement(0)
@@ -143,35 +145,36 @@ script NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene {
 	waitmovement(0)
 	applymovement(LOCALID_CHEREN, moves(face_up))
 	waitmovement(0)
-    msgbox(Bianca_Arrives)
-	applymovement(LOCALID_CHEREN, Cheren_Meets_Bianca)
+    msgbox(format("Bianca: Am I a little late again? So-oooo-orry!"))
+	applymovement(LOCALID_CHEREN, moves(walk_right, walk_up))
 	waitmovement(0)
-    msgbox(Cheren_Berating)
-	applymovement(LOCALID_BIANCA, Bianca_Enters)
+    msgbox(format("Cheren: Bianca...\pI've known for ten years that you have no sense of time, but...seriously...\pToday's the day we can get a Pokémon from Professor Juniper!"))
+	applymovement(LOCALID_BIANCA, moves(walk_down, walk_left * 4, walk_down))
 	waitmovement(0)
 	applymovement(LOCALID_CHEREN, moves(face_left))
 	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
 	waitmovement(OBJ_EVENT_ID_PLAYER)
-    msgbox(Bianca_Apology)
-	applymovement(LOCALID_BIANCA, Bianca_Approaches_Starters)
+    msgbox(format("Bianca: I know. Sorry, {PLAYER}.\nSorry, Cheren."))
+	applymovement(LOCALID_BIANCA, moves(walk_left, walk_down * 2, face_player))
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_left))
 	waitmovement(0)
-    msgbox(Bianca_TimeToPick)
-	msgbox(Cheren_Response)
-	applymovement(LOCALID_CHEREN, Cheren_Approaches_Starters)
+    msgbox(format("Bianca: So, where are the Pokémon?\pThey were delivered to {PLAYER}'s house, so {PLAYER} gets first pick."))
+	msgbox(format("Cheren: Naturally."))
+	applymovement(LOCALID_CHEREN, moves(walk_down, walk_left, face_down))
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_down))
 	waitmovement(0)
 	applymovement(LOCALID_BIANCA, moves(face_down))
 	waitmovement(0)
-    msgbox(Cheren_TimeToPick)
+    msgbox(format("The Pokémon are waiting for us inside that gift box.\pOk, {PLAYER}, you go first and take a peek at the gift box.\pI want to meet the Pokémon right now!"))
+	setvar(VAR_NUVEMA_INTRO_STATE, 2)
 	releaseall
 }
 
 script NuvemaTown_PlayersHouse_2F_EventScript_StarterBag {
 	lockall
-	msgbox(Player_Opened_Box)
+	msgbox(format("{PLAYER} opened the gift box!"))
 	setflag(FLAG_SYS_POKEMON_GET)
 	fadescreen(FADE_TO_BLACK)
 	special(ChooseStarter)
@@ -179,6 +182,7 @@ script NuvemaTown_PlayersHouse_2F_EventScript_StarterBag {
 	special(SetUnlockedPokedexFlags) //TMP
 	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH) //TMP
 	waitstate
+	playfanfare(MUS_OBTAIN_ITEM)
 	switch (var(VAR_STARTER_MON)) {
 		case 0:
 			msgbox(format("{PLAYER} chose \n Snivy!"))
@@ -189,7 +193,83 @@ script NuvemaTown_PlayersHouse_2F_EventScript_StarterBag {
 		default:
 			msgbox("Error getting starter!")
 	}
-	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	setvar(VAR_NUVEMA_INTRO_STATE, 3)
+	goto(NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter)
+	releaseall
+}
+
+script NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter {
+	lockall
+	applymovement(LOCALID_BIANCA, moves(walk_down, face_right))
+	waitmovement(0)
+	msgbox(format("Bianca: OK, I'll take this Pokémon!\NCheren, that one's yours!"))
+	applymovement(LOCALID_CHEREN, moves(walk_down, face_left))
+	waitmovement(0)
+	msgbox(format("Cheren: Hey, how come you get to pick out my Pokémon?"))
+	switch(var(VAR_STARTER_MON)) {
+		case 0:
+			msgbox(format("Oh, never mind. I wanted Tepig from the start, anyway."))
+		case 1:
+			msgbox(format("Oh, never mind. I wanted Oshawott from the start, anyway."))
+		case 2:
+			msgbox(format("Oh, never mind. I wanted Snivy from the start, anyway."))
+		default:
+			msgbox("Error getting starter!")
+	}
+	fadescreen(FADE_TO_BLACK)
+	setobjectxy(OBJ_EVENT_ID_PLAYER, 3, 6)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_right))
+	waitmovement(0)
+	setobjectxy(LOCALID_BIANCA, 5, 7)
+	applymovement(LOCALID_BIANCA, moves(face_left))
+	waitmovement(0)
+	setobjectxy(LOCALID_CHEREN, 4, 4)
+	applymovement(LOCALID_CHEREN, moves(face_down))
+	waitmovement(0)
+	fadescreen(FADE_FROM_BLACK)
+	applymovement(LOCALID_BIANCA, moves(walk_up, face_left))
+	waitmovement(0)
+	msgbox(format("Bianca: Everyone has chosen a Pokémon!\N...So that's that!"))
+	msgbox(format("Hey, I know!\nLet's have a Pokémon battle!"))
+	msgbox(format("Cheren: Honestly, Bianca..."))
+	msgbox(format("Even though they're still weak Pokémon, you shouldn't have Pokémon battles inside a house."))
+	msgbox(format("Bianca: Don't be a worrywart!\nThese little ones are weak, like you said."))
+	msgbox(format("We have to let them battle so they'll get stronger. It's settled, {PLAYER}!\NGet ready for a Pokémon battle!"))
+	switch(var(VAR_STARTER_MON)) {
+		// Dont know about midbattle text
+		case 0: trainerbattle_no_intro(TRAINER_BIANCA_INTRO_SNIVY, NuvemaTown_PlayersHouse_2F_Bianca_Lost)
+		case 1: trainerbattle_no_intro(TRAINER_BIANCA_INTRO_TEPIG, NuvemaTown_PlayersHouse_2F_Bianca_Lost)
+		case 2: trainerbattle_no_intro(TRAINER_BIANCA_INTRO_OSHAWOTT, NuvemaTown_PlayersHouse_2F_Bianca_Lost)
+	}
+	// Room gets destroyed
+	msgbox(format("Bianca: Wow...\N{PLAYER}, you're gonna be an awesome Trainer someday, I can tell!\pNo doubt!"))
+	msgbox(format("Cheren: Uh...\n...\pBianca, would you take a look around?"))
+	applymovement(LOCALID_BIANCA, moves(face_right))
+	waitmovement(0)
+	delay(60)
+	applymovement(LOCALID_BIANCA, moves(face_up))
+	waitmovement(0)
+	delay(60)
+	applymovement(LOCALID_BIANCA, moves(face_down))
+	waitmovement(0)
+	delay(60)
+		msgbox(format("Bianca: Wh-whoa!\lWhat ahppened?!"))
+	applymovement(LOCALID_BIANCA, moves(face_left))
+	waitmovement(0)
+	msgbox(format("Wow! Pokémon are amaaaaazing!! So little, but so strong!\pI'm so glad that I get to have a Pokémon!"))
+	msgbox(format("...Oh.\nUm, sorry about your room, {PLAYER}."))
+	applymovement(LOCALID_CHEREN, moves(walk_down * 2, face_right))
+	waitmovement(0)
+	msgbox(format("Cheren: You...are completely hopeless.\pHere!\lI'll restore your Pokémon for you."))
+	playfanfare(SE_USE_ITEM)
+	msgbox(format("Cheren healed Bianca's Pokémon!"))
+	waitfanfare
+	applymovement(LOCALID_CHEREN, moves(face_left))
+	waitmovement(0)
+	msgbox(format("{PLAYER}'s Pokémon needs to be fixed up, too."))
+	playfanfare(SE_USE_ITEM)
+	msgbox(format("Cheren healed {PLAYER}'s Pokémon!"))
 	waitfanfare
 	releaseall
 }
@@ -204,7 +284,6 @@ script PlayersHouse_2F_EventScript_CheckWallClock {
 	end
 }
 
-
 script PlayersHouse_2F_EventScript_SetWallClock {
 	lockall
 	fadescreen(FADE_TO_BLACK)
@@ -215,71 +294,6 @@ script PlayersHouse_2F_EventScript_SetWallClock {
 	return
 }
 
-//Intro Script
-movement Cheren_Approaches {
-    walk_down * 1
-	face_left
-}
-
-text Cheren_Intro{
-	format("Cheren: {PLAYER}! I heard from Professor Juniper. We can have a Pokémon?")
-}
-
-text Cheren_Waiting{
-	format("...\l...\nWhat's keeping Bianca?")
-}
-
-text Cheren_Time{
-	format("What time is it anyways?")
-}
-
-text Bianca_Arrives{
-    format("Bianca: Am I a little late again? So-oooo-orry!")
-}
-
-movement Cheren_Meets_Bianca{
-    walk_right * 1
-	walk_up * 1
-}
-
-text Cheren_Berating{
-    format("Cheren: Bianca...\nI've known for ten years that you have no sense of time, but...seriously...\NToday's the day we can get a Pokémon from Professor Juniper!")
-}
-
-movement Bianca_Enters{
-    walk_down * 1
-	walk_left * 4
-	walk_down * 1
-}
-
-text Bianca_Apology{
-    format("Bianca: I know. Sorry, {PLAYER}. Sorry, Cheren.")
-}
-
-movement Bianca_Approaches_Starters{
-	walk_left * 1
-	walk_down * 2
-	face_player
-}
-
-text Bianca_TimeToPick{
-    format("Bianca: So, where are the Pokémon?\nThey were delivered to {PLAYER}'s house, so {PLAYER} gets first pick.")
-}
-
-text Cheren_Response{
-    format("Cheren: Naturally.")
-}
-
-movement Cheren_Approaches_Starters{
-	walk_down * 1
-	walk_left * 1
-	face_down
-}
-
-text Cheren_TimeToPick{
-    format("The Pokémon are waiting for us inside that gift box.\nOk, {PLAYER}, you go first and take a peek at the gift box.\nI want to meet the Pokémon right now!")
-}
-
-text Player_Opened_Box{
-    format("{PLAYER} opened the gift box!")
+text NuvemaTown_PlayersHouse_2F_Bianca_Lost{
+    format("The Pokémon on both sides did their best!")
 }

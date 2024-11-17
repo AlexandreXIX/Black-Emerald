@@ -14,13 +14,11 @@ NuvemaTown_MapScripts::
 	@ 4: Received Running Shoes
 
 	@ State descriptions for VAR_NUVEMA_INTRO_STATE
-	@ 1: Intro Sequence (Male)
-	@ 2: Intro Sequence (Female)
-	@ 3: Entered house
-	@ 4: Told to go set clock
-	@ 5: Entered 2F to set clock
-	@ 6: Set clock
-	@ 7: Told to go meet rival
+	@ 1: End of new game sequence
+	@ 1: Juniper Walked
+	@ 2: Meet the Rivals
+	@ 3: Picked Starter
+
 
 	@ State descriptions for VAR_NUVEMA_HOUSES_STATE_MAY
 	@                    and VAR_NUVEMA_HOUSES_STATE_HILBERT
@@ -46,7 +44,7 @@ NuvemaTown_EventScript_LeftLabAfterDexUpgrade::
 	return
 
 NuvemaTown_OnFrame:
-	map_script_2 VAR_NUVEMA_TOWN_STATE, 0, NuvemaTown_EventScript_JuniperIntro
+	map_script_2 VAR_NUVEMA_INTRO_STATE, 0, NuvemaTown_EventScript_JuniperIntro
 	.2byte 0
 
 NuvemaTown_OnWarp:
@@ -64,7 +62,7 @@ script NuvemaTown_EventScript_JuniperIntro {
 	applymovement(LOCALID_JUNIPER, NuvemaTown_EnterHouse)
 	applymovement(OBJ_EVENT_ID_CAMERA, NuvemaTown_EnterHouse)
 	waitmovement(0)
-	setvar(VAR_NUVEMA_TOWN_STATE, 1)
+	setvar(VAR_NUVEMA_INTRO_STATE, 1)
 	setflag(FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_TRUCK)
 	clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 	hideobjectat(LOCALID_JUNIPER, MAP_NUVEMA_TOWN)
