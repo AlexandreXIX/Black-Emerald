@@ -989,16 +989,15 @@ static void CB2_GiveStarter(void)
     ScriptGiveMon(starterMon, 5, ITEM_NONE);
     ResetTasks();
     SetMainCallback2(CB2_EndFirstBattle);
-    BattleTransition_Start(B_TRANSITION_BLUR);
     FadeScreen(FADE_TO_WHITE, 0);
-    PlayFanfareByFanfareNum(FANFARE_TOO_BAD);
+    PlaySE(SE_BALL_OPEN);
 }
 
 static void CB2_EndFirstBattle(void)
 {
     UpdatePaletteFade();
     RunTasks();
-    if (IsBattleTransitionDone() == TRUE)
+    if (IsSEPlaying() == FALSE)
     {
         Overworld_ClearSavedMusic();
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
