@@ -990,6 +990,8 @@ static void CB2_GiveStarter(void)
     ResetTasks();
     SetMainCallback2(CB2_EndFirstBattle);
     BattleTransition_Start(B_TRANSITION_BLUR);
+    FadeScreen(FADE_TO_WHITE, 0);
+    PlayFanfareByFanfareNum(FANFARE_TOO_BAD);
 }
 
 static void CB2_EndFirstBattle(void)

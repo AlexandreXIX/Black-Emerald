@@ -227,6 +227,12 @@ script NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter {
 	setobjectxy(LOCALID_CHEREN, 4, 4)
 	applymovement(LOCALID_CHEREN, moves(face_down))
 	waitmovement(0)
+	goto(NuvemaTown_PlayersHouse_2F_Rival_Battles)
+	releaseall
+}
+
+script NuvemaTown_PlayersHouse_2F_Rival_Battles {
+	lockall
 	fadescreen(FADE_FROM_BLACK)
 	applymovement(LOCALID_BIANCA, moves(walk_up, face_left))
 	waitmovement(0)

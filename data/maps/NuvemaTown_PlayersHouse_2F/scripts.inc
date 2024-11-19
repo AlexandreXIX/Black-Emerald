@@ -338,89 +338,8 @@ NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_1:
 # 229 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitmovement 0
 # 230 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	goto NuvemaTown_PlayersHouse_2F_Rival_Battles
 # 231 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Movement_1
-# 232 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement 0
-# 233 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_5
-# 234 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_6
-# 235 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_7
-# 236 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_8
-# 237 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_9
-# 238 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_10
-# 239 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	switch VAR_STARTER_MON
-# 241 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	case 0, NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_9
-# 242 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	case 1, NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_10
-# 243 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	case 2, NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_11
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_7:
-# 246 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_11
-# 247 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_12
-# 248 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_3
-# 249 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement 0
-# 250 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	delay 60
-# 251 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_5
-# 252 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement 0
-# 253 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	delay 60
-# 254 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_1
-# 255 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement 0
-# 256 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	delay 60
-# 257 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_13
-# 258 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_2
-# 259 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement 0
-# 260 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_14
-# 261 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_15
-# 262 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_CHEREN, NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Movement_2
-# 263 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement 0
-# 264 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_16
-# 265 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	playfanfare SE_USE_ITEM
-# 266 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_17
-# 267 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitfanfare
-# 268 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	applymovement LOCALID_CHEREN, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_2
-# 269 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitmovement 0
-# 270 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_18
-# 271 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	playfanfare SE_USE_ITEM
-# 272 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_19
-# 273 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	waitfanfare
-# 274 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	releaseall
 	return
 
@@ -439,50 +358,141 @@ NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_5:
 	msgbox NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_4
 	goto NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_1
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_9:
+
+NuvemaTown_PlayersHouse_2F_Rival_Battles::
+# 235 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	lockall
+# 236 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 237 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_Rival_Battles_Movement_0
+# 238 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitmovement 0
+# 239 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_0
+# 240 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_1
 # 241 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	trainerbattle_no_intro TRAINER_BIANCA_INTRO_SNIVY, NuvemaTown_PlayersHouse_2F_Bianca_Lost
-	goto NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_7
-
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_10:
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_2
 # 242 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-	trainerbattle_no_intro TRAINER_BIANCA_INTRO_TEPIG, NuvemaTown_PlayersHouse_2F_Bianca_Lost
-	goto NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_7
-
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_11:
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_3
 # 243 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_4
+# 244 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_5
+# 245 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	switch VAR_STARTER_MON
+# 247 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	case 0, NuvemaTown_PlayersHouse_2F_Rival_Battles_3
+# 248 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	case 1, NuvemaTown_PlayersHouse_2F_Rival_Battles_4
+# 249 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	case 2, NuvemaTown_PlayersHouse_2F_Rival_Battles_5
+NuvemaTown_PlayersHouse_2F_Rival_Battles_1:
+# 252 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_6
+# 253 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_7
+# 254 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_3
+# 255 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitmovement 0
+# 256 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	delay 60
+# 257 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_5
+# 258 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitmovement 0
+# 259 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	delay 60
+# 260 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_1
+# 261 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitmovement 0
+# 262 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	delay 60
+# 263 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_8
+# 264 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	applymovement LOCALID_BIANCA, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_2
+# 265 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitmovement 0
+# 266 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_9
+# 267 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_10
+# 268 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	applymovement LOCALID_CHEREN, NuvemaTown_PlayersHouse_2F_Rival_Battles_Movement_1
+# 269 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitmovement 0
+# 270 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_11
+# 271 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	playfanfare SE_USE_ITEM
+# 272 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_12
+# 273 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitfanfare
+# 274 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	applymovement LOCALID_CHEREN, NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene_Movement_2
+# 275 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitmovement 0
+# 276 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_13
+# 277 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	playfanfare SE_USE_ITEM
+# 278 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_14
+# 279 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	waitfanfare
+# 280 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	releaseall
+	return
+
+NuvemaTown_PlayersHouse_2F_Rival_Battles_3:
+# 247 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	trainerbattle_no_intro TRAINER_BIANCA_INTRO_SNIVY, NuvemaTown_PlayersHouse_2F_Bianca_Lost
+	goto NuvemaTown_PlayersHouse_2F_Rival_Battles_1
+
+NuvemaTown_PlayersHouse_2F_Rival_Battles_4:
+# 248 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+	trainerbattle_no_intro TRAINER_BIANCA_INTRO_TEPIG, NuvemaTown_PlayersHouse_2F_Bianca_Lost
+	goto NuvemaTown_PlayersHouse_2F_Rival_Battles_1
+
+NuvemaTown_PlayersHouse_2F_Rival_Battles_5:
+# 249 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	trainerbattle_no_intro TRAINER_BIANCA_INTRO_OSHAWOTT, NuvemaTown_PlayersHouse_2F_Bianca_Lost
-	goto NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_7
+	goto NuvemaTown_PlayersHouse_2F_Rival_Battles_1
 
 
 PlayersHouse_2F_EventScript_CheckWallClock::
-# 278 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 284 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	lockall
-# 279 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 285 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	incrementgamestat GAME_STAT_CHECKED_CLOCK
-# 280 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 286 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 281 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 287 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	special Special_ViewWallClock
-# 282 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 288 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitstate
-# 283 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 289 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	releaseall
 	end
 
 
 PlayersHouse_2F_EventScript_SetWallClock::
-# 288 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 294 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	lockall
-# 289 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 295 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	fadescreen FADE_TO_BLACK
-# 290 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 296 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	special StartWallClock
-# 291 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 297 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	waitstate
-# 292 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 298 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	setflag FLAG_SET_WALL_CLOCK
-# 293 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 299 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	releaseall
 	return
 
@@ -579,21 +589,21 @@ NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Movement_0:
 	face_right
 	step_end
 
-# 231 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Movement_1:
-# 231 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 237 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Movement_0:
+# 237 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_up
-# 231 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 237 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	face_left
 	step_end
 
-# 262 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Movement_2:
-# 262 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 268 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Movement_1:
+# 268 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_down
-# 262 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 268 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	walk_down
-# 262 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 268 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	face_right
 	step_end
 
@@ -697,88 +707,88 @@ NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_4:
 	.string "Oh, never mind. I wanted Snivy from the\n"
 	.string "start, anyway.$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_5:
-# 233 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_0:
+# 239 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Bianca: Everyone has chosen a Pokémon!\n"
 	.string "...So that's that!$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_6:
-# 234 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_1:
+# 240 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Hey, I know!\n"
 	.string "Let's have a Pokémon battle!$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_7:
-# 235 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_2:
+# 241 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Cheren: Honestly, Bianca...$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_8:
-# 236 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_3:
+# 242 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Even though they're still weak Pokémon,\n"
 	.string "you shouldn't have Pokémon battles\l"
 	.string "inside a house.$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_9:
-# 237 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_4:
+# 243 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Bianca: Don't be a worrywart!\n"
 	.string "These little ones are weak, like you\l"
 	.string "said.$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_10:
-# 238 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_5:
+# 244 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "We have to let them battle so they'll\n"
 	.string "get stronger. It's settled, {PLAYER}!\l"
 	.string "Get ready for a Pokémon battle!$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_11:
-# 246 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_6:
+# 252 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Bianca: Wow...\n"
 	.string "{PLAYER}, you're gonna be an awesome\l"
 	.string "Trainer someday, I can tell!\p"
 	.string "No doubt!$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_12:
-# 247 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_7:
+# 253 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Cheren: Uh...\n"
 	.string "...\p"
 	.string "Bianca, would you take a look around?$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_13:
-# 257 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_8:
+# 263 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Bianca: Wh-whoa!\l"
 	.string "What ahppened?!$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_14:
-# 260 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_9:
+# 266 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Wow! Pokémon are amaaaaazing!! So\n"
 	.string "little, but so strong!\p"
 	.string "I'm so glad that I get to have a\n"
 	.string "Pokémon!$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_15:
-# 261 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_10:
+# 267 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "...Oh.\n"
 	.string "Um, sorry about your room, {PLAYER}.$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_16:
-# 264 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_11:
+# 270 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Cheren: You...are completely hopeless.\p"
 	.string "Here!\l"
 	.string "I'll restore your Pokémon for you.$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_17:
-# 266 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_12:
+# 272 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Cheren healed Bianca's Pokémon!$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_18:
-# 270 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_13:
+# 276 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "{PLAYER}'s Pokémon needs to be fixed\n"
 	.string "up, too.$"
 
-NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter_Text_19:
-# 272 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+NuvemaTown_PlayersHouse_2F_Rival_Battles_Text_14:
+# 278 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "Cheren healed {PLAYER}'s Pokémon!$"
 
 NuvemaTown_PlayersHouse_2F_Bianca_Lost::
-# 297 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
+# 303 "data/maps/NuvemaTown_PlayersHouse_2F/scripts.pory"
 	.string "The Pokémon on both sides did their\n"
 	.string "best!$"
