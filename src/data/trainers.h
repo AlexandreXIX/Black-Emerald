@@ -23749,7 +23749,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9514
-            .species = SPECIES_TREECKO,
+            .species = SPECIES_SNIVY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9516
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23892,7 +23892,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9570
-            .species = SPECIES_TORCHIC,
+            .species = SPECIES_TEPIG,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9572
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -24035,7 +24035,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9626
-            .species = SPECIES_MUDKIP,
+            .species = SPECIES_OSHAWOTT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9628
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
