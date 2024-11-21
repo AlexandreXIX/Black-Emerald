@@ -96,6 +96,15 @@ PlayersHouse_2F_Text_ItsAGameCube:
 // FLAG_SYS_TV_LATIAS_LATIOS
 // FLAG_LATIOS_OR_LATIAS_ROAMING
 // FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_MOM
+// FLAG_HIDE_ROUTE_1_BIRCH_ZIGZAGOON_BATTLE
+// FLAG_HIDE_NUVEMA_TOWN_BIRCHS_LAB_BIRCH
+// FLAG_HIDE_STARTER_INTRO
+// VAR_BIRCH_LAB_STATE
+// VAR_ROUTE1_STATE
+// Route1_EventScript_HideMayInBedroom
+// FLAG_HIDE_NUVEMA_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
+// FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_RIVAL_BEDROOM
+// ProfBirch_EventScript_UpdateLocation
 
 // removed running shoes manual as metatile
 
@@ -175,9 +184,10 @@ script NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene {
 script NuvemaTown_PlayersHouse_2F_EventScript_StarterBag {
 	lockall
 	msgbox(format("{PLAYER} opened the gift box!"))
-	setflag(FLAG_SYS_POKEMON_GET)
 	fadescreen(FADE_TO_BLACK)
 	special(ChooseStarter)
+	setflag(FLAG_SYS_POKEMON_GET)
+	setflag(FLAG_HIDE_STARTER_INTRO)
 	setflag(FLAG_SYS_POKEDEX_GET) //TMP
 	special(SetUnlockedPokedexFlags) //TMP
 	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH) //TMP
@@ -208,14 +218,10 @@ script NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter {
 	waitmovement(0)
 	msgbox(format("Cheren: Hey, how come you get to pick out my Pokémon?"))
 	switch(var(VAR_STARTER_MON)) {
-		case 0:
-			msgbox(format("Oh, never mind. I wanted Tepig from the start, anyway."))
-		case 1:
-			msgbox(format("Oh, never mind. I wanted Oshawott from the start, anyway."))
-		case 2:
-			msgbox(format("Oh, never mind. I wanted Snivy from the start, anyway."))
-		default:
-			msgbox("Error getting starter!")
+		case 0: msgbox(format("Oh, never mind. I wanted Tepig from the start, anyway."))
+		case 1: msgbox(format("Oh, never mind. I wanted Oshawott from the start, anyway."))
+		case 2: msgbox(format("Oh, never mind. I wanted Snivy from the start, anyway."))
+		default: msgbox("Error getting starter!")
 	}
 	fadescreen(FADE_TO_BLACK)
 	setobjectxy(OBJ_EVENT_ID_PLAYER, 3, 6)
@@ -234,6 +240,7 @@ script NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter {
 
 script NuvemaTown_PlayersHouse_2F_Rival_Battles {
 	lockall
+	setrespawn(HEAL_LOCATION_NUVEMA_TOWN_PLAYERS_HOUSE_2F)
 	fadescreen(FADE_FROM_BLACK)
 	applymovement(LOCALID_BIANCA, moves(walk_up, face_left))
 	waitmovement(0)
@@ -245,9 +252,9 @@ script NuvemaTown_PlayersHouse_2F_Rival_Battles {
 	msgbox(format("We have to let them battle so they'll get stronger. It's settled, {PLAYER}!\NGet ready for a Pokémon battle!"))
 	switch(var(VAR_STARTER_MON)) {
 		// Dont know about midbattle text
-		case 0: trainerbattle_no_intro(TRAINER_BIANCA_INTRO_SNIVY, NuvemaTown_PlayersHouse_2F_Bianca_Lost)
-		case 1: trainerbattle_no_intro(TRAINER_BIANCA_INTRO_TEPIG, NuvemaTown_PlayersHouse_2F_Bianca_Lost)
-		case 2: trainerbattle_no_intro(TRAINER_BIANCA_INTRO_OSHAWOTT, NuvemaTown_PlayersHouse_2F_Bianca_Lost)
+		case 0: trainerbattle_no_intro_no_whiteout(TRAINER_BIANCA_INTRO_SNIVY, NuvemaTown_PlayersHouse_2F_Bianca_Lost)
+		case 1: trainerbattle_no_intro_no_whiteout(TRAINER_BIANCA_INTRO_TEPIG, NuvemaTown_PlayersHouse_2F_Bianca_Lost)
+		case 2: trainerbattle_no_intro_no_whiteout(TRAINER_BIANCA_INTRO_OSHAWOTT, NuvemaTown_PlayersHouse_2F_Bianca_Lost)
 	}
 	// Room gets destroyed
 	msgbox(format("Bianca: Wow...\N{PLAYER}, you're gonna be an awesome Trainer someday, I can tell!\pNo doubt!"))
@@ -261,7 +268,7 @@ script NuvemaTown_PlayersHouse_2F_Rival_Battles {
 	applymovement(LOCALID_BIANCA, moves(face_down))
 	waitmovement(0)
 	delay(60)
-		msgbox(format("Bianca: Wh-whoa!\lWhat ahppened?!"))
+	msgbox(format("Bianca: Wh-whoa!\lWhat ahppened?!"))
 	applymovement(LOCALID_BIANCA, moves(face_left))
 	waitmovement(0)
 	msgbox(format("Wow! Pokémon are amaaaaazing!! So little, but so strong!\pI'm so glad that I get to have a Pokémon!"))
@@ -269,16 +276,43 @@ script NuvemaTown_PlayersHouse_2F_Rival_Battles {
 	applymovement(LOCALID_CHEREN, moves(walk_down * 2, face_right))
 	waitmovement(0)
 	msgbox(format("Cheren: You...are completely hopeless.\pHere!\lI'll restore your Pokémon for you."))
-	playfanfare(SE_USE_ITEM)
 	msgbox(format("Cheren healed Bianca's Pokémon!"))
-	waitfanfare
+	call(Common_EventScript_AllyHeal)
 	applymovement(LOCALID_CHEREN, moves(face_left))
 	waitmovement(0)
 	msgbox(format("{PLAYER}'s Pokémon needs to be fixed up, too."))
-	playfanfare(SE_USE_ITEM)
 	msgbox(format("Cheren healed {PLAYER}'s Pokémon!"))
-	waitfanfare
-	releaseall
+	call(Common_EventScript_AllyHeal)
+	applymovement(LOCALID_BIANCA, moves(emote_exclamation_mark))
+	waitmovement(0)
+	applymovement(LOCALID_BIANCA, moves(walk_up*2, walk_left))
+	waitmovement(0)
+	applymovement(LOCALID_BIANCA, moves(face_down))
+	applymovement(LOCALID_CHEREN, moves(face_up))
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
+	waitmovement(0)
+	msgbox(format("Bianca: Hey Cheren!\lHow about you battle, too?\p
+	With all you know, I'm sure you can battle without turning the room into a disaster area like I did!"))
+	msgbox(format("Cheren: I believe you're right!\p
+	It'll be no problem for me to keep the room from getting any messier.\p
+	Besides, it's not fair if you two are the only ones who get to have fun battling!"))
+	applymovement(LOCALID_CHEREN, moves(walk_right))
+	waitmovement(0)
+	applymovement(LOCALID_CHEREN, moves(face_left))
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_right))
+	waitmovement(0)
+	msgbox(format("It's decided. You'll be my opponent... in our first Pokémon battle!\p"))
+	switch(var(VAR_STARTER_MON)) {
+		case 0:
+			msgbox(format("Let's see what you can do, Tepig!"))
+			trainerbattle_no_intro_no_whiteout(TRAINER_CHEREN_INTRO_SNIVY, NuvemaTown_PlayersHouse_2F_Cheren_Lost)
+		case 1:
+			msgbox(format("Let's see what you can do, Oshawott!"))
+			trainerbattle_no_intro_no_whiteout(TRAINER_CHEREN_INTRO_TEPIG, NuvemaTown_PlayersHouse_2F_Cheren_Lost)
+		case 2:
+			msgbox(format("Let's see what you can do, Snivy!"))
+			trainerbattle_no_intro_no_whiteout(TRAINER_CHEREN_INTRO_OSHAWOTT, NuvemaTown_PlayersHouse_2F_Cheren_Lost)
+	}
 }
 
 script PlayersHouse_2F_EventScript_CheckWallClock {
@@ -303,4 +337,8 @@ script PlayersHouse_2F_EventScript_SetWallClock {
 
 text NuvemaTown_PlayersHouse_2F_Bianca_Lost{
     format("The Pokémon on both sides did their best!")
+}
+
+text NuvemaTown_PlayersHouse_2F_Cheren_Lost{
+    format("Ah! So that's a Pokémon battle!")
 }

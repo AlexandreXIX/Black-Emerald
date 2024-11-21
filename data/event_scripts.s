@@ -731,6 +731,14 @@ Common_EventScript_OutOfCenterPartyHeal::
 	fadescreen FADE_FROM_BLACK
 	return
 
+@ Healed by person, just item sound and heal, no need for flash or full song
+Common_EventScript_AllyHeal::
+	playfanfare SE_USE_ITEM
+	waitfanfare
+	special HealPlayerParty
+	callnative UpdateFollowingPokemon
+	return
+
 EventScript_RegionMap::
 	lockall
 	msgbox Common_Text_LookCloserAtMap, MSGBOX_DEFAULT
