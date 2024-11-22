@@ -990,15 +990,15 @@ static void CB2_GiveStarter(void)
     ScriptGiveMon(starterMon, 5, ITEM_NONE);
     ResetTasks();
     SetMainCallback2(CB2_EndFirstBattle);
-    FadeScreen(FADE_TO_WHITE, 0);
     PlaySE(SE_BALL_OPEN);
+    BeginNormalPaletteFade(0xFFFFFFFF, -1, 0, 0x10, 0);
 }
 
 static void CB2_EndFirstBattle(void)
 {
     UpdatePaletteFade();
     RunTasks();
-    if (IsSEPlaying() == FALSE)
+    if (!gPaletteFade.active)
     {
         Overworld_ClearSavedMusic();
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);

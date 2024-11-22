@@ -715,7 +715,12 @@
 
 #define STRINGID_EXPANSION_END                        713
 #define STRINGID_PLAYERWHITEOUT3                      714
-#define BATTLESTRINGS_COUNT                           715
+
+// here goes all the slide in trainer messages
+#define STRINGID_BIANCAFIRSTBATTLE                    715
+#define STRINGID_CHERENFIRSTBATTLE                    716
+
+#define BATTLESTRINGS_COUNT                           717
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

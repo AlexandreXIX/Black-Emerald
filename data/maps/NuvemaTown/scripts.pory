@@ -18,6 +18,7 @@ NuvemaTown_MapScripts::
 	@ 1: Juniper Walked
 	@ 2: Meet the Rivals
 	@ 3: Picked Starter
+	@ 4: Finished battles
 
 
 	@ State descriptions for VAR_NUVEMA_HOUSES_STATE_MAY

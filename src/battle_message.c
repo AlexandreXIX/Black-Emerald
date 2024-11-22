@@ -851,6 +851,10 @@ static const u8 sText_SupersweetAromaWafts[] = _("A supersweet aroma is wafting 
 static const u8 sText_TidyingUpComplete[] = _("Tidying up complete!");
 static const u8 sText_FickleBeamDoubled[] = _("{B_ATK_NAME_WITH_PREFIX} is going all\nout for this attack!");
 
+// New Slide in messages
+static const u8 sText_BiancaFirstBattle[] = _("Eek! Ouch! I won't let you get away with that!");
+static const u8 sText_CherenFirstBattle[] = _("I've finally become a trainer...\nEverything starts from here!");
+
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
     [STRINGID_FICKLEBEAMDOUBLED - BATTLESTRINGS_TABLE_START] = sText_FickleBeamDoubled,
@@ -1555,6 +1559,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ITEMWASUSEDUP - BATTLESTRINGS_TABLE_START] = sText_ItemWasUsedUp,
     [STRINGID_ATTACKERLOSTITSTYPE - BATTLESTRINGS_TABLE_START] = sText_AttackerLostItsType,
     [STRINGID_CLOAKEDINAHARSHLIGHT - BATTLESTRINGS_TABLE_START] = sText_PkmnIsCloakedInAHarshLight,
+    // Slide in messages during battles
+    [STRINGID_BIANCAFIRSTBATTLE - BATTLESTRINGS_TABLE_START] = sText_BiancaFirstBattle,
+    [STRINGID_CHERENFIRSTBATTLE - BATTLESTRINGS_TABLE_START] = sText_CherenFirstBattle,
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -4102,6 +4109,36 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgDynamax = sText_TargetWokeUp,
     },
     */
+    {
+        .trainerId = TRAINER_BIANCA_INTRO_SNIVY,
+        .isFrontierTrainer = FALSE,
+        .msgLastHalfHp = sText_BiancaFirstBattle,
+    },
+    {
+        .trainerId = TRAINER_BIANCA_INTRO_TEPIG,
+        .isFrontierTrainer = FALSE,
+        .msgLastHalfHp = sText_BiancaFirstBattle,
+    },
+    {
+        .trainerId = TRAINER_BIANCA_INTRO_OSHAWOTT,
+        .isFrontierTrainer = FALSE,
+        .msgLastHalfHp = sText_BiancaFirstBattle,
+    },
+    {
+        .trainerId = TRAINER_CHEREN_INTRO_SNIVY,
+        .isFrontierTrainer = FALSE,
+        .msgLastHalfHp = sText_CherenFirstBattle,
+    },
+    {
+        .trainerId = TRAINER_CHEREN_INTRO_TEPIG,
+        .isFrontierTrainer = FALSE,
+        .msgLastHalfHp = sText_CherenFirstBattle,
+    },
+    {
+        .trainerId = TRAINER_CHEREN_INTRO_OSHAWOTT,
+        .isFrontierTrainer = FALSE,
+        .msgLastHalfHp = sText_CherenFirstBattle,
+    },
 };
 
 static u32 GetEnemyMonCount(u32 firstId, u32 lastId, bool32 onlyAlive)

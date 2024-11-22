@@ -181,6 +181,18 @@ script NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene {
 	releaseall
 }
 
+script PlayersHouse_2F_EventScript_DontLeave {
+	lockall
+	applymovement(LOCALID_CHEREN, moves(face_up))
+	waitmovement(0)
+	msgbox(format("Cheren: Aren't you going to check out the gift box? Where are you going?"))
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(walk_down))
+	applymovement(LOCALID_CHEREN, moves(face_down))
+	waitmovement(0)
+	releaseall
+	end
+}
+
 script NuvemaTown_PlayersHouse_2F_EventScript_StarterBag {
 	lockall
 	msgbox(format("{PLAYER} opened the gift box!"))
@@ -227,7 +239,7 @@ script NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter {
 	setobjectxy(OBJ_EVENT_ID_PLAYER, 3, 6)
 	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_right))
 	special(SpawnCameraObject)
-	setobjectxy(OBJ_EVENT_ID_CAMERA, 4, 5)
+	setobjectxy(OBJ_EVENT_ID_CAMERA, 3, 6)
 	setobjectxy(LOCALID_BIANCA, 5, 7)
 	applymovement(LOCALID_BIANCA, moves(face_left))
 	waitmovement(0)
@@ -301,7 +313,7 @@ script NuvemaTown_PlayersHouse_2F_Rival_Battles {
 	applymovement(LOCALID_CHEREN, moves(face_left))
 	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_right))
 	waitmovement(0)
-	msgbox(format("It's decided. You'll be my opponent... in our first Pokémon battle!\p"))
+	msgbox(format("It's decided. You'll be my opponent... in our first Pokémon battle!"))
 	switch(var(VAR_STARTER_MON)) {
 		case 0:
 			msgbox(format("Let's see what you can do, Tepig!"))
@@ -313,6 +325,18 @@ script NuvemaTown_PlayersHouse_2F_Rival_Battles {
 			msgbox(format("Let's see what you can do, Snivy!"))
 			trainerbattle_no_intro_no_whiteout(TRAINER_CHEREN_INTRO_OSHAWOTT, NuvemaTown_PlayersHouse_2F_Cheren_Lost)
 	}
+	msgbox(format("Cheren: I made a strange blunder in my first battle, but this feeling I have...\p
+	...I'm finally a Trainer.\p
+	But first, we'd better go apologize to your mother about this messed-up room."))
+	applymovement(LOCALID_CHEREN, moves(walk_right * 3, walk_up * 5, set_invisible))
+	msgbox(format("Bianca: Oh!\nI'd better come, too!"))
+	applymovement(LOCALID_BIANCA, moves(walk_right * 4, walk_up * 3))
+	waitmovement(LOCALID_BIANCA)
+	removeobject(LOCALID_CHEREN)
+	removeobject(LOCALID_BIANCA)
+	setvar(VAR_NUVEMA_INTRO_STATE, 4)
+	releaseall
+	end
 }
 
 script PlayersHouse_2F_EventScript_CheckWallClock {
