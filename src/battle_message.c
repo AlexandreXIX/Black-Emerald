@@ -4112,32 +4112,32 @@ static const struct TrainerSlide sTrainerSlides[] =
     {
         .trainerId = TRAINER_BIANCA_INTRO_SNIVY,
         .isFrontierTrainer = FALSE,
-        .msgLastHalfHp = sText_BiancaFirstBattle,
+        .msgFirstSTABMove = sText_BiancaFirstBattle,
     },
     {
         .trainerId = TRAINER_BIANCA_INTRO_TEPIG,
         .isFrontierTrainer = FALSE,
-        .msgLastHalfHp = sText_BiancaFirstBattle,
+        .msgFirstSTABMove = sText_BiancaFirstBattle,
     },
     {
         .trainerId = TRAINER_BIANCA_INTRO_OSHAWOTT,
         .isFrontierTrainer = FALSE,
-        .msgLastHalfHp = sText_BiancaFirstBattle,
+        .msgFirstSTABMove = sText_BiancaFirstBattle,
     },
     {
         .trainerId = TRAINER_CHEREN_INTRO_SNIVY,
         .isFrontierTrainer = FALSE,
-        .msgLastHalfHp = sText_CherenFirstBattle,
+        .msgFirstSTABMove = sText_CherenFirstBattle,
     },
     {
         .trainerId = TRAINER_CHEREN_INTRO_TEPIG,
         .isFrontierTrainer = FALSE,
-        .msgLastHalfHp = sText_CherenFirstBattle,
+        .msgFirstSTABMove = sText_CherenFirstBattle,
     },
     {
         .trainerId = TRAINER_CHEREN_INTRO_OSHAWOTT,
         .isFrontierTrainer = FALSE,
-        .msgLastHalfHp = sText_CherenFirstBattle,
+        .msgFirstSTABMove = sText_CherenFirstBattle,
     },
 };
 
