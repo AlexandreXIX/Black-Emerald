@@ -1,23 +1,71 @@
-raw `
-.set LOCALID_MOM, 1
-.set LOCALID_RIVAL_MOM, 4
-.set LOCALID_RIVAL, 7
+const LOCALID_MOM = 1
+const LOCALID_CHEREN = 2
+const LOCALID_BIANCA = 3
 
-NuvemaTown_PlayersHouse_1F_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, NuvemaTown_PlayersHouse_1F_OnLoad
-	map_script MAP_SCRIPT_ON_TRANSITION, NuvemaTown_PlayersHouse_1F_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, NuvemaTown_PlayersHouse_1F_OnFrame
-	.byte 0
+mapscripts NuvemaTown_PlayersHouse_1F_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION : NuvemaTown_PlayersHouse_1F_OnTransition
+	MAP_SCRIPT_ON_FRAME_TABLE [VAR_NUVEMA_INTRO_STATE, 4: NuvemaTown_PlayersHouse_1F_Intro]
+}
 
-NuvemaTown_PlayersHouse_1F_OnLoad:
+script NuvemaTown_PlayersHouse_1F_OnTransition {
+	// If doing intro sequence
+	if(var(VAR_NUVEMA_INTRO_STATE) == 4) {
+		setobjectxy(LOCALID_MOM, 6, 6)
+		applymovement(LOCALID_MOM, moves(face_right))
+		}
+}
+
+script NuvemaTown_PlayersHouse_1F_Intro {
+	// Cheren and Bianca apologize
+	special(SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 3))
+	waitmovement(0)
+	msgbox(format("Cheren: I'm very sorry about all the trouble, ma'am."))
+	applymovement(LOCALID_BIANCA, moves(walk_left))
+	waitmovement(0)
+	msgbox(format("Bianca: Well, um...\nWe can clean up..."))
+	msgbox(format("Mom: Cleaning up?\nNo worries. I'll take care of it later.\p
+	Shouldn't you be on your way to meet Professor Juniper?"))
+	msgbox(format("Cheren: Yes, thank you!\nPlease excuse us.\p
+	Come on.\nLet's go thank Professor Juniper."))
+	applymovement(LOCALID_CHEREN, moves(walk_right, face_up))
+	waitmovement(0)
+	msgbox(format("Cheren: I'll be waiting in front of the Pokémon Research Lab."))
+	applymovement(LOCALID_BIANCA, moves(emote_exclamation_mark))
+	waitmovement(0)
+	applymovement(LOCALID_BIANCA, moves(face_up))
+	waitmovement(0)
+	msgbox(format("Bianca: Oh! Wait!\nI've gotta go home first."))
+	applymovement(LOCALID_BIANCA, moves(face_left))
+	waitmovement(0)
+	msgbox(format("Thanks for having us over!"))
+	applymovement(LOCALID_BIANCA, moves(walk_down * 2))
+	applymovement(LOCALID_CHEREN, moves(walk_down * 3))
+	waitmovement(LOCALID_CHEREN)
+	removeobject(LOCALID_CHEREN)
+	removeobject(LOCALID_BIANCA)
+	playse(SE_EXIT)
+	// Mom finalizes scene
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 3))
+	waitmovement(0)
+	playfanfare(MUS_RG_OBTAIN_KEY_ITEM)
+	waitfanfare
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	checkplayergender
+	switch(var(VAR_RESULT)) {
+		case MALE: giveitem(ITEM_XTRANSCEIVER_BLUE)
+		case FEMALE: giveitem(ITEM_XTRANSCEIVER_RED)
+	}
+	waitfanfare
+	setflag(FLAG_SYS_XTRANS_GET)
+	setflag(FLAG_RECEIVED_XTRANS)
+	// Final flags and vars
+	setvar(VAR_NUVEMA_INTRO_STATE, 5)
+	special(RemoveCameraObject)
+	releaseall
 	end
-
-NuvemaTown_PlayersHouse_1F_OnTransition:
-	end
-
-NuvemaTown_PlayersHouse_1F_OnFrame:
-	.2byte 0
-`
+}
 
 script NuvemaTown_PlayersHouse_1F_EventScript_Mom {
 	msgbox(Players_Mom, MSGBOX_NPC)

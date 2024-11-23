@@ -135,6 +135,7 @@ PlayersHouse_2F_Text_ItsAGameCube:
 
 script NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene {
 	lockall
+	setflag(FLAG_TEMP_HIDE_FOLLOWER)
 	applymovement(LOCALID_CHEREN, moves(walk_down, face_left))
 	waitmovement(0)
     msgbox(format("Cheren: {PLAYER}!\pI heard from Professor Juniper. We can have a Pokémon?"))
@@ -147,8 +148,8 @@ script NuvemaTown_PlayersHouse_2F_EventScript_IntroCutscene {
 	waitmovement(0)
 	msgbox(format("What time is it anyways?"))
 	call(PlayersHouse_2F_EventScript_SetWallClock)
-    addobject(LOCALID_BIANCA)
-	applymovement(LOCALID_BIANCA, moves(walk_down))
+	applymovement(LOCALID_BIANCA, moves(walk_down * 2))
+	playse(SE_EXIT)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_up))
 	waitmovement(0)
@@ -195,29 +196,31 @@ script PlayersHouse_2F_EventScript_DontLeave {
 
 script NuvemaTown_PlayersHouse_2F_EventScript_StarterBag {
 	lockall
-	msgbox(format("{PLAYER} opened the gift box!"))
-	fadescreen(FADE_TO_BLACK)
-	special(ChooseStarter)
-	setflag(FLAG_SYS_POKEMON_GET)
-	setflag(FLAG_HIDE_STARTER_INTRO)
-	setflag(FLAG_SYS_POKEDEX_GET) //TMP
-	special(SetUnlockedPokedexFlags) //TMP
-	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH) //TMP
-	waitstate
-	playfanfare(MUS_OBTAIN_ITEM)
-	switch (var(VAR_STARTER_MON)) {
-		case 0:
-			msgbox(format("{PLAYER} chose \n Snivy!"))
-		case 1:
-			msgbox(format("{PLAYER} chose \n Tepig!"))
-		case 2:
-			msgbox(format("{PLAYER} chose \n Oshawott!"))
-		default:
-			msgbox("Error getting starter!")
+	if (!flag(FLAG_SYS_POKEMON_GET)) {
+		msgbox(format("{PLAYER} opened the gift box!"))
+		fadescreen(FADE_TO_BLACK)
+		special(ChooseStarter)
+		setflag(FLAG_SYS_POKEMON_GET)
+		setflag(FLAG_SYS_POKEDEX_GET) //TMP
+		special(SetUnlockedPokedexFlags) //TMP
+		setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH) //TMP
+		waitstate
+		playfanfare(MUS_OBTAIN_ITEM)
+		switch (var(VAR_STARTER_MON)) {
+			case 0:
+				msgbox(format("{PLAYER} chose \n Snivy!"))
+			case 1:
+				msgbox(format("{PLAYER} chose \n Tepig!"))
+			case 2:
+				msgbox(format("{PLAYER} chose \n Oshawott!"))
+			default:
+				msgbox("Error getting starter!")
+		}
+		waitfanfare
+		setvar(VAR_NUVEMA_INTRO_STATE, 3)
+		goto(NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter)
 	}
-	waitfanfare
-	setvar(VAR_NUVEMA_INTRO_STATE, 3)
-	goto(NuvemaTown_PlayersHouse_2F_Rivals_Pick_Starter)
+	else {msgbox(format("An empty box..."), MSGBOX_SIGN)}
 	releaseall
 }
 
@@ -296,7 +299,7 @@ script NuvemaTown_PlayersHouse_2F_Rival_Battles {
 	msgbox(format("Cheren healed {PLAYER}'s Pokémon!"))
 	call(Common_EventScript_AllyHeal)
 	applymovement(LOCALID_BIANCA, moves(emote_exclamation_mark))
-	waitmovement(0)
+	delay(60)
 	applymovement(LOCALID_BIANCA, moves(walk_up*2, walk_left))
 	waitmovement(0)
 	applymovement(LOCALID_BIANCA, moves(face_down))
@@ -328,13 +331,12 @@ script NuvemaTown_PlayersHouse_2F_Rival_Battles {
 	msgbox(format("Cheren: I made a strange blunder in my first battle, but this feeling I have...\p
 	...I'm finally a Trainer.\p
 	But first, we'd better go apologize to your mother about this messed-up room."))
-	applymovement(LOCALID_CHEREN, moves(walk_right * 3, walk_up * 5, set_invisible))
+	applymovement(LOCALID_CHEREN, moves(walk_right * 3, walk_up * 5, set_invisible, walk_up))
 	msgbox(format("Bianca: Oh!\nI'd better come, too!"))
-	applymovement(LOCALID_BIANCA, moves(walk_right * 4, walk_up * 3))
+	applymovement(LOCALID_BIANCA, moves(walk_right * 4, walk_up * 3, set_invisible, walk_up))
 	waitmovement(LOCALID_BIANCA)
-	removeobject(LOCALID_CHEREN)
-	removeobject(LOCALID_BIANCA)
 	setvar(VAR_NUVEMA_INTRO_STATE, 4)
+	setflag(FLAG_HIDE_STARTER_INTRO)
 	releaseall
 	end
 }

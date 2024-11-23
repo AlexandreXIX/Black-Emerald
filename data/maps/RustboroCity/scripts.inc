@@ -357,7 +357,7 @@ RustboroCity_EventScript_Boy2::
 # 179 "data/maps/RustboroCity/scripts.pory"
 	faceplayer
 # 180 "data/maps/RustboroCity/scripts.pory"
-	goto_if_set FLAG_RECEIVED_POKENAV, RustboroCity_EventScript_Boy2BrineyLeftTunnel
+	goto_if_set FLAG_RECEIVED_XTRANS, RustboroCity_EventScript_Boy2BrineyLeftTunnel
 # 181 "data/maps/RustboroCity/scripts.pory"
 	msgbox RustboroCity_Text_MrBrineyWalksInTheTunnel, MSGBOX_DEFAULT
 # 182 "data/maps/RustboroCity/scripts.pory"

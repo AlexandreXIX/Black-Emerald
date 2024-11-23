@@ -14077,4 +14077,38 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    [ITEM_XTRANSCEIVER_BLUE] =
+    {
+        .name = _("Xtransceiver"),
+        .pluralName = _("Xtransceiver"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A high-tech watch\n"
+            "which allows 4-way\n"
+            "video calls."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Xtransceiver_Blue,
+        .iconPalette = gItemIconPalette_Xtransceiver_Blue,
+    },
+
+    [ITEM_XTRANSCEIVER_RED] =
+    {
+        .name = _("Xtransceiver"),
+        .pluralName = _("Xtransceiver"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A high-tech watch\n"
+            "which allows 4-way\n"
+            "video calls."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Xtransceiver_Red,
+        .iconPalette = gItemIconPalette_Xtransceiver_Red,
+    },
 };

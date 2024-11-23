@@ -81,7 +81,7 @@ RustboroCity_DevonCorp_2F_EventScript_PokenavScientist::
 # 41 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	call_if_eq VAR_FOSSIL_RESURRECTION_STATE, 1, RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
 # 42 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	goto_if_set FLAG_RECEIVED_POKENAV, RustboroCity_DevonCorp_2F_EventScript_HasPokenav
+	goto_if_set FLAG_RECEIVED_XTRANS, RustboroCity_DevonCorp_2F_EventScript_HasPokenav
 # 43 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	msgbox RustboroCity_DevonCorp_2F_Text_IMadePokenav, MSGBOX_DEFAULT
 # 44 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"

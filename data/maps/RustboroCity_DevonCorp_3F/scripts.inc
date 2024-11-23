@@ -113,9 +113,9 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 # 57 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 	waitfanfare
 # 58 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_RECEIVED_XTRANS
 # 59 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
-	setflag FLAG_RECEIVED_POKENAV
+	setflag FLAG_RECEIVED_XTRANS
 # 60 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"
 	setflag FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT
 # 61 "data/maps/RustboroCity_DevonCorp_3F/scripts.pory"

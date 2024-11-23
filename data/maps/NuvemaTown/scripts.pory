@@ -30,10 +30,9 @@ NuvemaTown_MapScripts::
 	@ 5: Exited house after above event
 
 	@ State descriptions for VAR_NUVEMA_RIVAL_STATE
-	@ 1: Never occurs
-	@ 2: Entered Rival's bedroom
-	@ 3: Met Rival
-	@ 4: Received Pokedex
+	@ 1: Finished initial rival battle
+	@ 2: Apologized to mom
+	@ 3: Bianca talked to her dad
 
 
 NuvemaTown_OnTransition:

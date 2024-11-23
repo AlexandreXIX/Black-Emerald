@@ -63,166 +63,164 @@ NuvemaTown_MapScripts::
 # 32 "data/maps/NuvemaTown/scripts.pory"
 	@ State descriptions for VAR_NUVEMA_RIVAL_STATE
 # 33 "data/maps/NuvemaTown/scripts.pory"
-	@ 1: Never occurs
+	@ 1: Finished initial rival battle
 # 34 "data/maps/NuvemaTown/scripts.pory"
-	@ 2: Entered Rival's bedroom
+	@ 2: Apologized to mom
 # 35 "data/maps/NuvemaTown/scripts.pory"
-	@ 3: Met Rival
+	@ 3: Bianca talked to her dad
 # 36 "data/maps/NuvemaTown/scripts.pory"
-	@ 4: Received Pokedex
+
 # 37 "data/maps/NuvemaTown/scripts.pory"
 
 # 38 "data/maps/NuvemaTown/scripts.pory"
-
-# 39 "data/maps/NuvemaTown/scripts.pory"
 NuvemaTown_OnTransition:
-# 40 "data/maps/NuvemaTown/scripts.pory"
+# 39 "data/maps/NuvemaTown/scripts.pory"
 	setflag FLAG_VISITED_NUVEMA_TOWN
-# 41 "data/maps/NuvemaTown/scripts.pory"
+# 40 "data/maps/NuvemaTown/scripts.pory"
 	end
+# 41 "data/maps/NuvemaTown/scripts.pory"
+
 # 42 "data/maps/NuvemaTown/scripts.pory"
-
-# 43 "data/maps/NuvemaTown/scripts.pory"
 NuvemaTown_EventScript_LeftLabAfterDexUpgrade::
-# 44 "data/maps/NuvemaTown/scripts.pory"
+# 43 "data/maps/NuvemaTown/scripts.pory"
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3
-# 45 "data/maps/NuvemaTown/scripts.pory"
+# 44 "data/maps/NuvemaTown/scripts.pory"
 	return
+# 45 "data/maps/NuvemaTown/scripts.pory"
+
 # 46 "data/maps/NuvemaTown/scripts.pory"
-
-# 47 "data/maps/NuvemaTown/scripts.pory"
 NuvemaTown_OnFrame:
-# 48 "data/maps/NuvemaTown/scripts.pory"
+# 47 "data/maps/NuvemaTown/scripts.pory"
 	map_script_2 VAR_NUVEMA_INTRO_STATE, 0, NuvemaTown_EventScript_JuniperIntro
-# 49 "data/maps/NuvemaTown/scripts.pory"
+# 48 "data/maps/NuvemaTown/scripts.pory"
 	.2byte 0
-# 50 "data/maps/NuvemaTown/scripts.pory"
+# 49 "data/maps/NuvemaTown/scripts.pory"
 
-# 51 "data/maps/NuvemaTown/scripts.pory"
+# 50 "data/maps/NuvemaTown/scripts.pory"
 NuvemaTown_OnWarp:
-# 52 "data/maps/NuvemaTown/scripts.pory"
+# 51 "data/maps/NuvemaTown/scripts.pory"
 	.2byte 0
 
 NuvemaTown_EventScript_JuniperIntro::
-# 55 "data/maps/NuvemaTown/scripts.pory"
+# 54 "data/maps/NuvemaTown/scripts.pory"
 	lockall
-# 56 "data/maps/NuvemaTown/scripts.pory"
+# 55 "data/maps/NuvemaTown/scripts.pory"
 	special SpawnCameraObject
-# 57 "data/maps/NuvemaTown/scripts.pory"
+# 56 "data/maps/NuvemaTown/scripts.pory"
 	playbgm MUS_FOLLOW_ME, TRUE
-# 58 "data/maps/NuvemaTown/scripts.pory"
+# 57 "data/maps/NuvemaTown/scripts.pory"
 	applymovement LOCALID_JUNIPER, NuvemaTown_LabToHouse
-# 59 "data/maps/NuvemaTown/scripts.pory"
+# 58 "data/maps/NuvemaTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, NuvemaTown_LabToHouse
+# 59 "data/maps/NuvemaTown/scripts.pory"
+	waitmovement 0
 # 60 "data/maps/NuvemaTown/scripts.pory"
-	waitmovement 0
+	opendoor 12, 12
 # 61 "data/maps/NuvemaTown/scripts.pory"
-	opendoor 12, 12
+	waitdooranim
 # 62 "data/maps/NuvemaTown/scripts.pory"
-	waitdooranim
-# 63 "data/maps/NuvemaTown/scripts.pory"
 	applymovement LOCALID_JUNIPER, NuvemaTown_EnterHouse
-# 64 "data/maps/NuvemaTown/scripts.pory"
+# 63 "data/maps/NuvemaTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, NuvemaTown_EnterHouse
+# 64 "data/maps/NuvemaTown/scripts.pory"
+	waitmovement 0
 # 65 "data/maps/NuvemaTown/scripts.pory"
-	waitmovement 0
-# 66 "data/maps/NuvemaTown/scripts.pory"
 	setvar VAR_NUVEMA_INTRO_STATE, 1
-# 67 "data/maps/NuvemaTown/scripts.pory"
+# 66 "data/maps/NuvemaTown/scripts.pory"
 	setflag FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_TRUCK
-# 68 "data/maps/NuvemaTown/scripts.pory"
+# 67 "data/maps/NuvemaTown/scripts.pory"
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
-# 69 "data/maps/NuvemaTown/scripts.pory"
+# 68 "data/maps/NuvemaTown/scripts.pory"
 	hideobjectat LOCALID_JUNIPER, MAP_NUVEMA_TOWN
+# 69 "data/maps/NuvemaTown/scripts.pory"
+	closedoor 12, 12
 # 70 "data/maps/NuvemaTown/scripts.pory"
-	closedoor 12, 12
+	waitdooranim
 # 71 "data/maps/NuvemaTown/scripts.pory"
-	waitdooranim
-# 72 "data/maps/NuvemaTown/scripts.pory"
 	opendoor 12, 12
+# 72 "data/maps/NuvemaTown/scripts.pory"
+	waitdooranim
 # 73 "data/maps/NuvemaTown/scripts.pory"
-	waitdooranim
-# 74 "data/maps/NuvemaTown/scripts.pory"
 	showobjectat LOCALID_JUNIPER, MAP_NUVEMA_TOWN
-# 75 "data/maps/NuvemaTown/scripts.pory"
+# 74 "data/maps/NuvemaTown/scripts.pory"
 	applymovement LOCALID_JUNIPER, NuvemaTown_ExitHouse
+# 75 "data/maps/NuvemaTown/scripts.pory"
+	waitmovement 0
 # 76 "data/maps/NuvemaTown/scripts.pory"
-	waitmovement 0
-# 77 "data/maps/NuvemaTown/scripts.pory"
 	closedoor 12, 12
-# 78 "data/maps/NuvemaTown/scripts.pory"
+# 77 "data/maps/NuvemaTown/scripts.pory"
 	waitdooranim
-# 79 "data/maps/NuvemaTown/scripts.pory"
+# 78 "data/maps/NuvemaTown/scripts.pory"
 	applymovement LOCALID_JUNIPER, NuvemaTown_WalkOffCamera
-# 80 "data/maps/NuvemaTown/scripts.pory"
+# 79 "data/maps/NuvemaTown/scripts.pory"
 	waitmovement 0
-# 81 "data/maps/NuvemaTown/scripts.pory"
+# 80 "data/maps/NuvemaTown/scripts.pory"
 	removeobject LOCALID_JUNIPER
-# 82 "data/maps/NuvemaTown/scripts.pory"
+# 81 "data/maps/NuvemaTown/scripts.pory"
 	warpsilent MAP_NUVEMA_TOWN_PLAYERS_HOUSE_2F, 4, 6
-# 83 "data/maps/NuvemaTown/scripts.pory"
+# 82 "data/maps/NuvemaTown/scripts.pory"
 	waitstate
-# 84 "data/maps/NuvemaTown/scripts.pory"
+# 83 "data/maps/NuvemaTown/scripts.pory"
 	releaseall
 	return
 
 
-# 87 "data/maps/NuvemaTown/scripts.pory"
+# 86 "data/maps/NuvemaTown/scripts.pory"
 NuvemaTown_LabToHouse:
-# 88 "data/maps/NuvemaTown/scripts.pory"
+# 87 "data/maps/NuvemaTown/scripts.pory"
+	walk_down
+# 87 "data/maps/NuvemaTown/scripts.pory"
+	walk_down
+# 87 "data/maps/NuvemaTown/scripts.pory"
+	walk_down
+# 87 "data/maps/NuvemaTown/scripts.pory"
+	walk_down
+# 87 "data/maps/NuvemaTown/scripts.pory"
+	walk_down
+# 87 "data/maps/NuvemaTown/scripts.pory"
+	walk_down
+# 87 "data/maps/NuvemaTown/scripts.pory"
+	walk_down
+# 87 "data/maps/NuvemaTown/scripts.pory"
 	walk_down
 # 88 "data/maps/NuvemaTown/scripts.pory"
-	walk_down
+	walk_right
 # 88 "data/maps/NuvemaTown/scripts.pory"
-	walk_down
+	walk_right
 # 88 "data/maps/NuvemaTown/scripts.pory"
-	walk_down
+	walk_right
 # 88 "data/maps/NuvemaTown/scripts.pory"
-	walk_down
+	walk_right
 # 88 "data/maps/NuvemaTown/scripts.pory"
-	walk_down
-# 88 "data/maps/NuvemaTown/scripts.pory"
-	walk_down
-# 88 "data/maps/NuvemaTown/scripts.pory"
-	walk_down
-# 89 "data/maps/NuvemaTown/scripts.pory"
 	walk_right
 # 89 "data/maps/NuvemaTown/scripts.pory"
-	walk_right
-# 89 "data/maps/NuvemaTown/scripts.pory"
-	walk_right
-# 89 "data/maps/NuvemaTown/scripts.pory"
-	walk_right
-# 89 "data/maps/NuvemaTown/scripts.pory"
-	walk_right
-# 90 "data/maps/NuvemaTown/scripts.pory"
 	face_up
 	step_end
 
-# 93 "data/maps/NuvemaTown/scripts.pory"
+# 92 "data/maps/NuvemaTown/scripts.pory"
 NuvemaTown_EnterHouse:
-# 94 "data/maps/NuvemaTown/scripts.pory"
+# 93 "data/maps/NuvemaTown/scripts.pory"
 	walk_up
 	step_end
 
-# 97 "data/maps/NuvemaTown/scripts.pory"
+# 96 "data/maps/NuvemaTown/scripts.pory"
 NuvemaTown_ExitHouse:
-# 98 "data/maps/NuvemaTown/scripts.pory"
+# 97 "data/maps/NuvemaTown/scripts.pory"
 	walk_down
 	step_end
 
-# 101 "data/maps/NuvemaTown/scripts.pory"
+# 100 "data/maps/NuvemaTown/scripts.pory"
 NuvemaTown_WalkOffCamera:
-# 102 "data/maps/NuvemaTown/scripts.pory"
+# 101 "data/maps/NuvemaTown/scripts.pory"
 	walk_down
-# 102 "data/maps/NuvemaTown/scripts.pory"
+# 101 "data/maps/NuvemaTown/scripts.pory"
 	walk_down
-# 102 "data/maps/NuvemaTown/scripts.pory"
+# 101 "data/maps/NuvemaTown/scripts.pory"
 	walk_down
-# 102 "data/maps/NuvemaTown/scripts.pory"
+# 101 "data/maps/NuvemaTown/scripts.pory"
 	walk_down
-# 102 "data/maps/NuvemaTown/scripts.pory"
+# 101 "data/maps/NuvemaTown/scripts.pory"
 	walk_down
-# 102 "data/maps/NuvemaTown/scripts.pory"
+# 101 "data/maps/NuvemaTown/scripts.pory"
 	walk_down
 	step_end

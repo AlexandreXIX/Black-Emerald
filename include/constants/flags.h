@@ -207,7 +207,7 @@
 #define FLAG_DECORATION_12                   0xB9
 #define FLAG_DECORATION_13                   0xBA
 #define FLAG_DECORATION_14                   0xBB
-#define FLAG_RECEIVED_POKENAV                0xBC
+#define FLAG_RECEIVED_XTRANS                0xBC
 #define FLAG_DELIVERED_STEVEN_LETTER         0xBD
 #define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
 #define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
@@ -1349,7 +1349,7 @@
 
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
-#define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
+#define FLAG_SYS_XTRANS_GET                         (SYSTEM_FLAGS + 0x2)
 #define FLAG_UNUSED_0x863                            (SYSTEM_FLAGS + 0x3) // Unused Flag
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
@@ -1649,6 +1649,7 @@
 #define FLAG_STORING_ITEMS_IN_PYRAMID_BAG       (SPECIAL_FLAGS_START + 0x4)
 #define FLAG_SAFE_FOLLOWER_MOVEMENT             (SPECIAL_FLAGS_START + 0x5) // When set, applymovement does not put the follower inside a pokeball
 // FLAG_SPECIAL_FLAG_0x4005 - 0x407F also exist and are unused
+#define FLAG_TEMP_HIDE_FOLLOWER                 (SPECIAL_FLAGS_START + 0x6)
 #define SPECIAL_FLAGS_END                       (SPECIAL_FLAGS_START + 0x7F)
 #define NUM_SPECIAL_FLAGS                       (SPECIAL_FLAGS_END - SPECIAL_FLAGS_START + 1)
 
@@ -1656,7 +1657,6 @@
 #define FLAG_TEMP_SKIP_GABBY_INTERVIEW          FLAG_TEMP_1
 #define FLAG_TEMP_REGICE_PUZZLE_STARTED         FLAG_TEMP_2
 #define FLAG_TEMP_REGICE_PUZZLE_FAILED          FLAG_TEMP_3
-#define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_E
 #define FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE FLAG_TEMP_11
 
 #endif // GUARD_CONSTANTS_FLAGS_H

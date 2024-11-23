@@ -21,7 +21,7 @@ Route104_MrBrineysHouse_OnTransition:
 # 11 "data/maps/Route104_MrBrineysHouse/scripts.pory"
 	call_if_eq VAR_BRINEY_HOUSE_STATE, 1, Route104_MrBrineysHouse_EventScript_SetBrineyPeekoPos
 # 12 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	call_if_set FLAG_RECEIVED_POKENAV, Route104_MrBrineysHouse_EventScript_HideRustboroRival
+	call_if_set FLAG_RECEIVED_XTRANS, Route104_MrBrineysHouse_EventScript_HideRustboroRival
 # 13 "data/maps/Route104_MrBrineysHouse/scripts.pory"
 	end
 # 14 "data/maps/Route104_MrBrineysHouse/scripts.pory"

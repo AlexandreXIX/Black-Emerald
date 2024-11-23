@@ -2096,3 +2096,9 @@ const u32 gItemIconPalette_SwapSnack[] = INCBIN_U32("graphics/items/icon_palette
 
 const u32 gItemIcon_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icons/twice_spiced_radish.4bpp.lz");
 const u32 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icon_palettes/twice_spiced_radish.gbapal.lz");
+
+const u32 gItemIcon_Xtransceiver_Blue[] = INCBIN_U32("graphics/items/icons/xtransceiver_blue.4bpp.lz");
+const u32 gItemIconPalette_Xtransceiver_Blue[] = INCBIN_U32("graphics/items/icon_palettes/xtransceiver_blue.gbapal.lz");
+
+const u32 gItemIcon_Xtransceiver_Red[] = INCBIN_U32("graphics/items/icons/xtransceiver_red.4bpp.lz");
+const u32 gItemIconPalette_Xtransceiver_Red[] = INCBIN_U32("graphics/items/icon_palettes/xtransceiver_red.gbapal.lz");

@@ -852,7 +852,7 @@ static const u8 sText_TidyingUpComplete[] = _("Tidying up complete!");
 static const u8 sText_FickleBeamDoubled[] = _("{B_ATK_NAME_WITH_PREFIX} is going all\nout for this attack!");
 
 // New Slide in messages
-static const u8 sText_BiancaFirstBattle[] = _("Eek! Ouch! I won't let you get away with that!");
+static const u8 sText_BiancaFirstBattle[] = _("Eek! Ouch!\nI won't let you get away with that!");
 static const u8 sText_CherenFirstBattle[] = _("I've finally become a trainer...\nEverything starts from here!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
