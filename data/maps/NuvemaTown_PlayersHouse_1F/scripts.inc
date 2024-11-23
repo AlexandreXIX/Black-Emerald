@@ -1,6 +1,6 @@
 NuvemaTown_PlayersHouse_1F_MapScripts::
 # 6 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NuvemaTown_PlayersHouse_1F_OnWarpIntoMap
+	map_script MAP_SCRIPT_ON_TRANSITION, NuvemaTown_PlayersHouse_1F_OnTransition
 # 7 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, NuvemaTown_PlayersHouse_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
@@ -11,17 +11,17 @@ NuvemaTown_PlayersHouse_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	.2byte 0
 
 
-NuvemaTown_PlayersHouse_1F_OnWarpIntoMap::
+NuvemaTown_PlayersHouse_1F_OnTransition::
 # 12 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	compare VAR_NUVEMA_INTRO_STATE, 4
-	goto_if_eq NuvemaTown_PlayersHouse_1F_OnWarpIntoMap_1
+	goto_if_eq NuvemaTown_PlayersHouse_1F_OnTransition_1
 	return
 
-NuvemaTown_PlayersHouse_1F_OnWarpIntoMap_1:
+NuvemaTown_PlayersHouse_1F_OnTransition_1:
 # 13 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	setobjectxy 1, 6, 6
 # 14 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	applymovement 1, NuvemaTown_PlayersHouse_1F_OnWarpIntoMap_Movement_0
+	applymovement 1, NuvemaTown_PlayersHouse_1F_OnTransition_Movement_0
 	return
 
 
@@ -108,6 +108,8 @@ NuvemaTown_PlayersHouse_1F_Intro_1:
 # 64 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	setvar VAR_NUVEMA_INTRO_STATE, 5
 # 65 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	special RemoveCameraObject
+# 66 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	releaseall
 	end
 
@@ -123,13 +125,15 @@ NuvemaTown_PlayersHouse_1F_Intro_4:
 
 
 NuvemaTown_PlayersHouse_1F_EventScript_Mom::
-# 70 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 71 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	msgbox Players_Mom, MSGBOX_NPC
+# 72 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	special Script_DoXtransceiverCall
 	return
 
 
 # 14 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-NuvemaTown_PlayersHouse_1F_OnWarpIntoMap_Movement_0:
+NuvemaTown_PlayersHouse_1F_OnTransition_Movement_0:
 # 14 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	face_right
 	step_end
@@ -233,5 +237,5 @@ NuvemaTown_PlayersHouse_1F_Intro_Text_6:
 	.string "Thanks for having us over!$"
 
 Players_Mom::
-# 73 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 75 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	.string "TBD$"
