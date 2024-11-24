@@ -68,10 +68,49 @@ script NuvemaTown_PlayersHouse_1F_Intro {
 }
 
 script NuvemaTown_PlayersHouse_1F_EventScript_Mom {
+	lockall
 	msgbox(Players_Mom, MSGBOX_NPC)
-	special(Script_DoXtransceiverCall)
+	fadescreen(FADE_TO_BLACK)
+	drawfullscreenimage(SCENEHILBERT)
+	msgbox(Players_Mom, MSGBOX_NPC)
+	closemessage
+	clearfullscreenimage
+	fadescreen(FADE_FROM_BLACK)
+	delay(60)
+	fadescreen(FADE_TO_BLACK)
+	drawfullscreenimage(SCENEHILDA)
+	msgbox(Players_Mom, MSGBOX_NPC)
+	closemessage
+	clearfullscreenimage
+	fadescreen(FADE_FROM_BLACK)
+	delay(60)
+	fadescreen(FADE_TO_BLACK)
+	drawfullscreenimage(SCENEHILDA)
+	drawfullscreenimage(SCENEHILBERT)
+	msgbox(Players_Mom, MSGBOX_NPC)
+	closemessage
+	clearfullscreenimage
+	fadescreen(FADE_FROM_BLACK)
+	delay(60)
+	fadescreen(FADE_TO_BLACK)
+	drawfullscreenimage(SCENEHILBERT)
+	drawfullscreenimage(SCENEHILDA)
+	msgbox(Players_Mom, MSGBOX_NPC)
+	closemessage
+	clearfullscreenimage
+	fadescreen(FADE_FROM_BLACK)
+	releaseall
+	end
 }
 
 text Players_Mom {
-    format("TBD")
+    format("Let's test your Xtransceiver...")
+}
+
+text Players_Phone {
+    format("Phone Message Box") // The game always a line of ... here, then new paragraph then text, same as pokenavcall(Players_Phone)
+}
+
+text Players_Video {
+    format("Can you see this?")
 }

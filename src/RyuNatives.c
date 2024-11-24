@@ -1,0 +1,120 @@
+    #include "global.h"
+    #include "malloc.h"
+    #include "battle.h"
+    #include "battle_tower.h"
+    #include "cable_club.h"
+    #include "cutscene.h"
+    #include "data.h"
+    #include "decoration.h"
+    #include "diploma.h"
+    #include "event_data.h"
+    #include "event_object_movement.h"
+    #include "fieldmap.h"
+    #include "field_camera.h"
+    #include "field_effect.h"
+    #include "field_message_box.h"
+    #include "field_player_avatar.h"
+    #include "field_screen_effect.h"
+    #include "field_specials.h"
+    #include "field_weather.h"
+    #include "graphics.h"
+    #include "international_string_util.h"
+    #include "item_icon.h"
+    #include "link.h"
+    #include "list_menu.h"
+    #include "main.h"
+    #include "match_call.h"
+    #include "menu.h"
+    #include "overworld.h"
+    #include "party_menu.h"
+    #include "pokeblock.h"
+    #include "pokemon.h"
+    #include "pokemon_storage_system.h"
+    #include "random.h"
+    #include "rayquaza_scene.h"
+    #include "region_map.h"
+    #include "rtc.h"
+    #include "script.h"
+    #include "script_menu.h"
+    #include "sound.h"
+    #include "starter_choose.h"
+    #include "string_util.h"
+    #include "strings.h"
+    #include "task.h"
+    #include "text.h"
+    #include "tv.h"
+    #include "wallclock.h"
+    #include "window.h"
+    #include "constants/battle_frontier.h"
+    #include "constants/battle_tower.h"
+    #include "constants/decorations.h"
+    #include "constants/event_objects.h"
+    #include "constants/event_object_movement.h"
+    #include "constants/field_effects.h"
+    #include "constants/field_specials.h"
+    #include "constants/items.h"
+    #include "constants/item.h"
+    #include "constants/heal_locations.h"
+    #include "constants/map_types.h"
+    #include "constants/maps.h"
+    // #include "constants/mevent.h"
+    #include "constants/tv.h"
+    #include "constants/script_menu.h"
+    #include "constants/slot_machine.h"
+    #include "constants/songs.h"
+    #include "constants/species.h"
+    #include "constants/moves.h"
+    #include "constants/party_menu.h"
+    #include "constants/battle_frontier.h"
+    #include "constants/weather.h"
+    #include "constants/metatile_labels.h"
+    #include "constants/rgb.h"
+    #include "constants/trainers.h"
+    #include "palette.h"
+    #include "item.h"
+    #include "decompress.h"
+    #include "constants/trainers.h"
+    #include "pokedex.h"
+    #include "money.h"
+    #include "menu_helpers.h"
+    #include "rtc.h"
+    #include "constants/region_map_sections.h"
+    #include "field_specials.h"
+    #include "constants/items.h"
+    #include "constants/songs.h"
+    #include "strings.h"
+    // #include "ach_atlas.h"
+    // #include "lifeskill.h"
+    #include "script_pokemon_util.h"
+    // #include "data/lifeskill.h"
+    // #include "RyuEnemyEnhancementSystem.h"
+    // #include "overworld_notif.h"
+    // #include "factions.h"
+    // #include "scripted_encounters.h"
+    // #include "StatAssist.h"
+    // #include "ryu_challenge_modifiers.h"
+    // #include "theme_color_factory.h"
+    #include "new_game.h"
+
+void VBCB_FullscreenCutscene(void) //callback for below function
+{
+    UpdatePidgeyPaletteFade();
+    UpdateBgPan();
+}
+
+bool8 ScrCmd_drawfullscreenimage(struct ScriptContext *ctx)//draws the fullscreen pic with index. Needs to be removed with the below function
+{                       
+                                       //also causes a screen refresh, so if you're hiding npc's or changing map tiles
+    u8 index = ScriptReadByte(ctx);                        //you don't need to also special DrawWholeScreenView.
+    SetVBlankCallback(NULL);
+    StartBGCutscene(index);
+    SetVBlankCallback(VBCB_FullscreenCutscene);
+    return TRUE;   
+}
+
+bool8 ScrCmd_clearfullscreenimage(struct ScriptContext *ctx)
+{
+    SetVBlankCallback(NULL);
+    SetMainCallback2(CB2_ReturnToFieldContinueScript);
+    return TRUE;
+}

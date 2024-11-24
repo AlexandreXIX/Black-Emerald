@@ -2338,3 +2338,14 @@
 	.macro togglefakertc
 	callnative Script_ToggleFakeRtc
 	.endm
+
+	@displays a fullscreen bg image.
+	.macro drawfullscreenimage index:req
+	.byte 0xe5
+	.byte \index
+	.endm
+
+	@clears the drawn fullscreen image.
+	.macro clearfullscreenimage
+	.byte 0xe6
+	.endm

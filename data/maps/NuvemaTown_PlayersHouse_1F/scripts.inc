@@ -126,10 +126,70 @@ NuvemaTown_PlayersHouse_1F_Intro_4:
 
 NuvemaTown_PlayersHouse_1F_EventScript_Mom::
 # 71 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	msgbox Players_Mom, MSGBOX_NPC
+	lockall
 # 72 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	special Script_DoXtransceiverCall
-	return
+	msgbox Players_Mom, MSGBOX_NPC
+# 73 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 74 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	drawfullscreenimage SCENEHILBERT
+# 75 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	msgbox Players_Mom, MSGBOX_NPC
+# 76 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	closemessage
+# 77 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	clearfullscreenimage
+# 78 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 79 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	delay 60
+# 80 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 81 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	drawfullscreenimage SCENEHILDA
+# 82 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	msgbox Players_Mom, MSGBOX_NPC
+# 83 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	closemessage
+# 84 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	clearfullscreenimage
+# 85 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 86 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	delay 60
+# 87 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 88 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	drawfullscreenimage SCENEHILDA
+# 89 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	drawfullscreenimage SCENEHILBERT
+# 90 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	msgbox Players_Mom, MSGBOX_NPC
+# 91 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	closemessage
+# 92 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	clearfullscreenimage
+# 93 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 94 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	delay 60
+# 95 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 96 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	drawfullscreenimage SCENEHILBERT
+# 97 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	drawfullscreenimage SCENEHILDA
+# 98 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	msgbox Players_Mom, MSGBOX_NPC
+# 99 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	closemessage
+# 100 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	clearfullscreenimage
+# 101 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 102 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	releaseall
+	end
 
 
 # 14 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
@@ -237,5 +297,13 @@ NuvemaTown_PlayersHouse_1F_Intro_Text_6:
 	.string "Thanks for having us over!$"
 
 Players_Mom::
-# 75 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	.string "TBD$"
+# 106 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	.string "Let's test your Xtransceiver...$"
+
+Players_Phone::
+# 110 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	.string "Phone Message Box$"
+
+Players_Video::
+# 114 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	.string "Can you see this?$"
