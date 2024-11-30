@@ -210,6 +210,8 @@
 // #define SCENEBGOPENWORLDTUTORIAL2 33
 // #define SCENEBGOPENWORLDTUTORIAL3 34
 // #define SCENEBGBLANK 35
+#define SIDEWAYS_STAIRS_IMPLEMENTED         TRUE
+#define POST_BATTLE_FOLLOWER_FIX            FALSE   //if you experience the follower de-syncing with the player after battle, set to TRUE
 
 #if TESTING
 #include "config/test.h"
