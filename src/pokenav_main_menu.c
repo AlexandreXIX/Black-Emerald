@@ -53,8 +53,10 @@ static void DrawHelpBar(u32);
 static void SpriteCB_SpinningPokenav(struct Sprite *);
 static u32 LoopedTask_InitPokenavMenu(s32);
 
-static const u16 sSpinningPokenav_Pal[] = INCBIN_U16("graphics/pokenav/nav_icon.gbapal");
-static const u32 sSpinningPokenav_Gfx[] = INCBIN_U32("graphics/pokenav/nav_icon.4bpp.lz");
+static const u16 sSpinningXtransBlue_Pal[] = INCBIN_U16("graphics/pokenav/xtrans_icon_blue.gbapal");
+static const u32 sSpinningXtransBlue_Gfx[] = INCBIN_U32("graphics/pokenav/xtrans_icon_blue.4bpp.lz");
+static const u16 sSpinningXtransRed_Pal[] = INCBIN_U16("graphics/pokenav/xtrans_icon_red.gbapal");
+static const u32 sSpinningXtransRed_Gfx[] = INCBIN_U32("graphics/pokenav/xtrans_icon_red.4bpp.lz");
 static const u32 sBlueLightCopy[] = INCBIN_U32("graphics/pokenav/blue_light.4bpp.lz"); // Unused copy of sMatchCallBlueLightTiles
 
 const struct BgTemplate gPokenavMainMenuBgTemplates[] =
@@ -105,19 +107,38 @@ static const u8 sHelpBarTextColors[3] =
     TEXT_COLOR_RED, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY
 };
 
-static const struct CompressedSpriteSheet sSpinningPokenavSpriteSheet[] =
+// Can probably only have the palette change instead of having two seperate sprite sheets
+static const struct CompressedSpriteSheet sSpinningXtransBlueSpriteSheet[] =
 {
     {
-        .data = sSpinningPokenav_Gfx,
+        .data = sSpinningXtransBlue_Gfx,
         .size = 0x1000,
         .tag = 0,
     }
 };
 
-static const struct SpritePalette sSpinningNavgearPalettes[] =
+static const struct SpritePalette sSpinningXtransBluePalettes[] =
 {
     {
-        .data = sSpinningPokenav_Pal,
+        .data = sSpinningXtransBlue_Pal,
+        .tag = 0,
+    },
+    {}
+};
+
+static const struct CompressedSpriteSheet sSpinningXtransRedSpriteSheet[] =
+{
+    {
+        .data = sSpinningXtransRed_Gfx,
+        .size = 0x1000,
+        .tag = 0,
+    }
+};
+
+static const struct SpritePalette sSpinningXtransRedPalettes[] =
+{
+    {
+        .data = sSpinningXtransRed_Pal,
         .tag = 0,
     },
     {}
@@ -583,10 +604,16 @@ static void InitPokenavMainMenuResources(void)
     u8 spriteId;
     struct Pokenav_MainMenu *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_MAIN_MENU);
 
-    for (i = 0; i < ARRAY_COUNT(sSpinningPokenavSpriteSheet); i++)
-        LoadCompressedSpriteSheet(&sSpinningPokenavSpriteSheet[i]);
-
-    Pokenav_AllocAndLoadPalettes(sSpinningNavgearPalettes);
+    if (gSaveBlock2Ptr->playerGender == MALE) {
+        for (i = 0; i < ARRAY_COUNT(sSpinningXtransBlueSpriteSheet); i++)
+            LoadCompressedSpriteSheet(&sSpinningXtransBlueSpriteSheet[i]);
+        Pokenav_AllocAndLoadPalettes(sSpinningXtransBluePalettes);
+    }
+    else {
+        for (i = 0; i < ARRAY_COUNT(sSpinningXtransRedSpriteSheet); i++)
+            LoadCompressedSpriteSheet(&sSpinningXtransRedSpriteSheet[i]);
+        Pokenav_AllocAndLoadPalettes(sSpinningXtransRedPalettes);
+    }
     menu->palettes = ~1 & ~(0x10000 << IndexOfSpritePaletteTag(0));
     spriteId = CreateSprite(&sSpinningPokenavSpriteTemplate, 220, 12, 0);
     menu->spinningPokenav = &gSprites[spriteId];

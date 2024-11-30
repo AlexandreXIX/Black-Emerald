@@ -2398,11 +2398,11 @@
 
 	@displays a fullscreen bg image.
 	.macro drawfullscreenimage index:req
-	.byte 0xe5
+	.byte 0xeb
 	.byte \index
 	.endm
 
 	@clears the drawn fullscreen image.
 	.macro clearfullscreenimage
-	.byte 0xe6
+	.byte 0xec
 	.endm

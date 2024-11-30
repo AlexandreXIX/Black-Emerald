@@ -1197,8 +1197,10 @@ static void StartMatchCall(void)
 
 static const u16 sMatchCallWindow_Pal[] = INCBIN_U16("graphics/pokenav/match_call/window.gbapal");
 static const u8 sMatchCallWindow_Gfx[] = INCBIN_U8("graphics/pokenav/match_call/window.4bpp");
-static const u16 sPokenavIcon_Pal[] = INCBIN_U16("graphics/pokenav/match_call/nav_icon.gbapal");
-static const u32 sPokenavIcon_Gfx[] = INCBIN_U32("graphics/pokenav/match_call/nav_icon.4bpp.lz");
+static const u16 sXtransIconBlue_Pal[] = INCBIN_U16("graphics/pokenav/match_call/xtrans_icon_blue.gbapal");
+static const u32 sXtransIconBlue_Gfx[] = INCBIN_U32("graphics/pokenav/match_call/xtrans_icon_blue.4bpp.lz");
+static const u16 sXtransIconRed_Pal[] = INCBIN_U16("graphics/pokenav/match_call/xtrans_icon_red.gbapal");
+static const u32 sXtransIconRed_Gfx[] = INCBIN_U32("graphics/pokenav/match_call/xtrans_icon_red.4bpp.lz");
 
 static const u8 sText_PokenavCallEllipsis[] = _("………………\p");
 
@@ -1261,16 +1263,27 @@ static bool32 MatchCall_LoadGfx(u8 taskId)
         return FALSE;
     }
 
-    if (!DecompressAndCopyTileDataToVram(0, sPokenavIcon_Gfx, 0, TILE_POKENAV_ICON, 0))
-    {
+    if (gSaveBlock2Ptr->playerGender == MALE) {
+        if (!DecompressAndCopyTileDataToVram(0, sXtransIconBlue_Gfx, 0, TILE_POKENAV_ICON, 0))
+        {
         RemoveWindow(tWindowId);
         DestroyTask(taskId);
         return FALSE;
+        }
     }
-
+    else {
+        if (!DecompressAndCopyTileDataToVram(0, sXtransIconRed_Gfx, 0, TILE_POKENAV_ICON, 0))
+        {
+        RemoveWindow(tWindowId);
+        DestroyTask(taskId);
+        return FALSE;
+        }
+    }
     FillWindowPixelBuffer(tWindowId, PIXEL_FILL(8));
     LoadPalette(sMatchCallWindow_Pal, BG_PLTT_ID(14), sizeof(sMatchCallWindow_Pal));
-    LoadPalette(sPokenavIcon_Pal, BG_PLTT_ID(15), sizeof(sPokenavIcon_Pal));
+
+    if (gSaveBlock2Ptr->playerGender == MALE) {LoadPalette(sXtransIconBlue_Pal, BG_PLTT_ID(15), sizeof(sXtransIconBlue_Pal));}
+    else {LoadPalette(sXtransIconRed_Pal, BG_PLTT_ID(15), sizeof(sXtransIconRed_Pal));}
     ChangeBgY(0, -0x2000, BG_COORD_SET);
     return TRUE;
 }

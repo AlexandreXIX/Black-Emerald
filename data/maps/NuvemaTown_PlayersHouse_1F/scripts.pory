@@ -69,6 +69,7 @@ script NuvemaTown_PlayersHouse_1F_Intro {
 
 script NuvemaTown_PlayersHouse_1F_EventScript_Mom {
 	lockall
+	msgbox(Players_Mom, MSGBOX_XTRANS)
 	msgbox(Players_Mom, MSGBOX_NPC)
 	fadescreen(FADE_TO_BLACK)
 	drawfullscreenimage(SCENEHILBERT)
