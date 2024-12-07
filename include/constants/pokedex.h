@@ -1246,7 +1246,7 @@ enum {
 
 enum
 {
-    DEX_MODE_HOENN,
+    DEX_MODE_UNOVA,
     DEX_MODE_NATIONAL
 };
 
