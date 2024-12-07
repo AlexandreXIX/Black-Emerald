@@ -41,8 +41,8 @@ EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum::
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent::
-	setvar VAR_NUVEMA_HOUSES_STATE_MAY, 3
-	setvar VAR_NUVEMA_HOUSES_STATE_HILBERT, 3
+	setvar VAR_RIVAL_BIANCA_STATE, 3
+	setvar VAR_RIVAL_CHEREN_STATE, 3
 	clearflag FLAG_HIDE_PLAYERS_HOUSE_DAD
 	return
 

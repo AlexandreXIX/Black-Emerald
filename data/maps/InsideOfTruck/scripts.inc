@@ -53,7 +53,7 @@ InsideOfTruck_EventScript_SetIntroFlagsMale::
 # 27 "data/maps/InsideOfTruck/scripts.pory"
 	setvar VAR_NUVEMA_INTRO_STATE, 1
 # 28 "data/maps/InsideOfTruck/scripts.pory"
-	setflag FLAG_HIDE_NUVEMA_TOWN_MAYS_HOUSE_MOM
+	setflag FLAG_HIDE_NUVEMA_TOWN_PIDOVES
 # 29 "data/maps/InsideOfTruck/scripts.pory"
 	setflag FLAG_HIDE_NUVEMA_TOWN_MAYS_HOUSE_TRUCK
 # 30 "data/maps/InsideOfTruck/scripts.pory"
@@ -63,7 +63,7 @@ InsideOfTruck_EventScript_SetIntroFlagsMale::
 # 32 "data/maps/InsideOfTruck/scripts.pory"
 	setflag FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_2F_POKE_BALL
 # 33 "data/maps/InsideOfTruck/scripts.pory"
-	setvar VAR_NUVEMA_HOUSES_STATE_HILBERT, 1
+	setvar VAR_RIVAL_CHEREN_STATE, 1
 # 34 "data/maps/InsideOfTruck/scripts.pory"
 	setdynamicwarp MAP_NUVEMA_TOWN, 3, 10
 # 35 "data/maps/InsideOfTruck/scripts.pory"
@@ -81,7 +81,7 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 # 41 "data/maps/InsideOfTruck/scripts.pory"
 	setflag FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_MOM
 # 42 "data/maps/InsideOfTruck/scripts.pory"
-	setflag FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_TRUCK
+	setflag FLAG_HIDE_NUVEMA_TOWN_INTRO_JUNIPER
 # 43 "data/maps/InsideOfTruck/scripts.pory"
 	setflag FLAG_HIDE_NUVEMA_TOWN_MAYS_HOUSE_RIVAL_MOM
 # 44 "data/maps/InsideOfTruck/scripts.pory"
@@ -89,7 +89,7 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 # 45 "data/maps/InsideOfTruck/scripts.pory"
 	setflag FLAG_HIDE_NUVEMA_TOWN_MAYS_HOUSE_2F_POKE_BALL
 # 46 "data/maps/InsideOfTruck/scripts.pory"
-	setvar VAR_NUVEMA_HOUSES_STATE_MAY, 1
+	setvar VAR_RIVAL_BIANCA_STATE, 1
 # 47 "data/maps/InsideOfTruck/scripts.pory"
 	setdynamicwarp MAP_NUVEMA_TOWN, 12, 10
 # 48 "data/maps/InsideOfTruck/scripts.pory"

@@ -4434,8 +4434,8 @@
     {
       "id": "LAYOUT_ROUTE1PART2",
       "name": "Route1Part2_Layout",
-      "width": 50,
-      "height": 96,
+      "width": 38,
+      "height": 66,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route1Part2/border.bin",

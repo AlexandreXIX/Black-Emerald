@@ -31,8 +31,8 @@ Debug_CheatStart::
 	setflag FLAG_SYS_B_DASH
 	setvar VAR_NUVEMA_TOWN_STATE, 4 @ 4: Received Running Shoes
 	setvar VAR_NUVEMA_INTRO_STATE, 7 @ 7: Told to go meet rival
-	setvar VAR_NUVEMA_HOUSES_STATE_HILBERT, 2 @ 2: Met Rival's Mom (and is corresponding gender)
-	setvar VAR_NUVEMA_HOUSES_STATE_MAY, 2 @ 2: Met Rival's Mom (and is corresponding gender)
+	setvar VAR_RIVAL_CHEREN_STATE, 2 @ 2: Met Rival's Mom (and is corresponding gender)
+	setvar VAR_RIVAL_BIANCA_STATE, 2 @ 2: Met Rival's Mom (and is corresponding gender)
 	setvar VAR_NUVEMA_RIVAL_STATE, 4 @ 4: Received Pokedex
 	setflag FLAG_RECEIVED_BIKE
 	additem ITEM_ACRO_BIKE

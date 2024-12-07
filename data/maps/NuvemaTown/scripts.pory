@@ -1,79 +1,94 @@
-raw `
-.set LOCALID_JUNIPER, 1
+const LOCALID_JUNIPER = 1
+const LOCALID_CHEREN = 2
+const LOCALID_BIANCA = 3
+const LOCALID_PIDOVE1 = 4
+const LOCALID_PIDOVE2 = 5
+const LOCALID_PIDOVE3 = 6
+const LOCALID_PIDOVE4 = 7
 
-NuvemaTown_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, NuvemaTown_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, NuvemaTown_OnFrame
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NuvemaTown_OnWarp
-	.byte 0
+// State descriptions for VAR_NUVEMA_TOWN_STATE
+// 1: Saw exit house cutscene
+// 2: Talked to Bianca's dad
+// 3: Got PokéDex
 
-	@ State descriptions for VAR_NUVEMA_TOWN_STATE
-	@ 1: Met Rival
-	@ 2: Saving Birch
-	@ 3: Received Pokedex
-	@ 4: Received Running Shoes
+// State descriptions for VAR_NUVEMA_INTRO_STATE
+// 0: End of new game sequence
+// 1: Juniper Walked
+// 2: Meet the Rivals
+// 3: Picked Starter
+// 4: Finished battles
+// 5: Finished meeting mom
 
-	@ State descriptions for VAR_NUVEMA_INTRO_STATE
-	@ 1: End of new game sequence
-	@ 1: Juniper Walked
-	@ 2: Meet the Rivals
-	@ 3: Picked Starter
-	@ 4: Finished battles
+// OLD State descriptions for VAR_RIVAL_BIANCA_STATE
+//                    and VAR_RIVAL_CHEREN_STATE
+// 1: On Truck (and is corresponding gender)
+// 2: Met Rival's Mom (and is corresponding gender)
+// 3: Entered Hall of Fame
+// 4: Completed Lati TV / SS Ticket event
+// 5: Exited house after above event
 
+// Old Var unusued: VAR_NUVEMA_RIVAL_STATE
+// State descriptions for VAR_NUVEMA_RIVAL_STATE
+// 1: Finished initial rival battle
+// 2: Apologized to mom
+// 3: Bianca talked to her dad
 
-	@ State descriptions for VAR_NUVEMA_HOUSES_STATE_MAY
-	@                    and VAR_NUVEMA_HOUSES_STATE_HILBERT
-	@ 1: On Truck (and is corresponding gender)
-	@ 2: Met Rival's Mom (and is corresponding gender)
-	@ 3: Entered Hall of Fame
-	@ 4: Completed Lati TV / SS Ticket event
-	@ 5: Exited house after above event
+mapscripts NuvemaTown_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION: NuvemaTown_OnTransition
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_NUVEMA_INTRO_STATE, 0: NuvemaTown_EventScript_JuniperIntro
+		VAR_NUVEMA_TOWN_STATE, 0: NuvemaTown_EventScript_PidoveCutscene
+	]
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_NUVEMA_INTRO_STATE, 0: NuvemaTown_OnWarp_Intro
+									   VAR_NUVEMA_TOWN_STATE, 0: NuvemaTown_OnWarp_FirstExit]
+}
 
-	@ State descriptions for VAR_NUVEMA_RIVAL_STATE
-	@ 1: Finished initial rival battle
-	@ 2: Apologized to mom
-	@ 3: Bianca talked to her dad
-
-
-NuvemaTown_OnTransition:
-	setflag FLAG_VISITED_NUVEMA_TOWN
+script NuvemaTown_OnTransition {
+	setflag(FLAG_VISITED_NUVEMA_TOWN)
 	end
+}
 
-NuvemaTown_EventScript_LeftLabAfterDexUpgrade::
-	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3
-	return
+script NuvemaTown_OnWarp_Intro {
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(set_invisible))
+	applymovement(LOCALID_CHEREN, moves(set_invisible))
+	applymovement(LOCALID_BIANCA, moves(set_invisible))
+	setflag(FLAG_HIDE_NUVEMA_TOWN_PIDOVES)
+}
 
-NuvemaTown_OnFrame:
-	map_script_2 VAR_NUVEMA_INTRO_STATE, 0, NuvemaTown_EventScript_JuniperIntro
-	.2byte 0
+script NuvemaTown_OnWarp_FirstExit {
+	setobjectxy(LOCALID_BIANCA, 17, 15)
+}
 
-NuvemaTown_OnWarp:
-	.2byte 0
-`
 script NuvemaTown_EventScript_JuniperIntro {
     lockall
     special(SpawnCameraObject)
 	playbgm(MUS_FOLLOW_ME, TRUE)
 	applymovement(LOCALID_JUNIPER, NuvemaTown_LabToHouse)
 	applymovement(OBJ_EVENT_ID_CAMERA, NuvemaTown_LabToHouse)
-	waitmovement(0)
-	opendoor(12,12)
+	applymovement(LOCALID_PIDOVE1, moves(set_invisible))
+	applymovement(LOCALID_PIDOVE2, moves(set_invisible))
+	applymovement(LOCALID_PIDOVE3, moves(set_invisible))
+	applymovement(LOCALID_PIDOVE4, moves(set_invisible))
+	waitmovement(OBJ_EVENT_ID_CAMERA)
+	opendoor(18,12)
 	waitdooranim
 	applymovement(LOCALID_JUNIPER, NuvemaTown_EnterHouse)
 	applymovement(OBJ_EVENT_ID_CAMERA, NuvemaTown_EnterHouse)
 	waitmovement(0)
 	setvar(VAR_NUVEMA_INTRO_STATE, 1)
-	setflag(FLAG_HIDE_NUVEMA_TOWN_PLAYERS_HOUSE_TRUCK)
+	setflag(FLAG_HIDE_NUVEMA_TOWN_INTRO_JUNIPER)
+	clearflag(FLAG_HIDE_NUVEMA_TOWN_PIDOVES)
 	clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 	hideobjectat(LOCALID_JUNIPER, MAP_NUVEMA_TOWN)
-	closedoor(12,12)
+	closedoor(18,12)
 	waitdooranim
-	opendoor(12,12)
+	delay(30)
+	opendoor(18,12)
 	waitdooranim
 	showobjectat(LOCALID_JUNIPER, MAP_NUVEMA_TOWN)
 	applymovement(LOCALID_JUNIPER, NuvemaTown_ExitHouse)
 	waitmovement(0)
-	closedoor(12,12)
+	closedoor(18,12)
 	waitdooranim
 	applymovement(LOCALID_JUNIPER, NuvemaTown_WalkOffCamera)
 	waitmovement(0)
@@ -83,9 +98,32 @@ script NuvemaTown_EventScript_JuniperIntro {
     releaseall
 }
 
+script NuvemaTown_EventScript_PidoveCutscene {
+	lockall
+	applymovement(LOCALID_BIANCA, moves(walk_down * 5))
+	applymovement(LOCALID_PIDOVE1, moves(walk_left * 10))
+	playse(SE_M_RAZOR_WIND)
+	applymovement(LOCALID_PIDOVE2, moves(walk_diag_southeast * 10))
+	playse(SE_M_RAZOR_WIND)
+	applymovement(LOCALID_PIDOVE3, moves(walk_diag_southeast * 10))
+	playse(SE_M_RAZOR_WIND)
+	applymovement(LOCALID_PIDOVE4, moves(walk_diag_northwest * 10))
+	playse(SE_M_RAZOR_WIND)
+	waitmovement(LOCALID_BIANCA)
+	removeobject(LOCALID_BIANCA)
+	removeobject(LOCALID_PIDOVE1)
+	removeobject(LOCALID_PIDOVE2)
+	removeobject(LOCALID_PIDOVE3)
+	removeobject(LOCALID_PIDOVE4)
+	setvar(VAR_NUVEMA_TOWN_STATE, 1)
+	setflag(FLAG_HIDE_NUVEMA_TOWN_PIDOVES)
+	releaseall
+	end
+}
+
 movement NuvemaTown_LabToHouse {
-    walk_down * 8
-    walk_right * 5
+    walk_down * 8,
+    walk_right * 5,
     face_up * 1
 }
 

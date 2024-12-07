@@ -1,9 +1,14 @@
 NuvemaTown_PlayersHouse_1F_MapScripts::
 # 6 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, NuvemaTown_PlayersHouse_1F_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, NuvemaTown_PlayersHouse_1F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 # 7 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, NuvemaTown_PlayersHouse_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+NuvemaTown_PlayersHouse_1F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+# 6 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	map_script_2 VAR_NUVEMA_INTRO_STATE, 4, NuvemaTown_PlayersHouse_1F_MomApology
+	.2byte 0
 
 NuvemaTown_PlayersHouse_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 7 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
@@ -11,301 +16,322 @@ NuvemaTown_PlayersHouse_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	.2byte 0
 
 
-NuvemaTown_PlayersHouse_1F_OnTransition::
-# 12 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	compare VAR_NUVEMA_INTRO_STATE, 4
-	goto_if_eq NuvemaTown_PlayersHouse_1F_OnTransition_1
-	return
-
-NuvemaTown_PlayersHouse_1F_OnTransition_1:
-# 13 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+NuvemaTown_PlayersHouse_1F_MomApology::
+# 11 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	setobjectxy 1, 6, 6
-# 14 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	applymovement 1, NuvemaTown_PlayersHouse_1F_OnTransition_Movement_0
+# 12 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	applymovement 1, NuvemaTown_PlayersHouse_1F_MomApology_Movement_0
 	return
 
 
 NuvemaTown_PlayersHouse_1F_Intro::
-# 20 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 17 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	special SpawnCameraObject
-# 21 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 18 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, NuvemaTown_PlayersHouse_1F_Intro_Movement_0
+# 19 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	waitmovement 0
+# 20 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_1F_Intro_Text_0
+# 21 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	applymovement 3, NuvemaTown_PlayersHouse_1F_Intro_Movement_1
 # 22 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	waitmovement 0
 # 23 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	msgbox NuvemaTown_PlayersHouse_1F_Intro_Text_0
-# 24 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	applymovement 3, NuvemaTown_PlayersHouse_1F_Intro_Movement_1
-# 25 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	waitmovement 0
-# 26 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	msgbox NuvemaTown_PlayersHouse_1F_Intro_Text_1
-# 27 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 24 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	msgbox NuvemaTown_PlayersHouse_1F_Intro_Text_2
-# 29 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 26 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	msgbox NuvemaTown_PlayersHouse_1F_Intro_Text_3
-# 31 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 28 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	applymovement 2, NuvemaTown_PlayersHouse_1F_Intro_Movement_2
-# 32 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 29 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	waitmovement 0
-# 33 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 30 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	msgbox NuvemaTown_PlayersHouse_1F_Intro_Text_4
-# 34 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 31 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	playse SE_PIN
+# 32 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	applymovement 3, NuvemaTown_PlayersHouse_1F_Intro_Movement_3
+# 33 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	waitmovement 0
+# 34 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	applymovement 3, NuvemaTown_PlayersHouse_1F_Intro_Movement_4
 # 35 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	waitmovement 0
 # 36 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	applymovement 3, NuvemaTown_PlayersHouse_1F_Intro_Movement_4
-# 37 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	waitmovement 0
-# 38 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	msgbox NuvemaTown_PlayersHouse_1F_Intro_Text_5
-# 39 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 37 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	applymovement 3, NuvemaTown_PlayersHouse_1F_Intro_Movement_5
-# 40 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 38 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	waitmovement 0
-# 41 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 39 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	msgbox NuvemaTown_PlayersHouse_1F_Intro_Text_6
-# 42 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 40 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	applymovement 3, NuvemaTown_PlayersHouse_1F_Intro_Movement_6
-# 43 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	applymovement 2, NuvemaTown_PlayersHouse_1F_Intro_Movement_0
-# 44 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 41 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	applymovement 2, NuvemaTown_PlayersHouse_1F_Intro_Movement_7
+# 42 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	waitmovement 2
-# 45 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 43 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	removeobject 2
-# 46 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 44 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	removeobject 3
-# 47 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 45 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	playse SE_EXIT
-# 49 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, NuvemaTown_PlayersHouse_1F_Intro_Movement_7
-# 50 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 47 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, NuvemaTown_PlayersHouse_1F_Intro_Movement_8
+# 48 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	waitmovement 0
+# 49 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	playbgm MUS_FOLLOW_ME, FALSE
+# 50 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	applymovement 1, NuvemaTown_PlayersHouse_1F_Intro_Movement_9
 # 51 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	playfanfare MUS_RG_OBTAIN_KEY_ITEM
+	waitmovement 1
 # 52 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	waitfanfare
+	applymovement OBJ_EVENT_ID_PLAYER, NuvemaTown_PlayersHouse_1F_Intro_Movement_5
 # 53 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	msgbox NuvemaTown_PlayersHouse_1F_Mom_Intro_1
 # 54 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	waitfanfare
+	applymovement 1, NuvemaTown_PlayersHouse_1F_Intro_Movement_10
 # 55 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	checkplayergender
+	waitmovement 1
 # 56 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	switch VAR_RESULT
+	msgbox NuvemaTown_PlayersHouse_1F_Mom_Intro_2
 # 57 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	case MALE, NuvemaTown_PlayersHouse_1F_Intro_3
+	applymovement 1, NuvemaTown_PlayersHouse_1F_MomApology_Movement_0
 # 58 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	waitmovement 1
+# 59 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_1F_Mom_Intro_3
+# 60 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	call Common_EventScript_OutOfCenterPartyHeal
+# 61 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_1F_Mom_Intro_4
+# 62 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	checkplayergender
+# 63 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	switch VAR_RESULT
+# 64 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	case MALE, NuvemaTown_PlayersHouse_1F_Intro_3
+# 65 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	case FEMALE, NuvemaTown_PlayersHouse_1F_Intro_4
 NuvemaTown_PlayersHouse_1F_Intro_1:
-# 60 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 67 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	waitfanfare
-# 61 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 68 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	setflag FLAG_SYS_XTRANS_GET
-# 62 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 69 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	setflag FLAG_RECEIVED_XTRANS
-# 64 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 70 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_1F_Mom_Intro_5
+# 71 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	setvar VAR_NUVEMA_INTRO_STATE, 5
-# 65 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 72 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	special RemoveCameraObject
-# 66 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 73 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	playbgm MUS_NUVEMA, FALSE
+# 74 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	releaseall
 	end
 
 NuvemaTown_PlayersHouse_1F_Intro_3:
-# 57 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 64 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	giveitem ITEM_XTRANSCEIVER_BLUE
 	goto NuvemaTown_PlayersHouse_1F_Intro_1
 
 NuvemaTown_PlayersHouse_1F_Intro_4:
-# 58 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 65 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	giveitem ITEM_XTRANSCEIVER_RED
 	goto NuvemaTown_PlayersHouse_1F_Intro_1
 
 
 NuvemaTown_PlayersHouse_1F_EventScript_Mom::
-# 71 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	lockall
-# 72 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	msgbox Players_Mom, MSGBOX_XTRANS
-# 73 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	msgbox Players_Mom, MSGBOX_NPC
-# 74 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 75 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	drawfullscreenimage SCENEHILBERT
-# 76 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	msgbox Players_Mom, MSGBOX_NPC
-# 77 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	closemessage
-# 78 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	clearfullscreenimage
 # 79 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	lockall
 # 80 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	delay 60
+	compare VAR_NUVEMA_INTRO_STATE, 5
+	goto_if_eq NuvemaTown_PlayersHouse_1F_EventScript_Mom_2
+NuvemaTown_PlayersHouse_1F_EventScript_Mom_1:
 # 81 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 82 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	drawfullscreenimage SCENEHILDA
-# 83 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	msgbox Players_Mom, MSGBOX_NPC
-# 84 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	closemessage
-# 85 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	clearfullscreenimage
-# 86 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 87 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	delay 60
-# 88 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 89 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	drawfullscreenimage SCENEHILDA
-# 90 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	drawfullscreenimage SCENEHILBERT
-# 91 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	msgbox Players_Mom, MSGBOX_NPC
-# 92 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	closemessage
-# 93 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	clearfullscreenimage
-# 94 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 95 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	delay 60
-# 96 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 97 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	drawfullscreenimage SCENEHILBERT
-# 98 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	drawfullscreenimage SCENEHILDA
-# 99 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	msgbox Players_Mom, MSGBOX_NPC
-# 100 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	closemessage
-# 101 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	clearfullscreenimage
-# 102 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 103 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	releaseall
 	end
 
+NuvemaTown_PlayersHouse_1F_EventScript_Mom_2:
+# 80 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	msgbox NuvemaTown_PlayersHouse_1F_Mom_Intro_5, MSGBOX_NPC
+	goto NuvemaTown_PlayersHouse_1F_EventScript_Mom_1
 
-# 14 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-NuvemaTown_PlayersHouse_1F_OnTransition_Movement_0:
-# 14 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+
+# 12 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+NuvemaTown_PlayersHouse_1F_MomApology_Movement_0:
+# 12 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	face_right
 	step_end
 
-# 21 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 18 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 NuvemaTown_PlayersHouse_1F_Intro_Movement_0:
-# 21 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 18 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_down
-# 21 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 18 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_down
-# 21 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 18 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_down
 	step_end
 
-# 24 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 21 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 NuvemaTown_PlayersHouse_1F_Intro_Movement_1:
-# 24 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 21 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_left
 	step_end
 
-# 31 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 28 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 NuvemaTown_PlayersHouse_1F_Intro_Movement_2:
-# 31 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 28 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_right
-# 31 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 28 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	face_up
 	step_end
 
-# 34 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 32 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 NuvemaTown_PlayersHouse_1F_Intro_Movement_3:
-# 34 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 32 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 36 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 34 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 NuvemaTown_PlayersHouse_1F_Intro_Movement_4:
-# 36 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 34 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	face_up
 	step_end
 
-# 39 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 37 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 NuvemaTown_PlayersHouse_1F_Intro_Movement_5:
-# 39 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 37 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	face_left
 	step_end
 
-# 42 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 40 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 NuvemaTown_PlayersHouse_1F_Intro_Movement_6:
-# 42 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 40 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_down
-# 42 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 40 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_down
+# 40 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_down
+# 40 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_down
+# 40 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_down
 	step_end
 
-# 49 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 41 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 NuvemaTown_PlayersHouse_1F_Intro_Movement_7:
-# 49 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 41 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_down
+# 41 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_down
+# 41 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_down
+# 41 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_down
+	step_end
+
+# 47 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+NuvemaTown_PlayersHouse_1F_Intro_Movement_8:
+# 47 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_up
-# 49 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 47 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_up
-# 49 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 47 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	walk_up
+	step_end
+
+# 50 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+NuvemaTown_PlayersHouse_1F_Intro_Movement_9:
+# 50 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_right
+# 50 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_up
+# 50 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_up
+# 50 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	walk_up
+# 50 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	face_right
+	step_end
+
+# 54 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+NuvemaTown_PlayersHouse_1F_Intro_Movement_10:
+# 54 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	face_down
 	step_end
 
 NuvemaTown_PlayersHouse_1F_Intro_Text_0:
-# 23 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 20 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	.string "Cheren: I'm very sorry about all the\n"
 	.string "trouble, ma'am.$"
 
 NuvemaTown_PlayersHouse_1F_Intro_Text_1:
-# 26 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 23 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	.string "Bianca: Well, um...\n"
 	.string "We can clean up...$"
 
 NuvemaTown_PlayersHouse_1F_Intro_Text_2:
-# 27 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 24 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	.string "Mom: Cleaning up?\n"
 	.string "No worries. I'll take care of it later.\p"
 	.string "Shouldn't you be on your way to meet\n"
 	.string "Professor Juniper?$"
 
 NuvemaTown_PlayersHouse_1F_Intro_Text_3:
-# 29 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 26 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	.string "Cheren: Yes, thank you!\n"
 	.string "Please excuse us.\p"
 	.string "Come on.\n"
 	.string "Let's go thank Professor Juniper.$"
 
 NuvemaTown_PlayersHouse_1F_Intro_Text_4:
-# 33 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 30 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	.string "Cheren: I'll be waiting in front of the\n"
 	.string "Pokémon Research Lab.$"
 
 NuvemaTown_PlayersHouse_1F_Intro_Text_5:
-# 38 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 36 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	.string "Bianca: Oh! Wait!\n"
 	.string "I've gotta go home first.$"
 
 NuvemaTown_PlayersHouse_1F_Intro_Text_6:
-# 41 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+# 39 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
 	.string "Thanks for having us over!$"
 
-Players_Mom::
-# 107 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	.string "Let's test your Xtransceiver...$"
+NuvemaTown_PlayersHouse_1F_Mom_Intro_1::
+# 85 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	.string "Mom: My, my, {PLAYER}.\p"
+	.string "Pokémon battles are so lively,\n"
+	.string "aren't they?\p"
+	.string "I could hear the Pokémon's\n"
+	.string "cries clear down here!$"
 
-Players_Phone::
-# 111 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	.string "Phone Message Box$"
+NuvemaTown_PlayersHouse_1F_Mom_Intro_2::
+# 91 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	.string "Hm. That sure reminded me of my first\n"
+	.string "Pokémon battle!$"
 
-Players_Video::
-# 115 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
-	.string "Can you see this?$"
+NuvemaTown_PlayersHouse_1F_Mom_Intro_3::
+# 95 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	.string "Oh, and you know? After a battle,\n"
+	.string "you need to rest your Pokémon!$"
+
+NuvemaTown_PlayersHouse_1F_Mom_Intro_4::
+# 99 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	.string "Your Pokémon is looking great!\p"
+	.string "Now, if you're out,\n"
+	.string "don't forget your “cross-transceiver”!$"
+
+NuvemaTown_PlayersHouse_1F_Mom_Intro_5::
+# 105 "data/maps/NuvemaTown_PlayersHouse_1F/scripts.pory"
+	.string "You're going to thank the\n"
+	.string "professor too, right?\l"
+	.string "Better ge going, honey!$"

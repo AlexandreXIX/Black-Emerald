@@ -2,7 +2,8 @@ gText_Birch_Welcome::
 	.string "Hi there!\p"
 	.string "Welcome to the world of Pokémon!\p"
 	.string "My name is Professor Juniper.\n"
-	.string "Everyone calls me the Pokémon Professor!\p"
+	.string "Everyone calls me the Pokémon\l"
+	.string "Professor!\p"
 	.string "$"
 
 gText_Birch_Pokemon::
@@ -29,16 +30,15 @@ gText_Birch_MainSpeech::
 gText_Birch_AndYouAre::
 	.string "Well, that's enough from me...\n"
 	.string "Could you tell me about yourself?\p"
+	.string "$"
 
 gText_Birch_BoyOrGirl::
 	.string "Are you a boy?\n"
-	.string "Or are you a girl?\p"
-	.string "$"
+	.string "Or are you a girl?$"
 
 gText_Birch_WhatsYourName::
-	.string "I'd like to know your name.\p"
-	.string "Please tell me.\p"
-	.string "$"
+	.string "I'd like to know your name.\n"
+	.string "Please tell me.$"
 
 gText_Birch_SoItsPlayer::
 	.string "Your name is {PLAYER}{KUN}?$"

@@ -3,16 +3,13 @@ const LOCALID_CHEREN = 2
 const LOCALID_BIANCA = 3
 
 mapscripts NuvemaTown_PlayersHouse_1F_MapScripts {
-	MAP_SCRIPT_ON_TRANSITION : NuvemaTown_PlayersHouse_1F_OnTransition
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_NUVEMA_INTRO_STATE, 4: NuvemaTown_PlayersHouse_1F_MomApology]
 	MAP_SCRIPT_ON_FRAME_TABLE [VAR_NUVEMA_INTRO_STATE, 4: NuvemaTown_PlayersHouse_1F_Intro]
 }
 
-script NuvemaTown_PlayersHouse_1F_OnTransition {
-	// If doing intro sequence
-	if(var(VAR_NUVEMA_INTRO_STATE) == 4) {
-		setobjectxy(LOCALID_MOM, 6, 6)
-		applymovement(LOCALID_MOM, moves(face_right))
-		}
+script NuvemaTown_PlayersHouse_1F_MomApology {
+	setobjectxy(LOCALID_MOM, 6, 6)
+	applymovement(LOCALID_MOM, moves(face_right))
 }
 
 script NuvemaTown_PlayersHouse_1F_Intro {
@@ -31,6 +28,7 @@ script NuvemaTown_PlayersHouse_1F_Intro {
 	applymovement(LOCALID_CHEREN, moves(walk_right, face_up))
 	waitmovement(0)
 	msgbox(format("Cheren: I'll be waiting in front of the Pokémon Research Lab."))
+	playse(SE_PIN)
 	applymovement(LOCALID_BIANCA, moves(emote_exclamation_mark))
 	waitmovement(0)
 	applymovement(LOCALID_BIANCA, moves(face_up))
@@ -39,8 +37,8 @@ script NuvemaTown_PlayersHouse_1F_Intro {
 	applymovement(LOCALID_BIANCA, moves(face_left))
 	waitmovement(0)
 	msgbox(format("Thanks for having us over!"))
-	applymovement(LOCALID_BIANCA, moves(walk_down * 2))
-	applymovement(LOCALID_CHEREN, moves(walk_down * 3))
+	applymovement(LOCALID_BIANCA, moves(walk_down * 5))
+	applymovement(LOCALID_CHEREN, moves(walk_down * 4))
 	waitmovement(LOCALID_CHEREN)
 	removeobject(LOCALID_CHEREN)
 	removeobject(LOCALID_BIANCA)
@@ -48,10 +46,19 @@ script NuvemaTown_PlayersHouse_1F_Intro {
 	// Mom finalizes scene
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 3))
 	waitmovement(0)
-	playfanfare(MUS_RG_OBTAIN_KEY_ITEM)
-	waitfanfare
-	playfanfare(MUS_OBTAIN_ITEM)
-	waitfanfare
+	playbgm(MUS_FOLLOW_ME, FALSE)
+	applymovement(LOCALID_MOM, moves(walk_right, walk_up * 3, face_right))
+	waitmovement(LOCALID_MOM)
+	applymovement(OBJ_EVENT_ID_PLAYER, moves(face_left))
+	msgbox(NuvemaTown_PlayersHouse_1F_Mom_Intro_1)
+	applymovement(LOCALID_MOM, moves(face_down))
+	waitmovement(LOCALID_MOM)
+	msgbox(NuvemaTown_PlayersHouse_1F_Mom_Intro_2)
+	applymovement(LOCALID_MOM, moves(face_right))
+	waitmovement(LOCALID_MOM)
+	msgbox(NuvemaTown_PlayersHouse_1F_Mom_Intro_3)
+	call(Common_EventScript_OutOfCenterPartyHeal)
+	msgbox(NuvemaTown_PlayersHouse_1F_Mom_Intro_4)
 	checkplayergender
 	switch(var(VAR_RESULT)) {
 		case MALE: giveitem(ITEM_XTRANSCEIVER_BLUE)
@@ -60,58 +67,42 @@ script NuvemaTown_PlayersHouse_1F_Intro {
 	waitfanfare
 	setflag(FLAG_SYS_XTRANS_GET)
 	setflag(FLAG_RECEIVED_XTRANS)
-	// Final flags and vars
+	msgbox(NuvemaTown_PlayersHouse_1F_Mom_Intro_5)
 	setvar(VAR_NUVEMA_INTRO_STATE, 5)
 	special(RemoveCameraObject)
+	playbgm(MUS_NUVEMA, FALSE)
 	releaseall
 	end
 }
 
 script NuvemaTown_PlayersHouse_1F_EventScript_Mom {
 	lockall
-	msgbox(Players_Mom, MSGBOX_XTRANS)
-	msgbox(Players_Mom, MSGBOX_NPC)
-	fadescreen(FADE_TO_BLACK)
-	drawfullscreenimage(SCENEHILBERT)
-	msgbox(Players_Mom, MSGBOX_NPC)
-	closemessage
-	clearfullscreenimage
-	fadescreen(FADE_FROM_BLACK)
-	delay(60)
-	fadescreen(FADE_TO_BLACK)
-	drawfullscreenimage(SCENEHILDA)
-	msgbox(Players_Mom, MSGBOX_NPC)
-	closemessage
-	clearfullscreenimage
-	fadescreen(FADE_FROM_BLACK)
-	delay(60)
-	fadescreen(FADE_TO_BLACK)
-	drawfullscreenimage(SCENEHILDA)
-	drawfullscreenimage(SCENEHILBERT)
-	msgbox(Players_Mom, MSGBOX_NPC)
-	closemessage
-	clearfullscreenimage
-	fadescreen(FADE_FROM_BLACK)
-	delay(60)
-	fadescreen(FADE_TO_BLACK)
-	drawfullscreenimage(SCENEHILBERT)
-	drawfullscreenimage(SCENEHILDA)
-	msgbox(Players_Mom, MSGBOX_NPC)
-	closemessage
-	clearfullscreenimage
-	fadescreen(FADE_FROM_BLACK)
+	if(var(VAR_NUVEMA_INTRO_STATE) == 5) {msgbox(NuvemaTown_PlayersHouse_1F_Mom_Intro_5, MSGBOX_NPC)}
 	releaseall
 	end
 }
 
-text Players_Mom {
-    format("Let's test your Xtransceiver...")
+text NuvemaTown_PlayersHouse_1F_Mom_Intro_1 {
+    format("Mom: My, my, {PLAYER}.\p
+	Pokémon battles are so lively,\naren't they?\p
+	I could hear the Pokémon's\ncries clear down here!")
 }
 
-text Players_Phone {
-    format("Phone Message Box") // The game always a line of ... here, then new paragraph then text, same as pokenavcall(Players_Phone)
+text NuvemaTown_PlayersHouse_1F_Mom_Intro_2 {
+    format("Hm. That sure reminded me of my first Pokémon battle!")
 }
 
-text Players_Video {
-    format("Can you see this?")
+text NuvemaTown_PlayersHouse_1F_Mom_Intro_3 {
+    format("Oh, and you know? After a battle,\nyou need to rest your Pokémon!")
+}
+
+text NuvemaTown_PlayersHouse_1F_Mom_Intro_4 {
+    format("Your Pokémon is looking great!\p
+	Now, if you're out,\n
+	don't forget your “cross-transceiver”!")
+}
+
+text NuvemaTown_PlayersHouse_1F_Mom_Intro_5 {
+    format("You're going to thank the\nprofessor too, right?\l
+	Better ge going, honey!")
 }
