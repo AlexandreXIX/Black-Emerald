@@ -4,20 +4,6 @@
 extern u8 gUnusedPokedexU8;
 extern void (*gPokedexVBlankCB)(void);
 
-enum
-{
-    DEX_MODE_UNOVA,
-    DEX_MODE_NATIONAL
-};
-
-enum
-{
-    FLAG_GET_SEEN,
-    FLAG_GET_CAUGHT,
-    FLAG_SET_SEEN,
-    FLAG_SET_CAUGHT
-};
-
 void ResetPokedex(void);
 u16 GetNationalPokedexCount(u8);
 u16 GetUnovaPokedexCount(u8);
